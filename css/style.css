@@ -27,7 +27,7 @@
 }
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:var(--nav-height);-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-height);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 body{font-family:var(--ff-body);font-size:var(--fs-body);font-weight:var(--fw-light);color:var(--clr-charcoal);background:var(--clr-white);line-height:1.75;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
 a{color:var(--clr-gold-dark);text-decoration:none;transition:color var(--transition)}
