@@ -61,6 +61,10 @@ h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2);letter-spacing:0.02em} h3{f
 .btn--white:hover{background:transparent;color:var(--clr-white);border-color:var(--clr-white);transform:translateY(-2px)}
 .btn--small{padding:0.7rem 1.5rem;font-size:0.8rem}
 .btn:hover .btn-arrow{transform:translateX(4px)}
+@media(max-width:500px){
+  .btn{padding:0.85rem 1.6rem;font-size:0.78rem;letter-spacing:0.1em;width:100%;justify-content:center}
+  .btn--small{width:auto}
+}
 
 /* ── Navbar ── */
 .navbar{position:fixed;top:0;left:0;width:100%;height:var(--nav-height);z-index:1000;display:flex;align-items:center;transition:all var(--transition);background:transparent}
@@ -83,18 +87,28 @@ h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2);letter-spacing:0.02em} h3{f
 .navbar__hamburger.open span:nth-child(2){opacity:0}
 .navbar__hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
-@media(max-width:900px){
+@media(max-width:1024px){
   .navbar__hamburger{display:flex}
-  .navbar__links{position:fixed;top:0;right:-100%;width:min(85vw,360px);height:100vh;background:var(--clr-white);flex-direction:column;justify-content:center;gap:var(--space-lg);padding:var(--space-xl);transition:right var(--transition-slow);box-shadow:-8px 0 40px rgba(0,0,0,0.1)}
+  .navbar__links{
+    position:fixed;top:0;right:-100%;width:min(85vw,360px);height:100vh;height:100dvh;
+    background:var(--clr-white);flex-direction:column;justify-content:center;
+    gap:var(--space-lg);padding:var(--space-xl);z-index:1001;
+    transition:right var(--transition-slow);box-shadow:-8px 0 40px rgba(0,0,0,0.15);
+    overflow-y:auto
+  }
   .navbar__links.open{right:0}
-  .navbar__links a{color:var(--clr-charcoal);font-size:1rem}
-  .navbar__cta{margin-left:0;margin-top:var(--space-sm)}
-  .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:999;opacity:0;pointer-events:none;transition:opacity var(--transition)}
+  .navbar__links a{color:var(--clr-charcoal);font-size:1.1rem;letter-spacing:0.08em}
+  .navbar__links a::after{display:none}
+  .navbar__links a.active{color:var(--clr-gold)}
+  .navbar__cta{margin-left:0;margin-top:var(--space-md)}
+  .navbar__cta .btn{width:100%;justify-content:center;padding:1rem 2rem}
+  .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;opacity:0;pointer-events:none;transition:opacity var(--transition)}
   .mobile-overlay.open{opacity:1;pointer-events:all}
+  .page-light .navbar__links a{color:var(--clr-charcoal)}
 }
 
 /* ── Hero ── */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .hero__bg{position:absolute;inset:0;z-index:0}
 .hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
 .hero__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(44,44,44,0.3) 0%,rgba(44,44,44,0.5) 50%,rgba(44,44,44,0.7) 100%);z-index:1}
@@ -112,3 +126,29 @@ h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2);letter-spacing:0.02em} h3{f
 /* ── Video Hero ── */
 .hero__bg video{width:100%;height:100%;object-fit:cover;object-position:center 30%;position:absolute;inset:0}
 .hero__overlay{background:linear-gradient(180deg,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.35) 25%,rgba(0,0,0,0.55) 55%,rgba(0,0,0,0.8) 80%,rgba(0,0,0,0.95) 100%)}
+
+/* ═══ MOBILE HERO ═══ */
+@media(max-width:768px){
+  .hero{min-height:100vh;min-height:100dvh}
+  .hero__content{padding:var(--space-lg) var(--space-md)}
+  .hero__label{letter-spacing:0.2em;font-size:0.75rem;margin-bottom:var(--space-sm)}
+  .hero__subtitle{font-size:0.95rem;line-height:1.65;margin-bottom:var(--space-md)}
+  .hero__scroll{bottom:1.5rem}
+  .hero__scroll-line{height:30px}
+}
+@media(max-width:500px){
+  .hero__content{padding:var(--space-md) var(--space-sm)}
+  .hero__cta .btn{width:100%;justify-content:center}
+}
+
+/* ═══ GLOBAL MOBILE SPACING ═══ */
+@media(max-width:768px){
+  .section{padding:clamp(3rem,6vw,5rem) clamp(1rem,4vw,2rem)}
+  .section-title{margin-bottom:var(--space-sm)}
+  .section-subtitle{font-size:0.9rem}
+}
+@media(max-width:500px){
+  .section{padding:2.5rem 1rem}
+  .container{padding:0 1rem}
+  .section-label{font-size:0.72rem;letter-spacing:0.15em}
+}
