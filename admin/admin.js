@@ -1,6 +1,16 @@
 /* ═══════════════════════════════════════════════════
    be2gether CMS — Admin Panel Logic (Supabase-backed)
    ═══════════════════════════════════════════════════ */
+
+// Global error catchers — surface anything silent into the login error box.
+function _showGlobalErr(msg) {
+  const box = document.getElementById('loginError');
+  if (box) { box.style.color = '#c00'; box.textContent = msg; }
+  else { console.error(msg); }
+}
+window.addEventListener('error', (e) => _showGlobalErr('JS-Fehler: ' + (e.message || e.error)));
+window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Fehler: ' + (e.reason?.message || e.reason)));
+
 (function () {
   'use strict';
 
@@ -715,19 +725,39 @@
 
   // ── Wire up events ───────────────────────────────
   function bindEvents() {
-    el.loginForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      el.loginError.textContent = '';
-      const { ok, error } = await login(el.loginPassword.value);
-      if (ok) {
-        boot();
-      } else {
-        el.loginError.textContent = error?.message?.includes('Invalid')
-          ? 'Passwort falsch.'
-          : 'Login fehlgeschlagen: ' + (error?.message || 'unbekannter Fehler');
-        el.loginPassword.value = '';
-        el.loginPassword.focus();
+    if (!el.loginForm) { _showGlobalErr('loginForm-Element nicht gefunden im DOM.'); return; }
+
+    async function attemptLogin() {
+      el.loginError.style.color = '';
+      el.loginError.textContent = 'Prüfe Login…';
+      try {
+        const { ok, error } = await login(el.loginPassword.value);
+        if (ok) {
+          el.loginError.textContent = '';
+          boot();
+        } else {
+          el.loginError.style.color = '#c00';
+          el.loginError.textContent = error?.message?.includes('Invalid')
+            ? 'Passwort falsch.'
+            : 'Login fehlgeschlagen: ' + (error?.message || JSON.stringify(error) || 'unbekannter Fehler');
+          el.loginPassword.value = '';
+          el.loginPassword.focus();
+        }
+      } catch (e) {
+        el.loginError.style.color = '#c00';
+        el.loginError.textContent = 'Ausnahme: ' + (e.message || e);
       }
+    }
+
+    el.loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      attemptLogin();
+    });
+    // Belt-and-suspenders: also bind directly to the submit button.
+    const submitBtn = el.loginForm.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      attemptLogin();
     });
 
     el.btnSave.addEventListener('click', save);
