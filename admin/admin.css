@@ -207,6 +207,9 @@ img { max-width: 100%; display: block; }
 .repeater-item__actions button:hover { border-color: var(--clr-gold); color: var(--clr-gold-dark); }
 .repeater-item__actions button.remove:hover { border-color: var(--clr-danger); color: var(--clr-danger); }
 .repeater-item__body { display: flex; flex-direction: column; gap: 1rem; }
+.repeater-item.collapsed .repeater-item__body { display: none; }
+.repeater-item.collapsed .repeater-item__toggle { transform: rotate(-90deg); }
+.repeater-item__toggle { transition: transform 0.18s ease; }
 
 .repeater-add {
   display: inline-flex; align-items: center; gap: 0.4rem;

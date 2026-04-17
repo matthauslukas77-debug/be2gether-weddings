@@ -46,6 +46,8 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
       fields: ['posts'],
       sectionLabels: { posts: 'Blog-Artikel' },
       itemHideKeys: ['slug'],
+      itemCollapsible: true,
+      itemTitleKey: 'title',
     },
   ];
 
@@ -638,26 +640,44 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
   }
 
   function renderArrayItem(item, idx, parentPath, wrapRef) {
+    const meta = PAGES.find(p => p.id === currentPageId);
+    const collapsible = !!meta?.itemCollapsible;
+    const titleKey = meta?.itemTitleKey;
+    const itemTitle = (titleKey && item && item[titleKey]) ? String(item[titleKey]) : '';
+
     const itemWrap = document.createElement('div');
-    itemWrap.className = 'repeater-item';
+    itemWrap.className = 'repeater-item' + (collapsible ? ' collapsed' : '');
 
     const header = document.createElement('div');
     header.className = 'repeater-item__header';
+    const labelText = itemTitle || `Eintrag ${idx + 1}`;
+    const caret = collapsible
+      ? '<i class="ph ph-caret-down repeater-item__toggle" style="margin-right:.5rem"></i>'
+      : '';
     header.innerHTML = `
-      <div class="repeater-item__index">Eintrag ${idx + 1}</div>
+      <div class="repeater-item__index" style="display:flex;align-items:center;flex:1;min-width:0">
+        ${caret}<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${labelText.replace(/</g,'&lt;')}</span>
+      </div>
       <div class="repeater-item__actions">
         <button type="button" title="Nach oben" data-action="up"><i class="ph ph-arrow-up"></i></button>
         <button type="button" title="Nach unten" data-action="down"><i class="ph ph-arrow-down"></i></button>
         <button type="button" class="remove" title="Entfernen" data-action="remove"><i class="ph ph-trash"></i></button>
       </div>
     `;
+    if (collapsible) {
+      header.style.cursor = 'pointer';
+      header.addEventListener('click', (e) => {
+        // Don't toggle when clicking action buttons.
+        if (e.target.closest('[data-action]')) return;
+        itemWrap.classList.toggle('collapsed');
+      });
+    }
     itemWrap.appendChild(header);
 
     const body = document.createElement('div');
     body.className = 'repeater-item__body';
 
     if (typeof item === 'object' && item !== null && !Array.isArray(item)) {
-      const meta = PAGES.find(p => p.id === currentPageId);
       const hide = meta?.itemHideKeys || [];
       for (const k of Object.keys(item)) {
         if (hide.includes(k)) continue;

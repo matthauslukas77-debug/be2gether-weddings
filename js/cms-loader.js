@@ -51,26 +51,40 @@
     });
   }
 
-  function applyBindings(root, data) {
-    root.querySelectorAll('[data-cms]').forEach(el => {
+  // When applyBindings runs on the whole document, skip anything inside a
+  // [data-cms-each] container — those bindings are item-scoped and were
+  // already resolved per-item by processArrays.
+  function inEachScope(el) {
+    return typeof el.closest === 'function' && el.closest('[data-cms-each]') !== null;
+  }
+
+  function applyBindings(root, data, opts) {
+    const skipEach = opts?.skipEach;
+    function each(sel, fn) {
+      root.querySelectorAll(sel).forEach(el => {
+        if (skipEach && inEachScope(el)) return;
+        fn(el);
+      });
+    }
+    each('[data-cms]', el => {
       const v = get(data, el.dataset.cms);
       if (v != null) el.innerHTML = v;
     });
-    root.querySelectorAll('[data-cms-text]').forEach(el => {
+    each('[data-cms-text]', el => {
       const v = get(data, el.dataset.cmsText);
       if (v != null) el.textContent = v;
     });
-    root.querySelectorAll('[data-cms-src]').forEach(el => {
+    each('[data-cms-src]', el => {
       const v = get(data, el.dataset.cmsSrc);
       if (v) el.src = v;
     });
-    root.querySelectorAll('[data-cms-href]').forEach(el => {
+    each('[data-cms-href]', el => {
       const v = get(data, el.dataset.cmsHref);
       if (v) el.href = v;
     });
     // Template href: data-cms-href-tpl="blog/post.html?slug={slug}" — {key}
     // tokens get replaced with values from the current data scope.
-    root.querySelectorAll('[data-cms-href-tpl]').forEach(el => {
+    each('[data-cms-href-tpl]', el => {
       const tpl = el.dataset.cmsHrefTpl;
       const out = tpl.replace(/\{([^}]+)\}/g, (_, k) => {
         const v = get(data, k);
@@ -78,11 +92,11 @@
       });
       el.href = out;
     });
-    root.querySelectorAll('[data-cms-alt]').forEach(el => {
+    each('[data-cms-alt]', el => {
       const v = get(data, el.dataset.cmsAlt);
       if (v) el.alt = v;
     });
-    root.querySelectorAll('[data-cms-bg]').forEach(el => {
+    each('[data-cms-bg]', el => {
       const v = get(data, el.dataset.cmsBg);
       if (v) el.style.backgroundImage = `url('${v}')`;
     });
@@ -133,7 +147,7 @@
     const data = { ...pageData, site };
 
     processArrays(document, data);
-    applyBindings(document, data);
+    applyBindings(document, data, { skipEach: true });
     applyMeta(data);
 
     document.documentElement.classList.add('cms-ready');
