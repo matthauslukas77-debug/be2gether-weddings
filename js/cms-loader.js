@@ -68,6 +68,16 @@
       const v = get(data, el.dataset.cmsHref);
       if (v) el.href = v;
     });
+    // Template href: data-cms-href-tpl="blog/post.html?slug={slug}" — {key}
+    // tokens get replaced with values from the current data scope.
+    root.querySelectorAll('[data-cms-href-tpl]').forEach(el => {
+      const tpl = el.dataset.cmsHrefTpl;
+      const out = tpl.replace(/\{([^}]+)\}/g, (_, k) => {
+        const v = get(data, k);
+        return v == null ? '' : encodeURIComponent(v);
+      });
+      el.href = out;
+    });
     root.querySelectorAll('[data-cms-alt]').forEach(el => {
       const v = get(data, el.dataset.cmsAlt);
       if (v) el.alt = v;

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>be2gether weddings</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+</head>
+<body data-cms-page="blog-post">
+  <nav class="navbar scrolled" id="navbar"><div class="navbar__inner"><a href="../index.html" class="navbar__logo"><img src="../images/180-Design-ohne-Titel2.png" alt="be2gether weddings Logo"></a><div class="navbar__links" id="navLinks"><a href="../index.html">Home</a><a href="../leistungen.html">Leistungen</a><a href="../impressionen.html">Impressionen</a><a href="../blog.html" class="active">Blog</a><div class="navbar__cta"><a href="../kontakt.html" class="btn btn--primary">Erstgespräch</a></div></div><button class="navbar__hamburger" id="hamburger" aria-label="Menü öffnen"><span></span><span></span><span></span></button></div></nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <section class="blog-post-hero" id="postHero">
+    <div class="blog-post-hero__overlay"></div>
+    <div class="blog-post-hero__content">
+      <a href="../blog.html" class="blog-post-back"><i class="ph ph-arrow-left"></i> Zurück zum Blog</a>
+      <span class="section-label" style="color:var(--clr-gold-light)">be2gether weddings</span>
+      <h1 id="postTitle"></h1>
+      <div class="blog-post-meta" id="postDate"></div>
+    </div>
+  </section>
+
+  <article class="blog-post-content">
+    <div class="container container--narrow">
+      <p class="blog-post-intro" id="postIntro"></p>
+      <div id="postBody"></div>
+      <div class="blog-post-cta">
+        <h3>Du suchst eine Hochzeitsplanerin in Süddeutschland oder der Schweiz?</h3>
+        <a href="../kontakt.html" class="btn btn--primary">Kostenfreies Erstgespräch anfragen</a>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer"><div class="footer__grid"><div class="footer__brand"><img src="../images/180-Design-ohne-Titel2.png" alt="be2gether weddings" class="footer__logo"><p>Professionelle Hochzeitsplanung in Süddeutschland und der Schweiz.</p></div><div><h4>Navigation</h4><div class="footer__links"><a href="../index.html">Home</a><a href="../leistungen.html">Leistungen</a><a href="../impressionen.html">Impressionen</a><a href="../blog.html">Blog</a><a href="../kontakt.html">Kontakt</a></div></div><div><h4>Kontakt</h4><div class="footer__contact"><p>Miriam Stabile</p><p>79725 Laufenburg (Baden)</p><a href="tel:+491734758590">+49 (0)173 4758590</a><a href="mailto:info@be2gether-weddings.de">info@be2gether-weddings.de</a></div></div><div><h4>Rechtliches</h4><div class="footer__links"><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a></div></div></div><div class="footer__bottom"><span>&copy; 2026 be2gether weddings &amp; events. Alle Rechte vorbehalten.</span></div></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/cms-config.js"></script>
+  <script>
+  // Generic blog post renderer — reads ?slug=... from URL, finds the matching
+  // post in data/blog.json (merged with any Supabase override), and renders.
+  (async function () {
+    const slug = new URLSearchParams(location.search).get('slug');
+    const cfg = window.CMS_CONFIG;
+    const sb = (cfg && window.supabase) ? window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey) : null;
+
+    function deepMerge(base, override) {
+      if (override === undefined) return base;
+      if (Array.isArray(override)) return override;
+      if (base && override && typeof base === 'object' && typeof override === 'object') {
+        const out = Array.isArray(base) ? base.slice() : { ...base };
+        for (const k of Object.keys(override)) out[k] = deepMerge(base[k], override[k]);
+        return out;
+      }
+      return override;
+    }
+
+    async function loadJson(path) {
+      try { const r = await fetch(path, { cache: 'no-cache' }); return r.ok ? await r.json() : {}; }
+      catch { return {}; }
+    }
+
+    async function loadOverride() {
+      if (!sb) return {};
+      try {
+        const { data } = await sb.from(cfg.table).select('data').eq('page_id', 'blog').maybeSingle();
+        return data?.data || {};
+      } catch { return {}; }
+    }
+
+    function renderNotFound() {
+      document.getElementById('postTitle').textContent = 'Artikel nicht gefunden';
+      document.getElementById('postIntro').textContent = 'Dieser Beitrag existiert nicht oder wurde entfernt.';
+      document.getElementById('postHero').style.background = '#2c2c2c';
+    }
+
+    const [base, override] = await Promise.all([loadJson('../data/blog.json'), loadOverride()]);
+    const merged = deepMerge(base, override);
+    const post = (merged.posts || []).find(p => p.slug === slug);
+
+    if (!post) { renderNotFound(); return; }
+
+    document.title = (post.title || 'Blog') + ' - be2gether weddings';
+    const descEl = document.querySelector('meta[name="description"]');
+    if (descEl && post.excerpt) descEl.setAttribute('content', post.excerpt);
+
+    const hero = document.getElementById('postHero');
+    if (post.heroImage) hero.style.backgroundImage = `url('../${post.heroImage}')`;
+
+    document.getElementById('postTitle').textContent = post.title || '';
+    document.getElementById('postDate').textContent = post.date || '';
+    document.getElementById('postIntro').textContent = post.intro || '';
+    // Body is HTML — rewrite root-relative image/href paths to ../ for this depth
+    let body = post.body || '';
+    body = body.replace(/(src|href)="(images\/)/g, '$1="../$2');
+    document.getElementById('postBody').innerHTML = body;
+
+    document.documentElement.classList.add('cms-ready');
+  })();
+  </script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -45,6 +45,7 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
       section: 'pages',
       fields: ['posts'],
       sectionLabels: { posts: 'Blog-Artikel' },
+      itemHideKeys: ['slug'],
     },
   ];
 
@@ -94,6 +95,9 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
     link: 'Link',
     date: 'Datum',
     excerpt: 'Vorschau-Text',
+    heroImage: 'Hero-Bild (Detail-Seite)',
+    intro: 'Einleitung',
+    body: 'Inhalt',
     author: 'Autor',
     paragraph1: 'Absatz 1',
     paragraph2: 'Absatz 2',
@@ -466,6 +470,8 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
 
     if (isImage) {
       field.appendChild(renderImageField(value, path));
+    } else if (key === 'body' && window.Quill) {
+      field.appendChild(renderRichText(value, path));
     } else if (isLongText(key, value)) {
       const ta = document.createElement('textarea');
       ta.value = value == null ? '' : String(value);
@@ -481,6 +487,53 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
     }
 
     return field;
+  }
+
+  function renderRichText(value, path) {
+    const wrap = document.createElement('div');
+    wrap.style.background = '#fff';
+    wrap.style.borderRadius = 'var(--radius)';
+    const editorDiv = document.createElement('div');
+    editorDiv.style.minHeight = '300px';
+    wrap.appendChild(editorDiv);
+    // Quill must be in the DOM before init.
+    queueMicrotask(() => {
+      const q = new window.Quill(editorDiv, {
+        theme: 'snow',
+        modules: {
+          toolbar: [
+            [{ header: [2, 3, false] }],
+            ['bold', 'italic', 'underline'],
+            [{ list: 'ordered' }, { list: 'bullet' }],
+            ['link', 'image'],
+            ['clean'],
+          ],
+        },
+      });
+      q.root.innerHTML = value == null ? '' : String(value);
+      q.on('text-change', () => {
+        setAtPath(currentData, path, q.root.innerHTML);
+        dirty = true;
+      });
+    });
+    return wrap;
+  }
+
+  function slugify(s) {
+    return String(s || '')
+      .toLowerCase()
+      .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .slice(0, 80);
+  }
+
+  function ensureSlugs(data) {
+    if (data && Array.isArray(data.posts)) {
+      data.posts.forEach(p => {
+        if (!p.slug && p.title) p.slug = slugify(p.title);
+      });
+    }
   }
 
   function renderImageField(value, path) {
@@ -604,7 +657,10 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
     body.className = 'repeater-item__body';
 
     if (typeof item === 'object' && item !== null && !Array.isArray(item)) {
+      const meta = PAGES.find(p => p.id === currentPageId);
+      const hide = meta?.itemHideKeys || [];
       for (const k of Object.keys(item)) {
+        if (hide.includes(k)) continue;
         body.appendChild(renderField(k, item[k], parentPath.concat(idx, k)));
       }
     } else {
@@ -673,6 +729,7 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
 
   // ── Save / Reset ─────────────────────────────────
   async function save() {
+    ensureSlugs(currentData);
     const fullDiff = computeDiff(basePageData, currentData) || {};
     // If this page has a field whitelist, drop any keys outside it so old
     // non-editable overrides (left from earlier admin versions) don't persist.
