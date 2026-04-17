@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS — be2gether weddings</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <div class="login-brand">
+        <img src="../images/180-Design-ohne-Titel2.png" alt="be2gether weddings">
+      </div>
+      <h1>Content Management</h1>
+      <p class="login-sub">Bitte einloggen, um Inhalte zu bearbeiten.</p>
+      <form id="loginForm" class="login-form">
+        <div class="field">
+          <label>Passwort</label>
+          <input type="password" id="loginPassword" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn btn--primary">
+          <i class="ph ph-sign-in"></i> Einloggen
+        </button>
+        <div class="login-error" id="loginError"></div>
+      </form>
+      <p class="login-hint">Demo-Passwort: <strong>miriam2026</strong></p>
+    </div>
+  </div>
+
+  <!-- ADMIN APP -->
+  <div class="admin-app" id="adminApp" hidden>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <img src="../images/180-Design-ohne-Titel2.png" alt="be2gether">
+        <div>
+          <strong>be2gether</strong>
+          <span>Content Management</span>
+        </div>
+      </div>
+
+      <nav class="sidebar__nav" id="pageNav"></nav>
+
+      <div class="sidebar__footer">
+        <button class="btn btn--ghost" id="btnExport"><i class="ph ph-download-simple"></i> Export JSON</button>
+        <button class="btn btn--ghost" id="btnImport"><i class="ph ph-upload-simple"></i> Import JSON</button>
+        <input type="file" id="importFile" accept="application/json" hidden>
+        <button class="btn btn--ghost btn--danger" id="btnResetAll"><i class="ph ph-arrow-counter-clockwise"></i> Alles zurücksetzen</button>
+        <button class="btn btn--ghost" id="btnLogout"><i class="ph ph-sign-out"></i> Abmelden</button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <header class="main__header">
+        <div>
+          <div class="crumb" id="crumb">Seite</div>
+          <h1 id="pageTitle">Home</h1>
+        </div>
+        <div class="main__actions">
+          <a class="btn btn--outline" id="btnPreview" target="_blank"><i class="ph ph-eye"></i> Seite ansehen</a>
+          <button class="btn btn--ghost" id="btnResetPage"><i class="ph ph-arrow-counter-clockwise"></i> Seite zurücksetzen</button>
+          <button class="btn btn--primary" id="btnSave"><i class="ph ph-check"></i> Speichern</button>
+        </div>
+      </header>
+
+      <div class="saved-toast" id="savedToast">
+        <i class="ph ph-check-circle"></i> Änderungen gespeichert
+      </div>
+
+      <section class="editor" id="editor">
+        <div class="empty">Lade…</div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

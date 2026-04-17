@@ -1,0 +1,24 @@
+{
+  "brand": {
+    "name": "be2gether weddings",
+    "logo": "images/180-Design-ohne-Titel2.png",
+    "tagline": "Professionelle Hochzeitsplanung in Süddeutschland und der Schweiz. Von der ersten Idee bis zum Hochzeitstag — mit Herz und Struktur.",
+    "taglineShort": "Professionelle Hochzeitsplanung in Süddeutschland und der Schweiz."
+  },
+  "contact": {
+    "name": "Miriam Stabile",
+    "address": "79725 Laufenburg (Baden)",
+    "phone": "+49 (0)173 4758590",
+    "phoneLink": "tel:+491734758590",
+    "email": "info@be2gether-weddings.de",
+    "emailLink": "mailto:info@be2gether-weddings.de"
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/be2gether_weddings/",
+    "facebook": "https://www.facebook.com/people/Be2gether-weddings-events/61560067391708/"
+  },
+  "footer": {
+    "copyright": "© 2026 be2gether weddings & events. Alle Rechte vorbehalten.",
+    "seo": "Hochzeit Freiburg · Hochzeit Basel · Hochzeit Zürich · Hochzeit Schweiz · Hochzeit Deutschland"
+  }
+}

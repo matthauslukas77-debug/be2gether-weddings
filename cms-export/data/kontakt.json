@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "title": "Kontakt - be2gether weddings | Hochzeitsplanerin Süddeutschland Schweiz",
+    "description": "Ich bin eine erfahrene Hochzeitsplanerin in Süddeutschland und der Schweiz. Hier kannst du mich kontaktieren."
+  },
+  "hero": {
+    "image": "images/brautstrauss-elegant.jpg",
+    "title": "Kontakt aufnehmen",
+    "subtitle": "Egal ob früh im Prozess oder kurz vor der Hochzeit — ich bin für euch da."
+  },
+  "form": {
+    "label": "Erstgespräch",
+    "title": "Frage ein kostenfreies Erstgespräch an",
+    "intro": "Fülle das Formular aus und ich melde mich innerhalb von 24 Stunden bei dir. Das Erstgespräch ist unverbindlich und kostenfrei.",
+    "submitText": "Anfrage absenden",
+    "privacyText": "Hiermit bestätige ich, dass ich die <a href=\"datenschutz.html\">Datenschutzerklärung</a> zur Kenntnis genommen habe."
+  },
+  "info": {
+    "image": "images/hochzeitsplanerin-miriam-stabile-deutschland-682x1024.jpg",
+    "name": "Miriam Stabile",
+    "address": "79725 Laufenburg (Baden)"
+  }
+}

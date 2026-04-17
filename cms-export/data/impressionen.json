@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "title": "Impressionen - be2gether weddings",
+    "description": "Als Hochzeitsplaner kann ich euch viele Impressionen zur Verfügung stellen. Entdeckt Möglichkeiten, wie eure Hochzeit aussehen könnte."
+  },
+  "hero": {
+    "image": "images/brautpaar-mit-hochzeitsplanerin.jpg",
+    "title": "Impressionen",
+    "subtitle": "Einblicke in unvergessliche Momente und liebevolle Details."
+  },
+  "gallery": [
+    { "image": "images/boho-braut-214x300.jpg", "alt": "Boho Braut" },
+    { "image": "images/brautpaar-basel-200x300.jpg", "alt": "Brautpaar Basel" },
+    { "image": "images/hochzeitspapeterie-200x300.jpg", "alt": "Hochzeitspapeterie" },
+    { "image": "images/brautstrauss-elegant-200x300.jpg", "alt": "Brautstrauß elegant" },
+    { "image": "images/braut-bad-saeckingen-200x300.jpg", "alt": "Braut Bad Säckingen" },
+    { "image": "images/brautpaar-mit-hochzeitsplanerin-300x200.jpg", "alt": "Brautpaar mit Hochzeitsplanerin" },
+    { "image": "images/hochzeitstorte-schwarzwald-200x300.jpg", "alt": "Hochzeitstorte Schwarzwald" },
+    { "image": "images/hochzeitsdekoration-blumenschmuck-200x300.jpg", "alt": "Dekoration & Blumenschmuck" },
+    { "image": "images/153-MZF_5421-200x300.jpg", "alt": "Hochzeitsfoto" },
+    { "image": "images/bride-to-be-2025-serravalle-200x300.jpg", "alt": "Bride to Be 2025" },
+    { "image": "images/bride-to-be-2025-rainbow-schuhe-240x300.jpg", "alt": "Rainbow Schuhe" }
+  ],
+  "credits": "Fotografen: Michel Sieber · Katrin Haberstock · Photostudio M · Photo Emilia Jarosch · Fabian Espinoza · Melina Zeiser · Wedding Crew · Yourmoments_ff · Nicole Janke",
+  "ctaBanner": {
+    "image": "images/save-the-date-blattwerkstatt.jpg",
+    "title": "Soll eure Geschichte die nächste sein?",
+    "text": "Fragt jetzt euer kostenfreies Erstgespräch an.",
+    "ctaText": "Erstgespräch anfragen"
+  }
+}

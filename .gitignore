@@ -18,4 +18,9 @@ desktop.ini
 
 # Antigravity template
 001-Antigravity Template/
+
+# Vercel
 .vercel
+
+# Build artifacts
+b2together-cms.zip
