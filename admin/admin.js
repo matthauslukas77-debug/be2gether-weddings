@@ -27,12 +27,8 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
   function tableName() { return window.CMS_CONFIG?.table || 'cms_content'; }
 
   const PAGES = [
-    { id: 'site',         label: 'Globale Einstellungen', icon: 'ph-gear',         preview: null,                section: 'global' },
-    { id: 'index',        label: 'Startseite',             icon: 'ph-house',        preview: '../index.html',     section: 'pages' },
-    { id: 'leistungen',   label: 'Leistungen',             icon: 'ph-sparkle',      preview: '../leistungen.html', section: 'pages' },
     { id: 'impressionen', label: 'Impressionen',           icon: 'ph-images',       preview: '../impressionen.html', section: 'pages' },
     { id: 'blog',         label: 'Blog',                   icon: 'ph-newspaper',    preview: '../blog.html',      section: 'pages' },
-    { id: 'kontakt',      label: 'Kontakt',                icon: 'ph-envelope',     preview: '../kontakt.html',   section: 'pages' },
   ];
 
   // Friendly labels for fields (German). Fallback to humanized key.
@@ -797,7 +793,7 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
       console.error('Konnte CMS-Inhalte nicht laden:', e);
       alert('CMS-Inhalte konnten nicht geladen werden: ' + (e.message || e));
     }
-    switchPage('index');
+    switchPage(PAGES[0].id);
   }
 
   async function init() {
