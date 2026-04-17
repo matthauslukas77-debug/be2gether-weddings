@@ -37,6 +37,7 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
       fields: ['gallery'],
       sectionLabels: { gallery: 'Bildergalerie' },
       itemDraggable: true,
+      arrayView: 'gallery', // grid of thumbnails matching the front-end layout
     },
     {
       id: 'blog',
@@ -492,31 +493,74 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
     return field;
   }
 
+  // Path rewriting between admin-display and stored values.
+  // Stored body uses root-relative-ish "images/foo.jpg"; admin lives at /admin/
+  // so the editor needs "../images/foo.jpg" to actually load the preview.
+  function bodyToDisplay(html) {
+    return String(html || '').replace(/(src|href)="(images\/)/g, '$1="../$2');
+  }
+  function bodyToStore(html) {
+    return String(html || '').replace(/(src|href)="\.\.\/(images\/)/g, '$1="$2');
+  }
+
   function renderRichText(value, path) {
     const wrap = document.createElement('div');
     wrap.style.background = '#fff';
     wrap.style.borderRadius = 'var(--radius)';
     const editorDiv = document.createElement('div');
-    editorDiv.style.minHeight = '300px';
+    editorDiv.style.minHeight = '320px';
     wrap.appendChild(editorDiv);
-    // Quill must be in the DOM before init.
+
     queueMicrotask(() => {
       const q = new window.Quill(editorDiv, {
         theme: 'snow',
         modules: {
-          toolbar: [
-            [{ header: [2, 3, false] }],
-            ['bold', 'italic', 'underline'],
-            [{ list: 'ordered' }, { list: 'bullet' }],
-            ['link', 'image'],
-            ['clean'],
-          ],
+          toolbar: {
+            container: [
+              [{ header: [2, 3, false] }],
+              ['bold', 'italic', 'underline'],
+              [{ list: 'ordered' }, { list: 'bullet' }],
+              [{ align: '' }, { align: 'center' }, { align: 'right' }],
+              ['link', 'image'],
+              ['clean'],
+            ],
+            handlers: {
+              image: function () {
+                const range = this.quill.getSelection(true);
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                input.onchange = () => {
+                  const file = input.files?.[0];
+                  if (!file) return;
+                  if (file.size > 3 * 1024 * 1024) {
+                    alert('Bild ist zu groß (max. 3 MB).');
+                    return;
+                  }
+                  const reader = new FileReader();
+                  reader.onload = () => {
+                    this.quill.insertEmbed(range.index, 'image', reader.result, 'user');
+                    this.quill.setSelection(range.index + 1, 0, 'user');
+                  };
+                  reader.readAsDataURL(file);
+                };
+                input.click();
+              },
+            },
+          },
         },
       });
-      q.root.innerHTML = value == null ? '' : String(value);
+
+      q.root.innerHTML = bodyToDisplay(value);
       q.on('text-change', () => {
-        setAtPath(currentData, path, q.root.innerHTML);
+        setAtPath(currentData, path, bodyToStore(q.root.innerHTML));
         dirty = true;
+      });
+
+      // Click-to-select images (visual cue + Delete key removes them).
+      q.root.addEventListener('click', (e) => {
+        q.root.querySelectorAll('img.ql-selected').forEach(i => i.classList.remove('ql-selected'));
+        if (e.target.tagName === 'IMG') e.target.classList.add('ql-selected');
       });
     });
     return wrap;
@@ -616,6 +660,9 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
   }
 
   function renderArray(arr, path) {
+    const meta = PAGES.find(p => p.id === currentPageId);
+    if (meta?.arrayView === 'gallery') return renderGalleryGrid(arr, path);
+
     const wrap = document.createElement('div');
     wrap.className = 'repeater';
 
@@ -636,6 +683,180 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
       wrap.replaceWith(renderArray(currentArr, path));
     });
     wrap.appendChild(addBtn);
+
+    return wrap;
+  }
+
+  // Visual grid view: thumbnails in a CSS grid, drag-and-drop to reorder,
+  // hover overlay with edit/delete, click cell or edit button to expand inline form.
+  function renderGalleryGrid(arr, path) {
+    const wrap = document.createElement('div');
+
+    const grid = document.createElement('div');
+    grid.className = 'gallery-edit-grid';
+    wrap.appendChild(grid);
+
+    function rerender() {
+      const fresh = renderGalleryGrid(getAtPath(currentData, path) || [], path);
+      wrap.replaceWith(fresh);
+    }
+
+    // Inline edit panel that follows the active cell (rendered after the grid).
+    const editPanel = document.createElement('div');
+    editPanel.className = 'gallery-edit-cell__edit';
+    wrap.appendChild(editPanel);
+
+    let activeIdx = null;
+    function openEdit(idx) {
+      activeIdx = idx;
+      const item = arr[idx] || {};
+      grid.querySelectorAll('.gallery-edit-cell.editing').forEach(c => c.classList.remove('editing'));
+      grid.children[idx]?.classList.add('editing');
+      editPanel.innerHTML = '';
+      editPanel.classList.add('active');
+      const heading = document.createElement('div');
+      heading.style.fontWeight = '600';
+      heading.style.marginBottom = '0.2rem';
+      heading.textContent = `Bild ${idx + 1} bearbeiten`;
+      editPanel.appendChild(heading);
+      // Reuse the existing image-field component for url + upload + preview
+      const imgWrap = document.createElement('div');
+      imgWrap.className = 'field';
+      const imgLabel = document.createElement('label');
+      imgLabel.textContent = 'Bild';
+      imgWrap.appendChild(imgLabel);
+      imgWrap.appendChild(renderImageField(item.image, path.concat(idx, 'image')));
+      editPanel.appendChild(imgWrap);
+      // Alt text
+      const altWrap = document.createElement('div');
+      altWrap.className = 'field';
+      const altLabel = document.createElement('label');
+      altLabel.textContent = 'Alt-Text (Bild­beschreibung)';
+      altWrap.appendChild(altLabel);
+      const altInput = document.createElement('input');
+      altInput.type = 'text';
+      altInput.value = item.alt == null ? '' : String(item.alt);
+      altInput.addEventListener('input', () => {
+        setAtPath(currentData, path.concat(idx, 'alt'), altInput.value);
+        dirty = true;
+      });
+      altWrap.appendChild(altInput);
+      editPanel.appendChild(altWrap);
+      // Close button
+      const closeBtn = document.createElement('button');
+      closeBtn.type = 'button';
+      closeBtn.className = 'btn btn--outline btn--sm';
+      closeBtn.style.alignSelf = 'flex-end';
+      closeBtn.innerHTML = '<i class="ph ph-x"></i> Schließen';
+      closeBtn.addEventListener('click', () => {
+        activeIdx = null;
+        editPanel.classList.remove('active');
+        editPanel.innerHTML = '';
+        grid.querySelectorAll('.gallery-edit-cell.editing').forEach(c => c.classList.remove('editing'));
+      });
+      editPanel.appendChild(closeBtn);
+    }
+
+    arr.forEach((item, idx) => {
+      const cell = document.createElement('div');
+      cell.className = 'gallery-edit-cell';
+      cell.draggable = true;
+
+      const img = document.createElement('img');
+      const src = item?.image || '';
+      img.src = src.startsWith('data:') || src.startsWith('http') ? src : '../' + src;
+      img.alt = item?.alt || '';
+      img.onerror = () => { img.style.background = '#eee'; img.removeAttribute('src'); };
+      cell.appendChild(img);
+
+      const indexBadge = document.createElement('div');
+      indexBadge.className = 'gallery-edit-cell__index';
+      indexBadge.textContent = idx + 1;
+      cell.appendChild(indexBadge);
+
+      const actions = document.createElement('div');
+      actions.className = 'gallery-edit-cell__actions';
+      actions.innerHTML = `
+        <button type="button" data-act="edit" title="Bearbeiten"><i class="ph ph-pencil-simple"></i></button>
+        <button type="button" data-act="delete" class="delete" title="Löschen"><i class="ph ph-trash"></i></button>
+      `;
+      actions.querySelector('[data-act="edit"]').addEventListener('click', (e) => {
+        e.stopPropagation();
+        openEdit(idx);
+      });
+      actions.querySelector('[data-act="delete"]').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (!confirm('Bild wirklich entfernen?')) return;
+        arr.splice(idx, 1);
+        setAtPath(currentData, path, arr);
+        dirty = true;
+        rerender();
+      });
+      cell.appendChild(actions);
+
+      cell.addEventListener('click', (e) => {
+        if (e.target.closest('button')) return;
+        openEdit(idx);
+      });
+
+      // Drag-and-drop reordering
+      cell.addEventListener('dragstart', (e) => {
+        dragState.fromIdx = idx;
+        dragState.path = path;
+        dragState.wrapRef = wrap;
+        cell.classList.add('dragging');
+        try { e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData('text/plain', String(idx)); } catch {}
+      });
+      cell.addEventListener('dragend', () => {
+        cell.classList.remove('dragging');
+        grid.querySelectorAll('.gallery-edit-cell.drag-over').forEach(n => n.classList.remove('drag-over'));
+      });
+      cell.addEventListener('dragover', (e) => {
+        if (dragState.fromIdx === null || dragState.wrapRef !== wrap) return;
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        cell.classList.add('drag-over');
+      });
+      cell.addEventListener('dragleave', () => cell.classList.remove('drag-over'));
+      cell.addEventListener('drop', (e) => {
+        e.preventDefault();
+        cell.classList.remove('drag-over');
+        const from = dragState.fromIdx;
+        if (from === null || dragState.wrapRef !== wrap || from === idx) {
+          dragState.fromIdx = null;
+          return;
+        }
+        const [moved] = arr.splice(from, 1);
+        const insertAt = from < idx ? idx - 1 : idx;
+        arr.splice(insertAt, 0, moved);
+        setAtPath(currentData, path, arr);
+        dirty = true;
+        dragState.fromIdx = null;
+        rerender();
+      });
+
+      grid.appendChild(cell);
+    });
+
+    const addCell = document.createElement('button');
+    addCell.type = 'button';
+    addCell.className = 'gallery-edit-add';
+    addCell.style.aspectRatio = '3 / 4';
+    addCell.innerHTML = '<i class="ph ph-plus" style="font-size:1.5rem"></i><br>Bild hinzufügen';
+    addCell.addEventListener('click', () => {
+      arr.push({ image: '', alt: '' });
+      setAtPath(currentData, path, arr);
+      dirty = true;
+      pendingGalleryOpenIdx = arr.length - 1;
+      rerender();
+    });
+    grid.appendChild(addCell);
+
+    if (pendingGalleryOpenIdx !== null) {
+      const idx = pendingGalleryOpenIdx;
+      pendingGalleryOpenIdx = null;
+      queueMicrotask(() => openEdit(idx));
+    }
 
     return wrap;
   }
@@ -750,6 +971,8 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
   }
 
   const dragState = { fromIdx: null, path: null, wrapRef: null };
+  // Set after adding a new gallery item; renderGalleryGrid auto-opens it.
+  let pendingGalleryOpenIdx = null;
 
   function moveItem(path, idx, dir, wrapRef) {
     const arr = getAtPath(currentData, path);
