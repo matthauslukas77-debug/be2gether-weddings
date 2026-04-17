@@ -28,6 +28,29 @@
     return override;
   }
 
+  // Render <template> blocks for arrays so the user can add unlimited items.
+  // Markup pattern:
+  //   <div data-cms-each="gallery">
+  //     <template><img data-cms-src="image" data-cms-alt="alt"></template>
+  //     ... existing static items get removed before re-render ...
+  //   </div>
+  function processArrays(root, data) {
+    root.querySelectorAll('[data-cms-each]').forEach(container => {
+      const path = container.dataset.cmsEach;
+      const arr = get(data, path);
+      if (!Array.isArray(arr)) return;
+      const tpl = container.querySelector(':scope > template');
+      if (!tpl) return;
+      // Strip everything except the <template> itself.
+      Array.from(container.children).forEach(c => { if (c.tagName !== 'TEMPLATE') c.remove(); });
+      arr.forEach(item => {
+        const frag = tpl.content.cloneNode(true);
+        applyBindings(frag, item);
+        container.appendChild(frag);
+      });
+    });
+  }
+
   function applyBindings(root, data) {
     root.querySelectorAll('[data-cms]').forEach(el => {
       const v = get(data, el.dataset.cms);
@@ -99,6 +122,7 @@
     const pageData = deepMerge(pageBase, overrides.page);
     const data = { ...pageData, site };
 
+    processArrays(document, data);
     applyBindings(document, data);
     applyMeta(data);
 

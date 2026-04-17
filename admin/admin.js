@@ -27,8 +27,25 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
   function tableName() { return window.CMS_CONFIG?.table || 'cms_content'; }
 
   const PAGES = [
-    { id: 'impressionen', label: 'Impressionen',           icon: 'ph-images',       preview: '../impressionen.html', section: 'pages' },
-    { id: 'blog',         label: 'Blog',                   icon: 'ph-newspaper',    preview: '../blog.html',      section: 'pages' },
+    {
+      id: 'impressionen',
+      label: 'Impressionen',
+      icon: 'ph-images',
+      preview: '../impressionen.html',
+      section: 'pages',
+      // Only these top-level keys are exposed in the editor.
+      fields: ['gallery'],
+      sectionLabels: { gallery: 'Bildergalerie' },
+    },
+    {
+      id: 'blog',
+      label: 'Blog',
+      icon: 'ph-newspaper',
+      preview: '../blog.html',
+      section: 'pages',
+      fields: ['posts'],
+      sectionLabels: { posts: 'Blog-Artikel' },
+    },
   ];
 
   // Friendly labels for fields (German). Fallback to humanized key.
@@ -222,6 +239,20 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
     if (error) throw error;
     for (const k of Object.keys(overrides)) delete overrides[k];
     for (const row of data || []) overrides[row.page_id] = row.data || {};
+    // Auto-prune fields that are no longer editable in the current admin
+    // (e.g. meta.title left over from a previous admin version).
+    for (const pageDef of PAGES) {
+      if (!pageDef.fields?.length) continue;
+      const existing = overrides[pageDef.id];
+      if (!existing) continue;
+      const cleaned = Object.fromEntries(
+        Object.entries(existing).filter(([k]) => pageDef.fields.includes(k))
+      );
+      if (Object.keys(cleaned).length !== Object.keys(existing).length) {
+        if (Object.keys(cleaned).length === 0) await deleteOverride(pageDef.id);
+        else await upsertOverride(pageDef.id, cleaned);
+      }
+    }
   }
 
   async function upsertOverride(pageId, diff) {
@@ -327,15 +358,20 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
   // ── Editor rendering ─────────────────────────────
   function renderEditor() {
     el.editor.innerHTML = '';
-    const topKeys = Object.keys(currentData);
+    const meta = PAGES.find(p => p.id === currentPageId);
+    const allKeys = Object.keys(currentData);
+    const keys = meta?.fields?.length
+      ? meta.fields.filter(k => allKeys.includes(k))
+      : allKeys;
 
-    topKeys.forEach(key => {
-      const group = renderSectionGroup(key, currentData[key], [key]);
+    keys.forEach(key => {
+      const labelOverride = meta?.sectionLabels?.[key];
+      const group = renderSectionGroup(key, currentData[key], [key], labelOverride);
       el.editor.appendChild(group);
     });
   }
 
-  function renderSectionGroup(key, value, path) {
+  function renderSectionGroup(key, value, path, labelOverride) {
     const group = document.createElement('div');
     group.className = 'section-group';
 
@@ -344,7 +380,7 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
     header.innerHTML = `
       <div class="section-group__title">
         <i class="ph ${iconForSection(key)}"></i>
-        <h2>${humanize(key)}</h2>
+        <h2>${labelOverride || humanize(key)}</h2>
       </div>
       <i class="ph ph-caret-down section-group__toggle"></i>
     `;
@@ -637,7 +673,13 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
 
   // ── Save / Reset ─────────────────────────────────
   async function save() {
-    const diff = computeDiff(basePageData, currentData) || {};
+    const fullDiff = computeDiff(basePageData, currentData) || {};
+    // If this page has a field whitelist, drop any keys outside it so old
+    // non-editable overrides (left from earlier admin versions) don't persist.
+    const meta = PAGES.find(p => p.id === currentPageId);
+    const diff = meta?.fields?.length
+      ? Object.fromEntries(Object.entries(fullDiff).filter(([k]) => meta.fields.includes(k)))
+      : fullDiff;
     try {
       if (Object.keys(diff).length === 0) {
         await deleteOverride(currentPageId);

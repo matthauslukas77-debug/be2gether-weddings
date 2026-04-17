@@ -36,18 +36,10 @@
 
   <section class="section">
     <div class="container">
-      <div class="gallery-grid reveal">
-        <div class="gallery-item"><img data-cms-src="gallery.0.image" data-cms-alt="gallery.0.alt" src="images/boho-braut-214x300.jpg" alt="Boho Braut"></div>
-        <div class="gallery-item"><img data-cms-src="gallery.1.image" data-cms-alt="gallery.1.alt" src="images/brautpaar-basel-200x300.jpg" alt="Brautpaar Basel"></div>
-        <div class="gallery-item"><img data-cms-src="gallery.2.image" data-cms-alt="gallery.2.alt" src="images/hochzeitspapeterie-200x300.jpg" alt="Hochzeitspapeterie"></div>
-        <div class="gallery-item"><img data-cms-src="gallery.3.image" data-cms-alt="gallery.3.alt" src="images/brautstrauss-elegant-200x300.jpg" alt="Brautstrauß elegant"></div>
-        <div class="gallery-item"><img data-cms-src="gallery.4.image" data-cms-alt="gallery.4.alt" src="images/braut-bad-saeckingen-200x300.jpg" alt="Braut Bad Säckingen"></div>
-        <div class="gallery-item"><img data-cms-src="gallery.5.image" data-cms-alt="gallery.5.alt" src="images/brautpaar-mit-hochzeitsplanerin-300x200.jpg" alt="Brautpaar mit Hochzeitsplanerin"></div>
-        <div class="gallery-item"><img data-cms-src="gallery.6.image" data-cms-alt="gallery.6.alt" src="images/hochzeitstorte-schwarzwald-200x300.jpg" alt="Hochzeitstorte Schwarzwald"></div>
-        <div class="gallery-item"><img data-cms-src="gallery.7.image" data-cms-alt="gallery.7.alt" src="images/hochzeitsdekoration-blumenschmuck-200x300.jpg" alt="Dekoration & Blumenschmuck"></div>
-        <div class="gallery-item"><img data-cms-src="gallery.8.image" data-cms-alt="gallery.8.alt" src="images/153-MZF_5421-200x300.jpg" alt="Hochzeitsfoto"></div>
-        <div class="gallery-item"><img data-cms-src="gallery.9.image" data-cms-alt="gallery.9.alt" src="images/bride-to-be-2025-serravalle-200x300.jpg" alt="Bride to Be 2025"></div>
-        <div class="gallery-item"><img data-cms-src="gallery.10.image" data-cms-alt="gallery.10.alt" src="images/bride-to-be-2025-rainbow-schuhe-240x300.jpg" alt="Rainbow Schuhe"></div>
+      <div class="gallery-grid reveal" data-cms-each="gallery">
+        <template>
+          <div class="gallery-item"><img data-cms-src="image" data-cms-alt="alt"></div>
+        </template>
       </div>
 
       <div class="text-center" style="margin-top:var(--space-2xl)">
