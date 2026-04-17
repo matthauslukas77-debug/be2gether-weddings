@@ -4,9 +4,17 @@
 (function () {
   'use strict';
 
-  // ── Supabase client ──────────────────────────────
-  const cfg = window.CMS_CONFIG;
-  const sb = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
+  // ── Supabase client (lazy — never throws at script load) ─
+  let _sb = null;
+  function sbClient() {
+    if (_sb) return _sb;
+    if (!window.CMS_CONFIG) throw new Error('CMS-Konfiguration fehlt (cms-config.js nicht geladen).');
+    if (!window.supabase || !window.supabase.createClient) throw new Error('Supabase SDK nicht geladen (CDN blockiert?).');
+    _sb = window.supabase.createClient(window.CMS_CONFIG.supabaseUrl, window.CMS_CONFIG.supabaseAnonKey);
+    return _sb;
+  }
+  function adminEmail() { return window.CMS_CONFIG?.adminEmail; }
+  function tableName() { return window.CMS_CONFIG?.table || 'cms_content'; }
 
   const PAGES = [
     { id: 'site',         label: 'Globale Einstellungen', icon: 'ph-gear',         preview: null,                section: 'global' },
@@ -166,20 +174,29 @@
 
   // ── Auth (Supabase) ──────────────────────────────
   async function isAuthenticated() {
-    const { data } = await sb.auth.getSession();
-    return !!data.session;
+    try {
+      const { data } = await sbClient().auth.getSession();
+      return !!data.session;
+    } catch (e) {
+      console.error('isAuthenticated:', e);
+      return false;
+    }
   }
 
   async function login(pw) {
-    const { error } = await sb.auth.signInWithPassword({
-      email: cfg.adminEmail,
-      password: pw,
-    });
-    return { ok: !error, error };
+    try {
+      const { error } = await sbClient().auth.signInWithPassword({
+        email: adminEmail(),
+        password: pw,
+      });
+      return { ok: !error, error };
+    } catch (e) {
+      return { ok: false, error: e };
+    }
   }
 
   async function logout() {
-    await sb.auth.signOut();
+    try { await sbClient().auth.signOut(); } catch (e) { /* ignore */ }
     location.reload();
   }
 
@@ -195,14 +212,14 @@
 
   // ── Supabase content I/O ─────────────────────────
   async function loadAllOverrides() {
-    const { data, error } = await sb.from(cfg.table).select('page_id, data');
+    const { data, error } = await sbClient().from(tableName()).select('page_id, data');
     if (error) throw error;
     for (const k of Object.keys(overrides)) delete overrides[k];
     for (const row of data || []) overrides[row.page_id] = row.data || {};
   }
 
   async function upsertOverride(pageId, diff) {
-    const { error } = await sb.from(cfg.table).upsert(
+    const { error } = await sbClient().from(tableName()).upsert(
       { page_id: pageId, data: diff },
       { onConflict: 'page_id' }
     );
@@ -211,7 +228,7 @@
   }
 
   async function deleteOverride(pageId) {
-    const { error } = await sb.from(cfg.table).delete().eq('page_id', pageId);
+    const { error } = await sbClient().from(tableName()).delete().eq('page_id', pageId);
     if (error) throw error;
     delete overrides[pageId];
   }
@@ -754,7 +771,13 @@
   }
 
   async function init() {
-    bindEvents();
+    try {
+      bindEvents();
+    } catch (e) {
+      console.error('bindEvents failed:', e);
+      el.loginError && (el.loginError.textContent = 'Init-Fehler: ' + (e.message || e));
+      return;
+    }
     if (await isAuthenticated()) boot();
     else showLogin();
   }
