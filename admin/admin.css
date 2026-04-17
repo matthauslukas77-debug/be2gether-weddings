@@ -211,6 +211,12 @@ img { max-width: 100%; display: block; }
 .repeater-item.collapsed .repeater-item__toggle { transform: rotate(-90deg); }
 .repeater-item__toggle { transition: transform 0.18s ease; }
 
+.repeater-item.draggable { transition: transform 0.15s ease, opacity 0.15s ease, border-color 0.15s ease; }
+.repeater-item.draggable .repeater-item__grab { color: var(--clr-charcoal-light); }
+.repeater-item.draggable:hover .repeater-item__grab { color: var(--clr-gold); }
+.repeater-item.dragging { opacity: 0.4; }
+.repeater-item.drag-over { border-color: var(--clr-gold); box-shadow: 0 0 0 2px rgba(196,159,107,0.18); }
+
 .repeater-add {
   display: inline-flex; align-items: center; gap: 0.4rem;
   padding: 0.6rem 1rem; border: 1px dashed var(--clr-border); border-radius: var(--radius);

@@ -36,6 +36,7 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
       // Only these top-level keys are exposed in the editor.
       fields: ['gallery'],
       sectionLabels: { gallery: 'Bildergalerie' },
+      itemDraggable: true,
     },
     {
       id: 'blog',
@@ -642,11 +643,13 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
   function renderArrayItem(item, idx, parentPath, wrapRef) {
     const meta = PAGES.find(p => p.id === currentPageId);
     const collapsible = !!meta?.itemCollapsible;
+    const draggable = !!meta?.itemDraggable;
     const titleKey = meta?.itemTitleKey;
     const itemTitle = (titleKey && item && item[titleKey]) ? String(item[titleKey]) : '';
 
     const itemWrap = document.createElement('div');
-    itemWrap.className = 'repeater-item' + (collapsible ? ' collapsed' : '');
+    itemWrap.className = 'repeater-item' + (collapsible ? ' collapsed' : '') + (draggable ? ' draggable' : '');
+    if (draggable) itemWrap.draggable = true;
 
     const header = document.createElement('div');
     header.className = 'repeater-item__header';
@@ -654,13 +657,17 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
     const caret = collapsible
       ? '<i class="ph ph-caret-down repeater-item__toggle" style="margin-right:.5rem"></i>'
       : '';
+    const grabHandle = draggable
+      ? '<i class="ph ph-dots-six-vertical repeater-item__grab" title="Ziehen zum Sortieren" style="margin-right:.5rem;cursor:grab"></i>'
+      : '';
+    const arrowButtons = draggable ? '' : `
+        <button type="button" title="Nach oben" data-action="up"><i class="ph ph-arrow-up"></i></button>
+        <button type="button" title="Nach unten" data-action="down"><i class="ph ph-arrow-down"></i></button>`;
     header.innerHTML = `
       <div class="repeater-item__index" style="display:flex;align-items:center;flex:1;min-width:0">
-        ${caret}<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${labelText.replace(/</g,'&lt;')}</span>
+        ${grabHandle}${caret}<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${labelText.replace(/</g,'&lt;')}</span>
       </div>
-      <div class="repeater-item__actions">
-        <button type="button" title="Nach oben" data-action="up"><i class="ph ph-arrow-up"></i></button>
-        <button type="button" title="Nach unten" data-action="down"><i class="ph ph-arrow-down"></i></button>
+      <div class="repeater-item__actions">${arrowButtons}
         <button type="button" class="remove" title="Entfernen" data-action="remove"><i class="ph ph-trash"></i></button>
       </div>
     `;
@@ -688,8 +695,8 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
     }
     itemWrap.appendChild(body);
 
-    header.querySelector('[data-action="up"]').addEventListener('click', () => moveItem(parentPath, idx, -1, wrapRef));
-    header.querySelector('[data-action="down"]').addEventListener('click', () => moveItem(parentPath, idx, 1, wrapRef));
+    header.querySelector('[data-action="up"]')?.addEventListener('click', () => moveItem(parentPath, idx, -1, wrapRef));
+    header.querySelector('[data-action="down"]')?.addEventListener('click', () => moveItem(parentPath, idx, 1, wrapRef));
     header.querySelector('[data-action="remove"]').addEventListener('click', () => {
       if (!confirm('Eintrag wirklich entfernen?')) return;
       const arr = getAtPath(currentData, parentPath);
@@ -699,8 +706,50 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
       wrapRef.replaceWith(renderArray(arr, parentPath));
     });
 
+    if (draggable) {
+      itemWrap.addEventListener('dragstart', (e) => {
+        dragState.fromIdx = idx;
+        dragState.path = parentPath;
+        dragState.wrapRef = wrapRef;
+        itemWrap.classList.add('dragging');
+        try { e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData('text/plain', String(idx)); } catch {}
+      });
+      itemWrap.addEventListener('dragend', () => {
+        itemWrap.classList.remove('dragging');
+        document.querySelectorAll('.repeater-item.drag-over').forEach(n => n.classList.remove('drag-over'));
+      });
+      itemWrap.addEventListener('dragover', (e) => {
+        if (dragState.fromIdx === null || dragState.wrapRef !== wrapRef) return;
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        itemWrap.classList.add('drag-over');
+      });
+      itemWrap.addEventListener('dragleave', () => {
+        itemWrap.classList.remove('drag-over');
+      });
+      itemWrap.addEventListener('drop', (e) => {
+        e.preventDefault();
+        itemWrap.classList.remove('drag-over');
+        const from = dragState.fromIdx;
+        if (from === null || dragState.wrapRef !== wrapRef || from === idx) {
+          dragState.fromIdx = null;
+          return;
+        }
+        const arr = getAtPath(currentData, parentPath);
+        const [moved] = arr.splice(from, 1);
+        const insertAt = from < idx ? idx - 1 : idx;
+        arr.splice(insertAt, 0, moved);
+        setAtPath(currentData, parentPath, arr);
+        dirty = true;
+        wrapRef.replaceWith(renderArray(arr, parentPath));
+        dragState.fromIdx = null;
+      });
+    }
+
     return itemWrap;
   }
+
+  const dragState = { fromIdx: null, path: null, wrapRef: null };
 
   function moveItem(path, idx, dir, wrapRef) {
     const arr = getAtPath(currentData, path);
