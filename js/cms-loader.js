@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   CMS Loader — hydrates pages from JSON + localStorage
+   CMS Loader — hydrates pages from JSON + Supabase overrides
    ═══════════════════════════════════════════════════ */
 (function () {
   'use strict';
@@ -7,8 +7,10 @@
   const page = document.body.dataset.cmsPage;
   if (!page) return;
 
-  const STORAGE_KEY = 'cms_' + page;
-  const SITE_KEY = 'cms_site';
+  const cfg = window.CMS_CONFIG;
+  const sb = (cfg && window.supabase)
+    ? window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey)
+    : null;
 
   function get(obj, path) {
     if (!obj || !path) return undefined;
@@ -70,19 +72,31 @@
     }
   }
 
+  async function loadOverrides() {
+    if (!sb) return { site: {}, page: {} };
+    try {
+      const { data, error } = await sb
+        .from(cfg.table)
+        .select('page_id, data')
+        .in('page_id', ['site', page]);
+      if (error) return { site: {}, page: {} };
+      const map = {};
+      for (const row of data || []) map[row.page_id] = row.data || {};
+      return { site: map.site || {}, page: map[page] || {} };
+    } catch (e) {
+      return { site: {}, page: {} };
+    }
+  }
+
   async function init() {
-    const [siteBase, pageBase] = await Promise.all([
+    const [siteBase, pageBase, overrides] = await Promise.all([
       loadJson('data/site.json'),
       loadJson('data/' + page + '.json'),
+      loadOverrides(),
     ]);
 
-    let siteOverride = {};
-    let pageOverride = {};
-    try { siteOverride = JSON.parse(localStorage.getItem(SITE_KEY) || '{}'); } catch {}
-    try { pageOverride = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch {}
-
-    const site = deepMerge(siteBase, siteOverride);
-    const pageData = deepMerge(pageBase, pageOverride);
+    const site = deepMerge(siteBase, overrides.site);
+    const pageData = deepMerge(pageBase, overrides.page);
     const data = { ...pageData, site };
 
     applyBindings(document, data);

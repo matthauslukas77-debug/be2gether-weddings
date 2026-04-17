@@ -1,13 +1,12 @@
 /* ═══════════════════════════════════════════════════
-   be2gether CMS — Admin Panel Logic
+   be2gether CMS — Admin Panel Logic (Supabase-backed)
    ═══════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  // ── Config ───────────────────────────────────────
-  const PASSWORD = 'miriam2026';
-  const AUTH_KEY = 'cms_auth';
-  const STORAGE_PREFIX = 'cms_';
+  // ── Supabase client ──────────────────────────────
+  const cfg = window.CMS_CONFIG;
+  const sb = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
 
   const PAGES = [
     { id: 'site',         label: 'Globale Einstellungen', icon: 'ph-gear',         preview: null,                section: 'global' },
@@ -96,6 +95,8 @@
   let basePageData = null;
   let currentData = null;
   let dirty = false;
+  // Cache of all overrides loaded from Supabase: { [page_id]: data }
+  const overrides = {};
 
   // ── DOM refs ─────────────────────────────────────
   const $ = (sel) => document.querySelector(sel);
@@ -163,13 +164,24 @@
     return res.json();
   }
 
-  // ── Auth ─────────────────────────────────────────
-  function isAuthenticated() { return sessionStorage.getItem(AUTH_KEY) === 'ok'; }
-  function login(pw) {
-    if (pw === PASSWORD) { sessionStorage.setItem(AUTH_KEY, 'ok'); return true; }
-    return false;
+  // ── Auth (Supabase) ──────────────────────────────
+  async function isAuthenticated() {
+    const { data } = await sb.auth.getSession();
+    return !!data.session;
   }
-  function logout() { sessionStorage.removeItem(AUTH_KEY); location.reload(); }
+
+  async function login(pw) {
+    const { error } = await sb.auth.signInWithPassword({
+      email: cfg.adminEmail,
+      password: pw,
+    });
+    return { ok: !error, error };
+  }
+
+  async function logout() {
+    await sb.auth.signOut();
+    location.reload();
+  }
 
   function showLogin() {
     el.loginScreen.hidden = false;
@@ -179,6 +191,33 @@
   function showAdmin() {
     el.loginScreen.hidden = true;
     el.adminApp.hidden = false;
+  }
+
+  // ── Supabase content I/O ─────────────────────────
+  async function loadAllOverrides() {
+    const { data, error } = await sb.from(cfg.table).select('page_id, data');
+    if (error) throw error;
+    for (const k of Object.keys(overrides)) delete overrides[k];
+    for (const row of data || []) overrides[row.page_id] = row.data || {};
+  }
+
+  async function upsertOverride(pageId, diff) {
+    const { error } = await sb.from(cfg.table).upsert(
+      { page_id: pageId, data: diff },
+      { onConflict: 'page_id' }
+    );
+    if (error) throw error;
+    overrides[pageId] = diff;
+  }
+
+  async function deleteOverride(pageId) {
+    const { error } = await sb.from(cfg.table).delete().eq('page_id', pageId);
+    if (error) throw error;
+    delete overrides[pageId];
+  }
+
+  function getOverride(pageId) {
+    return overrides[pageId] || {};
   }
 
   // ── Sidebar ──────────────────────────────────────
@@ -246,23 +285,9 @@
     }
   }
 
-  function getOverride(pageId) {
-    try { return JSON.parse(localStorage.getItem(STORAGE_PREFIX + pageId) || '{}'); }
-    catch { return {}; }
-  }
-
-  function setOverride(pageId, diff) {
-    if (!diff || (typeof diff === 'object' && !Array.isArray(diff) && Object.keys(diff).length === 0)) {
-      localStorage.removeItem(STORAGE_PREFIX + pageId);
-    } else {
-      localStorage.setItem(STORAGE_PREFIX + pageId, JSON.stringify(diff));
-    }
-  }
-
   // Compute diff between base and edited — only store changed fields
   function computeDiff(base, edited) {
     if (Array.isArray(edited)) {
-      // For arrays, store full array if any item changed (simpler)
       return JSON.stringify(base) === JSON.stringify(edited) ? undefined : edited;
     }
     if (edited && typeof edited === 'object') {
@@ -354,7 +379,6 @@
       return wrap;
     }
     if (value && typeof value === 'object') {
-      // Nested object — render as a light sub-card
       const wrap = document.createElement('div');
       wrap.className = 'repeater-item';
       const h = document.createElement('div');
@@ -432,7 +456,7 @@
       const file = e.target.files?.[0];
       if (!file) return;
       if (file.size > 3 * 1024 * 1024) {
-        alert('Bild ist zu groß (max. 3 MB für Demo-Modus).\nFür größere Bilder die URL angeben.');
+        alert('Bild ist zu groß (max. 3 MB).\nFür größere Bilder die URL angeben.');
         return;
       }
       const reader = new FileReader();
@@ -494,7 +518,6 @@
       currentArr.push(template);
       setAtPath(currentData, path, currentArr);
       dirty = true;
-      // Re-render just this array
       wrap.replaceWith(renderArray(currentArr, path));
     });
     wrap.appendChild(addBtn);
@@ -590,27 +613,44 @@
   }
 
   // ── Save / Reset ─────────────────────────────────
-  function save() {
+  async function save() {
     const diff = computeDiff(basePageData, currentData) || {};
-    setOverride(currentPageId, diff);
-    dirty = false;
-    showToast('Änderungen gespeichert');
+    try {
+      if (Object.keys(diff).length === 0) {
+        await deleteOverride(currentPageId);
+      } else {
+        await upsertOverride(currentPageId, diff);
+      }
+      dirty = false;
+      showToast('Änderungen gespeichert');
+    } catch (e) {
+      alert('Speichern fehlgeschlagen: ' + (e.message || e));
+    }
   }
 
-  function resetPage() {
+  async function resetPage() {
     if (!confirm(`Wirklich alle Änderungen auf "${PAGES.find(p=>p.id===currentPageId).label}" zurücksetzen?`)) return;
-    localStorage.removeItem(STORAGE_PREFIX + currentPageId);
-    dirty = false;
-    switchPage(currentPageId);
-    showToast('Seite zurückgesetzt');
+    try {
+      await deleteOverride(currentPageId);
+      dirty = false;
+      switchPage(currentPageId);
+      showToast('Seite zurückgesetzt');
+    } catch (e) {
+      alert('Zurücksetzen fehlgeschlagen: ' + (e.message || e));
+    }
   }
 
-  function resetAll() {
+  async function resetAll() {
     if (!confirm('Wirklich ALLE Änderungen auf ALLEN Seiten zurücksetzen?')) return;
-    PAGES.forEach(p => localStorage.removeItem(STORAGE_PREFIX + p.id));
-    dirty = false;
-    switchPage(currentPageId);
-    showToast('Alles zurückgesetzt');
+    try {
+      const ids = Object.keys(overrides);
+      await Promise.all(ids.map(id => deleteOverride(id)));
+      dirty = false;
+      switchPage(currentPageId);
+      showToast('Alles zurückgesetzt');
+    } catch (e) {
+      alert('Zurücksetzen fehlgeschlagen: ' + (e.message || e));
+    }
   }
 
   // ── Export / Import ──────────────────────────────
@@ -622,7 +662,7 @@
     };
     PAGES.forEach(p => {
       const ov = getOverride(p.id);
-      if (Object.keys(ov).length) payload.data[p.id] = ov;
+      if (ov && Object.keys(ov).length) payload.data[p.id] = ov;
     });
     const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
     const a = document.createElement('a');
@@ -636,21 +676,21 @@
 
   function importAll(file) {
     const reader = new FileReader();
-    reader.onload = () => {
+    reader.onload = async () => {
       try {
         const payload = JSON.parse(reader.result);
         const data = payload.data || payload;
         let count = 0;
-        Object.keys(data).forEach(pageId => {
+        for (const pageId of Object.keys(data)) {
           if (PAGES.find(p => p.id === pageId)) {
-            localStorage.setItem(STORAGE_PREFIX + pageId, JSON.stringify(data[pageId]));
+            await upsertOverride(pageId, data[pageId]);
             count++;
           }
-        });
+        }
         showToast(`${count} Seiten importiert`);
         switchPage(currentPageId);
       } catch (e) {
-        alert('Import fehlgeschlagen: ' + e.message);
+        alert('Import fehlgeschlagen: ' + (e.message || e));
       }
     };
     reader.readAsText(file);
@@ -658,13 +698,16 @@
 
   // ── Wire up events ───────────────────────────────
   function bindEvents() {
-    el.loginForm.addEventListener('submit', (e) => {
+    el.loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (login(el.loginPassword.value)) {
-        el.loginError.textContent = '';
+      el.loginError.textContent = '';
+      const { ok, error } = await login(el.loginPassword.value);
+      if (ok) {
         boot();
       } else {
-        el.loginError.textContent = 'Passwort falsch.';
+        el.loginError.textContent = error?.message?.includes('Invalid')
+          ? 'Passwort falsch.'
+          : 'Login fehlgeschlagen: ' + (error?.message || 'unbekannter Fehler');
         el.loginPassword.value = '';
         el.loginPassword.focus();
       }
@@ -685,7 +728,6 @@
       logout();
     });
 
-    // Keyboard shortcut: Ctrl/Cmd+S to save
     document.addEventListener('keydown', (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key === 's' && !el.adminApp.hidden) {
         e.preventDefault();
@@ -699,15 +741,21 @@
   }
 
   // ── Boot ─────────────────────────────────────────
-  function boot() {
+  async function boot() {
     showAdmin();
     renderNav();
+    try {
+      await loadAllOverrides();
+    } catch (e) {
+      console.error('Konnte CMS-Inhalte nicht laden:', e);
+      alert('CMS-Inhalte konnten nicht geladen werden: ' + (e.message || e));
+    }
     switchPage('index');
   }
 
-  function init() {
+  async function init() {
     bindEvents();
-    if (isAuthenticated()) boot();
+    if (await isAuthenticated()) boot();
     else showLogin();
   }
 
