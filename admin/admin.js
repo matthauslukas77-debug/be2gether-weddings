@@ -727,39 +727,25 @@ window.addEventListener('unhandledrejection', (e) => _showGlobalErr('Promise-Feh
   function bindEvents() {
     if (!el.loginForm) { _showGlobalErr('loginForm-Element nicht gefunden im DOM.'); return; }
 
-    function diag(msg, isErr) {
-      el.loginError.style.color = isErr ? '#c00' : '#666';
-      el.loginError.style.whiteSpace = 'pre-wrap';
-      el.loginError.style.textAlign = 'left';
-      el.loginError.style.fontSize = '0.78rem';
-      el.loginError.textContent = msg;
-    }
-
     async function attemptLogin() {
-      let log = '1) Click empfangen\n';
-      diag(log);
+      el.loginError.style.color = '';
+      el.loginError.textContent = 'Prüfe Login…';
       try {
-        log += '2) Konfig: ' + (window.CMS_CONFIG ? 'ok' : 'FEHLT') + '\n';
-        log += '3) Supabase SDK: ' + (window.supabase?.createClient ? 'ok' : 'FEHLT') + '\n';
-        diag(log);
-        log += '4) Sende Login an Supabase…\n';
-        diag(log);
         const { ok, error } = await login(el.loginPassword.value);
-        log += '5) Login-Antwort: ok=' + ok + (error ? ' err=' + (error.message || JSON.stringify(error)) : '') + '\n';
-        diag(log, !ok);
-        if (!ok) { el.loginPassword.focus(); return; }
-        log += '6) Lade CMS-Inhalte…\n';
-        diag(log);
-        await loadAllOverrides();
-        log += '7) Inhalte geladen: ' + Object.keys(overrides).length + ' Einträge\n';
-        log += '8) Zeige Admin-Panel…';
-        diag(log);
-        showAdmin();
-        renderNav();
-        switchPage('index');
+        if (!ok) {
+          el.loginError.style.color = '#c00';
+          el.loginError.textContent = error?.message?.includes('Invalid')
+            ? 'Passwort falsch.'
+            : 'Login fehlgeschlagen: ' + (error?.message || 'unbekannter Fehler');
+          el.loginPassword.value = '';
+          el.loginPassword.focus();
+          return;
+        }
+        el.loginError.textContent = '';
+        await boot();
       } catch (e) {
-        log += 'AUSNAHME: ' + (e.message || JSON.stringify(e) || e);
-        diag(log, true);
+        el.loginError.style.color = '#c00';
+        el.loginError.textContent = 'Fehler: ' + (e.message || e);
       }
     }
 

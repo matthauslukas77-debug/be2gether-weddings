@@ -62,6 +62,7 @@ img { max-width: 100%; display: block; }
   min-height: 100vh; display: flex; align-items: center; justify-content: center;
   padding: 2rem; background: linear-gradient(135deg, var(--clr-cream) 0%, #f0e6d4 100%);
 }
+[hidden] { display: none !important; }
 .login-card {
   width: 100%; max-width: 420px; background: #fff; border-radius: 12px;
   padding: 3rem 2.5rem; box-shadow: var(--shadow-lg); text-align: center;
