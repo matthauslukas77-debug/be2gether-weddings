@@ -1,31 +1,69 @@
 {
   "meta": {
     "title": "Impressionen - be2gether weddings",
-    "description": "Als Hochzeitsplaner kann ich euch viele Impressionen zur Verfügung stellen. Entdeckt Möglichkeiten, wie eure Hochzeit aussehen könnte."
+    "description": "Einblicke in Hochzeiten in Süddeutschland und der Schweiz — Momente, Details, Geschichten."
   },
   "hero": {
-    "image": "images/brautpaar-mit-hochzeitsplanerin.jpg",
-    "title": "Impressionen",
-    "subtitle": "Einblicke in unvergessliche Momente und liebevolle Details."
+    "label": "Impressionen",
+    "title": "Momente, die <em>bleiben.</em>",
+    "subtitle": "Ein Blick auf Details, Geschichten und Augenblicke aus Hochzeiten, die ich begleiten durfte."
+  },
+  "intro": {
+    "text": "Weniger erzählen, mehr zeigen. Hier sind Augenblicke aus echten Hochzeiten — und ein paar leise Details, die zwischen den großen Momenten leben."
   },
   "gallery": [
-    { "image": "images/boho-braut-214x300.jpg", "alt": "Boho Braut" },
-    { "image": "images/brautpaar-basel-200x300.jpg", "alt": "Brautpaar Basel" },
-    { "image": "images/hochzeitspapeterie-200x300.jpg", "alt": "Hochzeitspapeterie" },
-    { "image": "images/brautstrauss-elegant-200x300.jpg", "alt": "Brautstrauß elegant" },
-    { "image": "images/braut-bad-saeckingen-200x300.jpg", "alt": "Braut Bad Säckingen" },
-    { "image": "images/brautpaar-mit-hochzeitsplanerin-300x200.jpg", "alt": "Brautpaar mit Hochzeitsplanerin" },
-    { "image": "images/hochzeitstorte-schwarzwald-200x300.jpg", "alt": "Hochzeitstorte Schwarzwald" },
-    { "image": "images/hochzeitsdekoration-blumenschmuck-200x300.jpg", "alt": "Dekoration & Blumenschmuck" },
-    { "image": "images/153-MZF_5421-200x300.jpg", "alt": "Hochzeitsfoto" },
-    { "image": "images/bride-to-be-2025-serravalle-200x300.jpg", "alt": "Bride to Be 2025" },
-    { "image": "images/bride-to-be-2025-rainbow-schuhe-240x300.jpg", "alt": "Rainbow Schuhe" }
+    { "image": "images/Herbsthochzeit.png", "alt": "Herbsthochzeit im Schwarzwald", "caption": "Herbsthochzeit, Schwarzwald." },
+    { "image": "images/glueckliches-brautpaar.jpg", "alt": "Glückliches Brautpaar", "caption": "Der Moment danach." },
+    { "image": "images/braut-mit-fascinator-731x1024.jpg", "alt": "Braut mit Fascinator", "caption": "Detail, das bleibt." },
+    { "image": "images/brautkleid-details-683x1024.jpg", "alt": "Brautkleid Details", "caption": "Stoff & Stille." },
+    { "image": "images/brautpaar-aarau.jpg", "alt": "Brautpaar Aarau", "caption": "Aarau." },
+    { "image": "images/mari-lezhava-egz7W1zHYbU-unsplash-Kopie-scaled.png", "alt": "Hochzeitsdetail", "caption": "Ein leiser Augenblick." },
+    { "image": "images/heiraten-im-schwarzwald.jpg", "alt": "Heiraten im Schwarzwald", "caption": "Schwarzwald." },
+    { "image": "images/brautstrauss-boho-683x1024.jpg", "alt": "Brautstrauß Boho", "caption": "Boho." },
+    { "image": "images/brautpaar-mit-hochzeitsplanerin.jpg", "alt": "Brautpaar mit Hochzeitsplanerin", "caption": "Gemeinsam." },
+    { "image": "images/michael-morse-1463389.png", "alt": "Hochzeitsmoment", "caption": "Der Augenblick." },
+    { "image": "images/eheringe.jpg", "alt": "Eheringe", "caption": "Versprochen." },
+    { "image": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg", "alt": "Braut mit Pferd in Süddeutschland", "caption": "Süddeutschland." },
+    { "image": "images/ringtausch-brautpaar.jpg", "alt": "Ringtausch", "caption": "Der Tausch." },
+    { "image": "images/brautpaar-in-der-schweiz.jpg", "alt": "Brautpaar in der Schweiz", "caption": "Schweiz." },
+    { "image": "images/polina-tankilevitch-5255510.png", "alt": "Hochzeitsstimmung", "caption": "Atmosphäre." },
+    { "image": "images/brautstrauss-elegant.jpg", "alt": "Eleganter Brautstrauß", "caption": "Hände, die festhalten." },
+    { "image": "images/save-the-date-blattwerkstatt.jpg", "alt": "Save the Date Papeterie", "caption": "Worte zum Tag." },
+    { "image": "images/verlobung.jpg", "alt": "Verlobung", "caption": "Der Anfang." },
+    { "image": "images/hochzeit-schweiz.jpg", "alt": "Hochzeit in der Schweiz", "caption": "Eine Geschichte beginnt." },
+    { "image": "images/Hochrheinwedding.png", "alt": "Hochrheinwedding", "caption": "Hochrheinwedding." },
+    { "image": "images/save-the-daten-hochzeit.jpg", "alt": "Save the Date Detail", "caption": "Save the Date." },
+    { "image": "images/hochzeitsdekoration-blumenschmuck-200x300.jpg", "alt": "Blumenschmuck", "caption": "Blütenwerk." },
+    { "image": "images/hochzeitspapeterie-200x300.jpg", "alt": "Hochzeitspapeterie", "caption": "Papier & Tinte." },
+    { "image": "images/hochzeitstorte-schwarzwald-200x300.jpg", "alt": "Hochzeitstorte Schwarzwald", "caption": "Süßer Schluss." },
+    { "image": "images/brautstrauss-elegant-200x300.jpg", "alt": "Eleganter Brautstrauß", "caption": "Eleganz." },
+    { "image": "images/braut-bad-saeckingen-200x300.jpg", "alt": "Braut Bad Säckingen", "caption": "Bad Säckingen." },
+    { "image": "images/brautpaar-basel-200x300.jpg", "alt": "Brautpaar Basel", "caption": "Basel." },
+    { "image": "images/boho-braut-214x300.jpg", "alt": "Boho Braut", "caption": "Boho-Braut." },
+    { "image": "images/bride-to-be-2025-aarau.jpg", "alt": "Bride to be Aarau", "caption": "Bride to Be." },
+    { "image": "images/bride-to-be-schweiz.jpg", "alt": "Bride to be Schweiz", "caption": "Schweiz, vor dem Tag." },
+    { "image": "images/bride-to-be-2025-rainbow-schuhe-240x300.jpg", "alt": "Hochzeitsschuhe", "caption": "Schritt für Schritt." },
+    { "image": "images/bride-to-be-2025-serravalle-200x300.jpg", "alt": "Bride to be Serravalle", "caption": "Serravalle." },
+    { "image": "images/24-DSC04983.jpg", "alt": "Hochzeitsmoment", "caption": "Stillstand." },
+    { "image": "images/153-MZF_5421-200x300.jpg", "alt": "Hochzeitsdetail", "caption": "Detail." },
+    { "image": "images/518844108-1-scaled.jpg", "alt": "Hochzeit", "caption": "Augenblick." },
+    { "image": "images/mlkbnl-11652626-683x1024.jpg", "alt": "Brautpaar", "caption": "Zwischen den Zeilen." },
+    { "image": "images/eheringe-juwelier.png", "alt": "Eheringe", "caption": "Aus Gold." },
+    { "image": "images/brautpaar-im-spiegel-rust.jpg", "alt": "Brautpaar im Spiegel", "caption": "Spiegelmoment." },
+    { "image": "images/braeutigam-mit-hochzeitsplaner.jpg", "alt": "Bräutigam mit Hochzeitsplaner", "caption": "Vor dem Tag." },
+    { "image": "images/brautpaar-mit-hochzeitsplanerin-300x200.jpg", "alt": "Brautpaar mit Hochzeitsplanerin", "caption": "Hand in Hand." },
+    { "image": "images/Miriam-Stabile_Klein-1024x538.jpg", "alt": "Hochzeitsplanung", "caption": "Hinter den Kulissen." }
   ],
-  "credits": "Fotografen: Michel Sieber · Katrin Haberstock · Photostudio M · Photo Emilia Jarosch · Fabian Espinoza · Melina Zeiser · Wedding Crew · Yourmoments_ff · Nicole Janke",
-  "ctaBanner": {
+  "creditsLabel": "Mit Dank an",
+  "credits": "Michel Sieber · Katrin Haberstock · Photostudio M · Photo Emilia Jarosch · Fabian Espinoza · Melina Zeiser · Wedding Crew · Yourmoments_ff · Nicole Janke",
+  "pullQuote": {
+    "text": "Soll eure Geschichte die nächste sein?",
+    "attribution": "— Miriam"
+  },
+  "finalCta": {
     "image": "images/save-the-date-blattwerkstatt.jpg",
-    "title": "Soll eure Geschichte die nächste sein?",
-    "text": "Fragt jetzt euer kostenfreies Erstgespräch an.",
-    "ctaText": "Erstgespräch anfragen"
+    "title": "Lasst uns reden.",
+    "text": "Unverbindlich, persönlich, mit Zeit für eure Vision.",
+    "ctaText": "Kennenlerngespräch vereinbaren"
   }
 }

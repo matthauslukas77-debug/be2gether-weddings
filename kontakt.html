@@ -3,134 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt - be2gether weddings | Hochzeitsplanerin Süddeutschland Schweiz</title>
-  <meta name="description" content="Ich bin eine erfahrene Hochzeitsplanerin in Süddeutschland und der Schweiz. Hier kannst du mich kontaktieren.">
+  <title>Kontakt - be2gether weddings | Hochzeitsplanerin Süddeutschland & Schweiz</title>
+  <meta name="description" content="Lass uns reden — Kennenlerngespräch mit Miriam Stabile vereinbaren. Hochzeitsplanung in Süddeutschland und der Schweiz.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
 <body class="page-light" data-cms-page="kontakt">
 
-  <!-- NAVBAR -->
   <nav class="navbar scrolled" id="navbar">
     <div class="navbar__inner">
       <a href="index.html" class="navbar__logo"><img src="images/180-Design-ohne-Titel2.png" alt="be2gether weddings Logo"></a>
       <div class="navbar__links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="leistungen.html">Leistungen</a>
+        <a href="ueber-mich.html">Über mich</a>
         <a href="impressionen.html">Impressionen</a>
         <a href="blog.html">Blog</a>
-        <div class="navbar__cta"><a href="kontakt.html" class="btn btn--primary active">Erstgespräch</a></div>
+        <div class="navbar__cta"><a href="kontakt.html" class="btn btn--primary active">Kennenlerngespräch</a></div>
       </div>
       <button class="navbar__hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <!-- PAGE HERO -->
-  <div class="page-hero">
-    <div class="page-hero__bg"><img data-cms-src="hero.image" src="images/brautstrauss-elegant.jpg" alt="Kontakt"></div>
-    <div class="page-hero__overlay"></div>
-    <div class="page-hero__content">
-      <h1 data-cms="hero.title">Kontakt aufnehmen</h1>
-      <p data-cms="hero.subtitle">Egal ob früh im Prozess oder kurz vor der Hochzeit — ich bin für euch da.</p>
-    </div>
-  </div>
-
-  <!-- CONTACT FORM -->
-  <section class="section">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="reveal-left">
-          <span class="section-label" data-cms="form.label">Erstgespräch</span>
-          <h2 data-cms="form.title">Frage ein kostenfreies Erstgespräch an</h2>
-          <p style="color:var(--clr-charcoal-light);margin-bottom:var(--space-lg)" data-cms="form.intro">Fülle das Formular aus und ich melde mich innerhalb von 24 Stunden bei dir. Das Erstgespräch ist unverbindlich und kostenfrei.</p>
-
-          <form id="contactForm" action="#" method="POST">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-sm)">
-              <div class="form-group">
-                <label for="firstName">Vorname *</label>
-                <input type="text" id="firstName" name="firstName" required>
-              </div>
-              <div class="form-group">
-                <label for="lastName">Nachname *</label>
-                <input type="text" id="lastName" name="lastName" required>
-              </div>
+  <!-- ═══ FORM + INFO GRID ═══ -->
+  <section class="kontakt">
+    <div class="kontakt__grid">
+      <!-- Form -->
+      <div class="kontakt__form-col reveal">
+        <header class="kontakt-form__header">
+          <h2 class="kontakt-form__title">Frage ein kostenfreies <em>Erstgespräch</em> an</h2>
+          <p class="kontakt-form__intro">Fülle das Formular aus und ich melde mich innerhalb von 24 Stunden bei dir. Das Erstgespräch ist unverbindlich und kostenfrei.</p>
+        </header>
+        <form id="contactForm" class="kontakt-form" novalidate>
+          <div class="kontakt-form__row">
+            <div class="form-field">
+              <label for="firstName">Vorname *</label>
+              <input type="text" id="firstName" name="firstName" required autocomplete="given-name">
             </div>
-            <div class="form-group">
-              <label for="email">E-Mail *</label>
-              <input type="email" id="email" name="email" required>
+            <div class="form-field">
+              <label for="lastName">Nachname *</label>
+              <input type="text" id="lastName" name="lastName" required autocomplete="family-name">
             </div>
-            <div class="form-group">
+          </div>
+          <div class="form-field">
+            <label for="email">E-Mail *</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="kontakt-form__row">
+            <div class="form-field">
               <label for="phone">Telefon</label>
-              <input type="tel" id="phone" name="phone">
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
             </div>
-            <div class="form-group">
-              <label for="leistung">Welche Leistung interessiert dich?</label>
-              <select id="leistung" name="leistung">
-                <option value="">Bitte wählen...</option>
-                <option value="komplettplanung">Komplettplanung</option>
-                <option value="teilplanung">Teilplanung</option>
-                <option value="tagesbegleitung">Tagesbegleitung</option>
-                <option value="location-scouting">Location-Scouting</option>
-                <option value="allgemein">Allgemein</option>
-              </select>
+            <div class="form-field">
+              <label for="weddingDate">Hochzeitsdatum</label>
+              <input type="date" id="weddingDate" name="weddingDate">
             </div>
-            <div class="form-group">
-              <label for="source">Wie hast du mich gefunden?</label>
-              <select id="source" name="source">
-                <option value="">Bitte wählen...</option>
-                <option value="instagram">Instagram</option>
-                <option value="facebook">Facebook</option>
-                <option value="google">Google</option>
-                <option value="freunde">Freunde/Bekannte</option>
-                <option value="sonstiges">Sonstiges</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Nachricht</label>
-              <textarea id="message" name="message" placeholder="Erzählt mir ein bisschen über eure Hochzeitspläne..."></textarea>
-            </div>
-            <div class="form-group">
-              <label class="form-checkbox">
-                <input type="checkbox" required>
-                <span data-cms="form.privacyText">Hiermit bestätige ich, dass ich die <a href="datenschutz.html">Datenschutzerklärung</a> zur Kenntnis genommen habe.</span>
-              </label>
-            </div>
-            <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center" data-cms="form.submitText">Anfrage absenden</button>
-          </form>
-        </div>
+          </div>
+          <div class="form-field">
+            <label for="weddingPlace">Hochzeitsort</label>
+            <input type="text" id="weddingPlace" name="weddingPlace" placeholder="z.B. Schwarzwald, Basel, Bodensee &hellip;">
+          </div>
+          <div class="form-field">
+            <label for="message">Erzähle mir mehr</label>
+            <textarea id="message" name="message" rows="5" placeholder="Eure Vision, eure Wünsche, eure Fragen &hellip;"></textarea>
+          </div>
+          <div class="form-field">
+            <label for="source">Wie hast du mich gefunden?</label>
+            <select id="source" name="source">
+              <option value="">Bitte wählen &hellip;</option>
+              <option value="instagram">Instagram</option>
+              <option value="google">Google</option>
+              <option value="empfehlung">Empfehlung</option>
+              <option value="messe">Messe / Event</option>
+              <option value="presse">Presse / Magazin</option>
+              <option value="sonstiges">Sonstiges</option>
+            </select>
+          </div>
+          <label class="form-consent">
+            <input type="checkbox" name="consent" required>
+            <span data-cms="form.privacyText">Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben für die Kontaktaufnahme gespeichert werden.</span>
+          </label>
+          <button type="submit" class="btn btn--primary kontakt-form__submit">
+            <span class="kontakt-form__submit-label">Kennenlerngespräch vereinbaren</span>
+            <i class="ph ph-paper-plane-tilt"></i>
+          </button>
+          <p class="kontakt-form__error" id="formError" hidden></p>
+        </form>
 
-        <div class="reveal-right" style="padding-top:var(--space-xl)">
-          <img data-cms-src="info.image" src="images/hochzeitsplanerin-miriam-stabile-deutschland-682x1024.jpg" alt="Miriam Stabile" style="border-radius:var(--border-radius);margin-bottom:var(--space-lg)">
-          <h3 style="margin-bottom:var(--space-sm)" data-cms="info.name">Miriam Stabile</h3>
-          <p style="color:var(--clr-charcoal-light);font-size:var(--fs-small);margin-bottom:var(--space-xs)" data-cms="info.address">79725 Laufenburg (Baden)</p>
-          <p style="margin-bottom:var(--space-xs)"><a data-cms-href="site.contact.phoneLink" data-cms="site.contact.phone" href="tel:+491734758590" style="font-size:var(--fs-small)">+49 (0)173 4758590</a></p>
-          <p><a data-cms-href="site.contact.emailLink" data-cms="site.contact.email" href="mailto:info@be2gether-weddings.de" style="font-size:var(--fs-small)">info@be2gether-weddings.de</a></p>
+        <div class="kontakt-form__success" id="formSuccess" hidden>
+          <i class="ph ph-check-circle"></i>
+          <h3 data-cms="form.successTitle">Vielen Dank.</h3>
+          <p data-cms="form.successText">Eure Anfrage ist bei mir angekommen. Ich melde mich innerhalb von 24 Stunden &mdash; mit einer ganz persönlichen Antwort.</p>
         </div>
       </div>
+
+      <!-- Side: portrait + condensed contact -->
+      <aside class="kontakt__info reveal-right">
+        <div class="kontakt__portrait">
+          <img src="images/hochzeitsplanerin-miriam-stabile-sueddeutschland-682x1024.jpg" alt="Miriam Stabile">
+        </div>
+        <div class="kontakt__info-body">
+          <h3 class="kontakt__info-title">Lieber <em>schreiben?</em></h3>
+          <p class="kontakt__info-text">WhatsApp geht meistens am schnellsten. Oder ruf mich einfach an &mdash; ich freue mich, deine Stimme zu hören.</p>
+          <a href="https://wa.me/491734758590?text=Hallo%20Miriam%2C%20ich%20interessiere%20mich%20f%C3%BCr%20deine%20Hochzeitsplanung." target="_blank" rel="noopener" class="kontakt__wa">
+            <i class="ph-fill ph-whatsapp-logo"></i>
+            <span>WhatsApp schreiben</span>
+          </a>
+          <div class="kontakt__details">
+            <p data-cms="info.name">Miriam Stabile</p>
+            <p data-cms="info.address">79725 Laufenburg (Baden)</p>
+            <a data-cms-href="site.contact.phoneLink" data-cms="site.contact.phone" href="tel:+491734758590"><i class="ph ph-phone"></i> +49 (0)173 4758590</a>
+            <a data-cms-href="site.contact.emailLink" data-cms="site.contact.email" href="mailto:info@be2gether-weddings.de"><i class="ph ph-envelope-simple"></i> info@be2gether-weddings.de</a>
+          </div>
+        </div>
+      </aside>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer__grid">
-      <div class="footer__brand">
-        <img data-cms-src="site.brand.logo" src="images/180-Design-ohne-Titel2.png" alt="be2gether weddings" class="footer__logo">
-        <p data-cms="site.brand.taglineShort">Professionelle Hochzeitsplanung in Süddeutschland und der Schweiz.</p>
-      </div>
-      <div><h4>Navigation</h4><div class="footer__links"><a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="impressionen.html">Impressionen</a><a href="blog.html">Blog</a><a href="kontakt.html">Kontakt</a></div></div>
+      <div class="footer__brand"><img data-cms-src="site.brand.logo" src="images/180-Design-ohne-Titel2.png" alt="be2gether weddings" class="footer__logo"><p data-cms="site.brand.taglineShort">Professionelle Hochzeitsplanung in Süddeutschland und der Schweiz.</p></div>
+      <div><h4>Navigation</h4><div class="footer__links"><a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="ueber-mich.html">Über mich</a><a href="impressionen.html">Impressionen</a><a href="blog.html">Blog</a><a href="kontakt.html">Kontakt</a></div></div>
       <div><h4>Kontakt</h4><div class="footer__contact"><p data-cms="site.contact.name">Miriam Stabile</p><a data-cms-href="site.contact.phoneLink" data-cms="site.contact.phone" href="tel:+491734758590">+49 (0)173 4758590</a><a data-cms-href="site.contact.emailLink" data-cms="site.contact.email" href="mailto:info@be2gether-weddings.de">info@be2gether-weddings.de</a></div></div>
       <div><h4>Rechtliches</h4><div class="footer__links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div>
     </div>
-    <div class="footer__bottom">
-      <span data-cms="site.footer.copyright">© 2026 be2gether weddings & events</span>
-      <div class="footer__seo" data-cms="site.footer.seo">Hochzeit Freiburg · Basel · Zürich · Schweiz · Deutschland</div>
-    </div>
+    <div class="footer__bottom"><span data-cms="site.footer.copyright">© 2026 be2gether weddings & events</span><div class="footer__seo" data-cms="site.footer.seo">Hochzeit Freiburg · Basel · Zürich · Schweiz · Deutschland</div></div>
   </footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/cms-config.js"></script>
   <script src="js/cms-loader.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/contact-form.js"></script>
 </body>
 </html>

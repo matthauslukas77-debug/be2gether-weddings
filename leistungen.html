@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leistungen - be2gether weddings | Hochzeitsplaner</title>
-  <meta name="description" content="Anspruchsvolle Hochzeitsplanung aus Süddeutschland, aktiv in der Schweiz, der Bodensee-Region und im Südschwarzwald.">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/components.css">
+  <meta name="description" content="Komplettplanung, Teilplanung, Tagesbegleitung, Location-Scouting — anspruchsvolle Hochzeitsplanung aus Süddeutschland, aktiv in der Schweiz.">
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/components.css?v=2">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
 <body class="page-light" data-cms-page="leistungen">
 
@@ -16,98 +17,124 @@
       <div class="navbar__links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="leistungen.html" class="active">Leistungen</a>
+        <a href="ueber-mich.html">Über mich</a>
         <a href="impressionen.html">Impressionen</a>
         <a href="blog.html">Blog</a>
-        <div class="navbar__cta"><a href="kontakt.html" class="btn btn--primary">Erstgespräch</a></div>
+        <div class="navbar__cta"><a href="kontakt.html" class="btn btn--primary">Kennenlerngespräch</a></div>
       </div>
       <button class="navbar__hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <div class="page-hero">
-    <div class="page-hero__bg"><img data-cms-src="hero.image" src="images/eheringe-juwelier.png" alt="Leistungen"></div>
-    <div class="page-hero__overlay"></div>
-    <div class="page-hero__content">
-      <h1 data-cms="hero.title">Meine Leistungen</h1>
-      <p data-cms="hero.subtitle">Individuelle Hochzeitsplanung — so einzigartig wie eure Liebe.</p>
-    </div>
-  </div>
+  <!-- ═══ EDITORIAL HERO ═══ -->
+  <section class="aboutpage-hero aboutpage-hero--image">
+    <div class="aboutpage-hero__bg"><img src="images/vozradui-12298495.png" alt=""></div>
+    <span class="aboutpage-hero__label" data-cms="hero.label">Meine Leistungen</span>
+    <h1 class="aboutpage-hero__title" data-cms="hero.title">Vier Wege, <em>einen Tag</em><br>zu schenken.</h1>
+    <p class="aboutpage-hero__subtitle" data-cms="hero.subtitle">Ob alles aus einer Hand oder nur am Tag selbst &mdash; ich begleite euch genau so, wie ihr es braucht.</p>
+  </section>
 
-  <!-- SERVICES DETAIL -->
-  <section class="section">
-    <div class="container">
-
-      <!-- Komplettplanung -->
-      <div class="leistung-section reveal" id="komplett">
-        <div class="leistung-image"><img data-cms-src="services.0.image" src="images/braut-mit-fascinator-731x1024.jpg" alt="Komplettplanung"></div>
-        <div class="leistung-content">
-          <span class="section-label" data-cms="services.0.label">Full Service</span>
-          <h2 data-cms="services.0.title">Komplettplanung</h2>
-          <p data-cms="services.0.paragraph1">Bei der Komplettplanung übernehme ich die gesamte Organisation eurer Hochzeit — von den ersten Ideen bis zum großen Tag. Gemeinsam erarbeiten wir ein individuelles Konzept, das eure Liebe und Persönlichkeit in jedem Detail widerspiegelt.</p>
-          <p data-cms="services.0.paragraph2">Ich kümmere mich um die Auswahl der perfekten Location, die passenden Dienstleister, Design und Dekoration. Alle organisatorischen Aufgaben, Termine und Absprachen halte ich im Blick. Am Hochzeitstag bin ich vor Ort und koordiniere jeden Ablauf.</p>
-          <a href="kontakt.html" class="btn btn--primary" style="margin-top:var(--space-md)" data-cms="services.0.ctaText">Jetzt beraten lassen</a>
+  <!-- ═══ CHAPTER 01 — Komplettplanung ═══ -->
+  <section class="chapter chapter--cream reveal" id="komplett">
+    <div class="chapter__inner">
+      <div class="chapter__media reveal-left">
+        <img data-cms-src="services.0.image" src="images/braut-mit-fascinator-731x1024.jpg" alt="Komplettplanung">
+      </div>
+      <div class="chapter__content reveal-right">
+        <span class="chapter__num" data-cms="services.0.num">01 / 04 &mdash; Full Service</span>
+        <h2 class="chapter__title" data-cms="services.0.title">Komplettplanung.</h2>
+        <div class="chapter__body" data-cms="services.0.body">
+          <p>Bei der Komplettplanung übernehme ich die gesamte Organisation eurer Hochzeit &mdash; von den ersten Ideen bis zum großen Tag. Gemeinsam erarbeiten wir ein Konzept, das eure Liebe und Persönlichkeit in jedem Detail widerspiegelt.</p>
+          <p>Ich kümmere mich um Location, Dienstleister, Design und Dekoration. Termine, Absprachen und Abläufe halte ich im Blick. Am Hochzeitstag bin ich vor Ort und koordiniere alles &mdash; ihr feiert.</p>
         </div>
       </div>
-
-      <!-- Teilplanung -->
-      <div class="leistung-section reveal" id="teil">
-        <div class="leistung-image"><img data-cms-src="services.1.image" src="images/brautkleid-details-683x1024.jpg" alt="Teilplanung"></div>
-        <div class="leistung-content">
-          <span class="section-label" data-cms="services.1.label">Flexibel</span>
-          <h2 data-cms="services.1.title">Teilplanung</h2>
-          <p data-cms="services.1.paragraph1">Habt ihr eure Wunschlocation bereits gesichert? Großartig! Mit meiner Teilplanung greife ich genau dort auf, wo ihr aufgehört habt, und übernehme die restlichen organisatorischen Aufgaben.</p>
-          <p data-cms="services.1.paragraph2">In einem unverbindlichen Erstgespräch schauen wir uns gemeinsam eure bisherigen Planungen an und klären, welche Unterstützung ihr euch wünscht.</p>
-          <a href="kontakt.html" class="btn btn--primary" style="margin-top:var(--space-md)" data-cms="services.1.ctaText">Jetzt beraten lassen</a>
-        </div>
-      </div>
-
-      <!-- Tagesbegleitung -->
-      <div class="leistung-section reveal" id="tages">
-        <div class="leistung-image"><img data-cms-src="services.2.image" src="images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg" alt="Tagesbegleitung"></div>
-        <div class="leistung-content">
-          <span class="section-label" data-cms="services.2.label">Am großen Tag</span>
-          <h2 data-cms="services.2.title">Tagesbegleitung</h2>
-          <p data-cms="services.2.paragraph1">Eure Location steht und alle Dienstleister sind gebucht? Super, dann kann die Hochzeit kommen! Vor der Hochzeit übergebt Ihr mir die komplette Planung und ich halte Euch den Rücken frei.</p>
-          <p data-cms="services.2.paragraph2">Ich koordiniere am Hochzeitstag den reibungslosen Ablauf mit allen Dienstleistern — damit ihr euren Tag in vollen Zügen genießen könnt.</p>
-          <a href="kontakt.html" class="btn btn--primary" style="margin-top:var(--space-md)" data-cms="services.2.ctaText">Jetzt beraten lassen</a>
-        </div>
-      </div>
-
-      <!-- Location Scouting -->
-      <div class="leistung-section reveal" id="location">
-        <div class="leistung-image"><img data-cms-src="services.3.image" src="images/brautstrauss-boho-683x1024.jpg" alt="Location-Scouting"></div>
-        <div class="leistung-content">
-          <span class="section-label" data-cms="services.3.label">Traumort finden</span>
-          <h2 data-cms="services.3.title">Location-Scouting</h2>
-          <p data-cms="services.3.paragraph1">Die richtige Location ist der Schlüssel zu einer unvergesslichen Hochzeit. Ob romantisches Schloss, moderne Stadtlocation oder idyllischer Garten — ich kenne die versteckten Perlen und besten Plätze.</p>
-          <p data-cms="services.3.paragraph2">Mit meinem Location-Scouting erspare ich euch stundenlange Recherchen und zeige euch ausgewählte Orte, die eure Hochzeit einzigartig machen.</p>
-          <a href="kontakt.html" class="btn btn--primary" style="margin-top:var(--space-md)" data-cms="services.3.ctaText">Jetzt beraten lassen</a>
-        </div>
-      </div>
-
-      <!-- Mein Versprechen -->
-      <div class="promise-section reveal">
-        <span class="section-label" data-cms="promise.label">Mein Versprechen</span>
-        <h2 data-cms="promise.title">Transparenz & Vertrauen</h2>
-        <p data-cms="promise.paragraph1">Ich arbeite provisionsfrei und biete Festpreise an. Alle Dienstleister senden euch direkt den Vertrag und die Abrechnung zu. Häufig könnt ihr von meinem Agentur-Rabatt profitieren, den ich zu 100% an euch weitergebe.</p>
-        <p data-cms="promise.paragraph2">Auch eure Gäste können sich jederzeit an mich wenden — für Fragen zu Anreise, Übernachtung, Beiträgen und Überraschungen.</p>
-        <a href="kontakt.html" class="btn btn--primary" style="margin-top:var(--space-lg)" data-cms="promise.ctaText">Erstgespräch anfragen</a>
-      </div>
-
     </div>
   </section>
+
+  <!-- ═══ CHAPTER 02 — Teilplanung ═══ -->
+  <section class="chapter chapter--reverse reveal" id="teil">
+    <div class="chapter__inner">
+      <div class="chapter__media reveal-right">
+        <img data-cms-src="services.1.image" src="images/brautkleid-details-683x1024.jpg" alt="Teilplanung">
+      </div>
+      <div class="chapter__content reveal-left">
+        <span class="chapter__num" data-cms="services.1.num">02 / 04 &mdash; Flexibel</span>
+        <h2 class="chapter__title" data-cms="services.1.title">Teilplanung.</h2>
+        <div class="chapter__body" data-cms="services.1.body">
+          <p>Habt ihr eure Wunschlocation schon gesichert? Großartig. Mit der Teilplanung greife ich genau dort auf, wo ihr aufgehört habt &mdash; und übernehme die Aufgaben, die ihr abgeben wollt.</p>
+          <p>In einem unverbindlichen Erstgespräch schauen wir uns gemeinsam eure Planung an und klären, welche Unterstützung ihr euch wünscht.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CHAPTER 03 — Tagesbegleitung ═══ -->
+  <section class="chapter chapter--cream reveal" id="tages">
+    <div class="chapter__inner">
+      <div class="chapter__media reveal-left">
+        <img data-cms-src="services.2.image" src="images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg" alt="Tagesbegleitung">
+      </div>
+      <div class="chapter__content reveal-right">
+        <span class="chapter__num" data-cms="services.2.num">03 / 04 &mdash; Am großen Tag</span>
+        <h2 class="chapter__title" data-cms="services.2.title">Tagesbegleitung.</h2>
+        <div class="chapter__body" data-cms="services.2.body">
+          <p>Eure Location steht, alle Dienstleister sind gebucht? Dann kann die Hochzeit kommen. Vor dem Tag übergebt ihr mir die komplette Planung &mdash; und ich halte euch den Rücken frei.</p>
+          <p>Ich koordiniere den reibungslosen Ablauf mit allen Dienstleistern, damit ihr euren Tag in vollen Zügen genießen könnt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CHAPTER 04 — Location-Scouting ═══ -->
+  <section class="chapter chapter--reverse reveal" id="location">
+    <div class="chapter__inner">
+      <div class="chapter__media reveal-right">
+        <img data-cms-src="services.3.image" src="images/brautstrauss-boho-683x1024.jpg" alt="Location-Scouting">
+      </div>
+      <div class="chapter__content reveal-left">
+        <span class="chapter__num" data-cms="services.3.num">04 / 04 &mdash; Traumort finden</span>
+        <h2 class="chapter__title" data-cms="services.3.title">Location-Scouting.</h2>
+        <div class="chapter__body" data-cms="services.3.body">
+          <p>Die richtige Location ist der Schlüssel zu einer unvergesslichen Hochzeit. Romantisches Schloss, moderne Stadtlocation oder idyllischer Garten &mdash; ich kenne die versteckten Perlen und besten Plätze in Süddeutschland und der Schweiz.</p>
+          <p>Mit dem Location-Scouting erspare ich euch stundenlange Recherchen und zeige euch ausgewählte Orte, die zu eurer Geschichte passen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROMISE — pull-quote / philosophy ═══ -->
+  <section class="pull-quote reveal">
+    <span class="aboutpage-hero__label" style="margin-bottom:var(--space-md);display:block" data-cms="promise.label">Mein Versprechen</span>
+    <p class="pull-quote__text" data-cms="promise.title">Transparenz &amp; Vertrauen.</p>
+    <div style="max-width:640px;margin:var(--space-md) auto 0;font-family:var(--ff-body);font-weight:var(--fw-light);line-height:1.85;color:var(--clr-charcoal-light);font-size:1rem">
+      <p data-cms="promise.paragraph1">Ich arbeite provisionsfrei und biete Festpreise. Alle Dienstleister senden euch direkt den Vertrag und die Abrechnung. Häufig könnt ihr von meinem Agentur-Rabatt profitieren &mdash; den ich zu 100 % an euch weitergebe.</p>
+      <p data-cms="promise.paragraph2" style="margin-top:var(--space-sm)">Auch eure Gäste können sich jederzeit an mich wenden &mdash; für Fragen zu Anreise, Übernachtung, Beiträgen und Überraschungen.</p>
+    </div>
+  </section>
+
+  <!-- ═══ FINAL CTA ═══ -->
+  <div class="cta-banner">
+    <div class="cta-banner__bg"><img data-cms-src="finalCta.image" src="images/brautstrauss-elegant.jpg" alt=""></div>
+    <div class="cta-banner__overlay"></div>
+    <div class="cta-banner__content reveal">
+      <h2 data-cms="finalCta.title">Welcher Weg passt zu euch?</h2>
+      <p data-cms="finalCta.text">Lasst uns reden &mdash; unverbindlich, persönlich und mit Zeit für eure Geschichte.</p>
+      <a href="kontakt.html" class="btn btn--white" data-cms="finalCta.ctaText">Kennenlerngespräch vereinbaren</a>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer__grid">
       <div class="footer__brand"><img data-cms-src="site.brand.logo" src="images/180-Design-ohne-Titel2.png" alt="be2gether" class="footer__logo"><p data-cms="site.brand.taglineShort">Professionelle Hochzeitsplanung in Süddeutschland und der Schweiz.</p></div>
-      <div><h4>Navigation</h4><div class="footer__links"><a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="impressionen.html">Impressionen</a><a href="blog.html">Blog</a><a href="kontakt.html">Kontakt</a></div></div>
+      <div><h4>Navigation</h4><div class="footer__links"><a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="ueber-mich.html">Über mich</a><a href="impressionen.html">Impressionen</a><a href="blog.html">Blog</a><a href="kontakt.html">Kontakt</a></div></div>
       <div><h4>Kontakt</h4><div class="footer__contact"><p data-cms="site.contact.name">Miriam Stabile</p><a data-cms-href="site.contact.phoneLink" data-cms="site.contact.phone" href="tel:+491734758590">+49 (0)173 4758590</a><a data-cms-href="site.contact.emailLink" data-cms="site.contact.email" href="mailto:info@be2gether-weddings.de">info@be2gether-weddings.de</a></div></div>
       <div><h4>Rechtliches</h4><div class="footer__links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div>
     </div>
     <div class="footer__bottom"><span data-cms="site.footer.copyright">© 2026 be2gether weddings & events</span><div class="footer__seo" data-cms="site.footer.seo">Hochzeit Freiburg · Basel · Zürich · Schweiz · Deutschland</div></div>
   </footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/cms-config.js"></script>

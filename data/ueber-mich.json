@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "title": "Über mich - be2gether weddings | Miriam Stabile, Hochzeitsplanerin",
+    "description": "Hi, ich bin Miriam. Hochzeitsplanerin in Süddeutschland und der Schweiz. Background, Familie, Perfektion — meine Geschichte hinter be2gether."
+  },
+  "hero": {
+    "label": "Über mich",
+    "title": "Hi, ich bin <em>Miriam.</em>",
+    "subtitle": "Herz, Struktur und ein offenes Ohr für eure Geschichte.",
+    "image": "images/hochzeitsplanerin-miriam-stabile-sueddeutschland-682x1024.jpg"
+  },
+  "intro": {
+    "text": "Hochzeitsplanung ist für mich kein Job — sie ist die Verbindung aus 18 Jahren Eventerfahrung, einem unermüdlichen Blick fürs Detail und der festen Überzeugung, dass kein Tag im Leben mehr Aufmerksamkeit verdient als dieser."
+  },
+  "chapters": [
+    {
+      "image": "images/braeutigam-mit-hochzeitsplaner.jpg",
+      "num": "01 — Background",
+      "title": "Wo <em>Erfahrung</em> anfängt.",
+      "body": "<p>18 Jahre Eventerfahrung, eine Ausbildung zur Veranstaltungskauffrau und ein Marketingstudium — auf dem Weg zur Hochzeitsplanerin habe ich Events von der Tagung bis zum Familienfest begleitet.</p><p>Was geblieben ist: die Liebe zum Detail, der Blick fürs Ganze und die Lust, Geschichten in Erlebnisse zu verwandeln. Wenn ich heute einen Tag plane, dann weiß ich, wo die Stolpersteine liegen — und wie ich sie für euch aus dem Weg räume, bevor ihr überhaupt davon erfahrt.</p>"
+    },
+    {
+      "image": "images/brautpaar-in-der-schweiz.jpg",
+      "num": "02 — Familie",
+      "title": "Mein <em>Anker.</em>",
+      "body": "<p>Ich lebe mit meiner Familie in Süddeutschland, direkt am Dreiländereck zwischen Schwarzwald, Bodensee und der Schweiz. Familie ist mein Zuhause und mein Maßstab.</p><p>Sie erinnert mich daran, dass die schönsten Hochzeiten dort entstehen, wo Menschen sich nahe sind. Genau diese Wärme bringe ich in eure Planung — mit dem Ohr einer Vertrauten und der Ruhe einer, die weiß, wie wertvoll der Tag mit den Liebsten ist.</p>"
+    },
+    {
+      "image": "images/hochzeitspapeterie-200x300.jpg",
+      "num": "03 — Perfektion",
+      "title": "Im <em>Detail</em> liegt das Gefühl.",
+      "body": "<p>Eine Hochzeit lebt von tausend kleinen Entscheidungen — und davon, dass keine davon auf eurem Rücken landet.</p><p>Ich plane strukturiert, transparent und mit einem wachsamen Auge auf jeden Moment. So müsst ihr am Tag selbst nichts mehr koordinieren, sondern nur noch genießen — jedes Lachen, jede Träne, jedes \"Ja\".</p>"
+    }
+  ],
+  "pullQuote": {
+    "text": "Eine Hochzeit ist kein Termin. Sie ist eure Geschichte.",
+    "attribution": "— Miriam Stabile"
+  },
+  "finalCta": {
+    "image": "images/brautstrauss-elegant.jpg",
+    "title": "Lust, dich kennenzulernen?",
+    "text": "Erzähl mir von deinem Tag — unverbindlich, persönlich und mit Zeit für deine Geschichte.",
+    "ctaText": "Kennenlerngespräch vereinbaren"
+  }
+}

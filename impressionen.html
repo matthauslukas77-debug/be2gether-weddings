@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impressionen - be2gether weddings</title>
-  <meta name="description" content="Als Hochzeitsplaner kann ich euch viele Impressionen zur Verfügung stellen. Entdeckt Möglichkeiten, wie eure Hochzeit aussehen könnte.">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/components.css">
+  <meta name="description" content="Einblicke in Hochzeiten in Süddeutschland und der Schweiz — Momente, Details, Geschichten.">
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/components.css?v=2">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
 <body class="page-light" data-cms-page="impressionen">
 
@@ -16,62 +17,120 @@
       <div class="navbar__links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="leistungen.html">Leistungen</a>
+        <a href="ueber-mich.html">Über mich</a>
         <a href="impressionen.html" class="active">Impressionen</a>
         <a href="blog.html">Blog</a>
-        <div class="navbar__cta"><a href="kontakt.html" class="btn btn--primary">Erstgespräch</a></div>
+        <div class="navbar__cta"><a href="kontakt.html" class="btn btn--primary">Kennenlerngespräch</a></div>
       </div>
       <button class="navbar__hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <div class="page-hero">
-    <div class="page-hero__bg"><img data-cms-src="hero.image" src="images/brautpaar-mit-hochzeitsplanerin.jpg" alt="Impressionen"></div>
-    <div class="page-hero__overlay"></div>
-    <div class="page-hero__content">
-      <h1 data-cms="hero.title">Impressionen</h1>
-      <p data-cms="hero.subtitle">Einblicke in unvergessliche Momente und liebevolle Details.</p>
-    </div>
-  </div>
+  <!-- ═══ EDITORIAL HERO ═══ -->
+  <section class="aboutpage-hero aboutpage-hero--image">
+    <div class="aboutpage-hero__bg"><img src="images/vozradui-12298495.png" alt=""></div>
+    <h1 class="aboutpage-hero__title" data-cms="hero.title">Momente, die <em>bleiben.</em></h1>
+    <p class="aboutpage-hero__subtitle" data-cms="hero.subtitle">Ein Blick auf Details, Geschichten und Augenblicke aus Hochzeiten, die ich begleiten durfte.</p>
+  </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="gallery-grid reveal" data-cms-each="gallery">
-        <template>
-          <div class="gallery-item"><img data-cms-src="image" data-cms-alt="alt"></div>
-        </template>
-      </div>
-
-      <div class="text-center" style="margin-top:var(--space-2xl)">
-        <p style="color:var(--clr-charcoal-light);margin-bottom:var(--space-md);font-size:var(--fs-small)" data-cms="credits">Fotografen: Michel Sieber · Katrin Haberstock · Photostudio M · Photo Emilia Jarosch · Fabian Espinoza · Melina Zeiser · Wedding Crew · Yourmoments_ff · Nicole Janke</p>
-      </div>
+  <!-- ═══ MASONRY GALLERY ═══ -->
+  <section class="impressions-gallery">
+    <div class="impressions-gallery__grid reveal" data-cms-each="gallery">
+      <template>
+        <figure class="impressions-gallery__item">
+          <img data-cms-src="image" data-cms-alt="alt" loading="lazy">
+          <figcaption class="impressions-gallery__caption" data-cms="caption"></figcaption>
+        </figure>
+      </template>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- ═══ PHOTO CREDITS ═══ -->
+  <section class="impressions-credits reveal">
+    <span class="impressions-credits__label" data-cms="creditsLabel">Mit Dank an</span>
+    <p class="impressions-credits__text" data-cms="credits">Michel Sieber · Katrin Haberstock · Photostudio M · Photo Emilia Jarosch · Fabian Espinoza · Melina Zeiser · Wedding Crew · Yourmoments_ff · Nicole Janke</p>
+  </section>
+
+  <!-- ═══ PULL QUOTE ═══ -->
+  <section class="pull-quote pull-quote--cream reveal">
+    <p class="pull-quote__text" data-cms="pullQuote.text">Soll eure Geschichte die nächste sein?</p>
+    <span class="pull-quote__attribution" data-cms="pullQuote.attribution">&mdash; Miriam</span>
+  </section>
+
+  <!-- ═══ FINAL CTA ═══ -->
   <div class="cta-banner">
-    <div class="cta-banner__bg"><img data-cms-src="ctaBanner.image" src="images/save-the-date-blattwerkstatt.jpg" alt=""></div>
+    <div class="cta-banner__bg"><img data-cms-src="finalCta.image" src="images/save-the-date-blattwerkstatt.jpg" alt=""></div>
     <div class="cta-banner__overlay"></div>
     <div class="cta-banner__content reveal">
-      <h2 data-cms="ctaBanner.title">Soll eure Geschichte die nächste sein?</h2>
-      <p data-cms="ctaBanner.text">Fragt jetzt euer kostenfreies Erstgespräch an.</p>
-      <a href="kontakt.html" class="btn btn--white" data-cms="ctaBanner.ctaText">Erstgespräch anfragen</a>
+      <h2 data-cms="finalCta.title">Lasst uns reden.</h2>
+      <p data-cms="finalCta.text">Unverbindlich, persönlich, mit Zeit für eure Vision.</p>
+      <a href="kontakt.html" class="btn btn--white" data-cms="finalCta.ctaText">Kennenlerngespräch vereinbaren</a>
     </div>
+  </div>
+
+  <!-- ═══ LIGHTBOX ═══ -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Schließen"><i class="ph ph-x"></i></button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Vorheriges Bild"><i class="ph ph-caret-left"></i></button>
+    <img class="lightbox__img" id="lightboxImg" alt="">
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Nächstes Bild"><i class="ph ph-caret-right"></i></button>
+    <div class="lightbox__caption" id="lightboxCaption"></div>
   </div>
 
   <footer class="footer">
     <div class="footer__grid">
       <div class="footer__brand"><img data-cms-src="site.brand.logo" src="images/180-Design-ohne-Titel2.png" alt="be2gether" class="footer__logo"><p data-cms="site.brand.taglineShort">Professionelle Hochzeitsplanung in Süddeutschland und der Schweiz.</p></div>
-      <div><h4>Navigation</h4><div class="footer__links"><a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="impressionen.html">Impressionen</a><a href="blog.html">Blog</a><a href="kontakt.html">Kontakt</a></div></div>
+      <div><h4>Navigation</h4><div class="footer__links"><a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="ueber-mich.html">Über mich</a><a href="impressionen.html">Impressionen</a><a href="blog.html">Blog</a><a href="kontakt.html">Kontakt</a></div></div>
       <div><h4>Kontakt</h4><div class="footer__contact"><p data-cms="site.contact.name">Miriam Stabile</p><a data-cms-href="site.contact.phoneLink" data-cms="site.contact.phone" href="tel:+491734758590">+49 (0)173 4758590</a><a data-cms-href="site.contact.emailLink" data-cms="site.contact.email" href="mailto:info@be2gether-weddings.de">info@be2gether-weddings.de</a></div></div>
       <div><h4>Rechtliches</h4><div class="footer__links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div>
     </div>
     <div class="footer__bottom"><span data-cms="site.footer.copyright">© 2026 be2gether weddings & events</span></div>
   </footer>
 
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/cms-config.js"></script>
   <script src="js/cms-loader.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('cms:ready', () => {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCaption');
+      const closeBtn = document.getElementById('lightboxClose');
+      const prevBtn = document.getElementById('lightboxPrev');
+      const nextBtn = document.getElementById('lightboxNext');
+      const items = Array.from(document.querySelectorAll('.impressions-gallery__item img'));
+      let idx = 0;
+      const open = (i) => {
+        idx = i;
+        const el = items[i];
+        img.src = el.src;
+        img.alt = el.alt;
+        cap.textContent = el.alt || '';
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+      const close = () => {
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+      const step = (d) => open((idx + d + items.length) % items.length);
+      items.forEach((el, i) => { el.style.cursor = 'zoom-in'; el.addEventListener('click', () => open(i)); });
+      closeBtn.addEventListener('click', close);
+      prevBtn.addEventListener('click', () => step(-1));
+      nextBtn.addEventListener('click', () => step(1));
+      lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+      document.addEventListener('keydown', (e) => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') step(-1);
+        if (e.key === 'ArrowRight') step(1);
+      });
+    });
+  </script>
 </body>
 </html>

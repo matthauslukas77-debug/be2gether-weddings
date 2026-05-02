@@ -4,35 +4,41 @@
     "description": "Anspruchsvolle Hochzeitsplanung aus Süddeutschland, aktiv in der Schweiz, Bodensee-Region und im Südschwarzwald."
   },
   "hero": {
-    "label": "Hochzeitsplanung mit Herz",
-    "title": "Euer perfekter Tag.<br><em>Unsere Leidenschaft.</em>",
-    "subtitle": "Professionelle Hochzeitsplanung in Süddeutschland und der Schweiz – damit ihr euren Tag in vollen Zügen genießen könnt.",
-    "ctaText": "Kostenfreies Erstgespräch",
+    "label": "",
+    "title": "be2gether",
+    "subtitle": "Hochzeitsplanung in Süddeutschland und der Schweiz.",
+    "ctaText": "Jetzt anfragen",
     "scrollText": "Entdecken"
   },
   "challenges": {
     "label": "Warum eine Hochzeitsplanerin?",
-    "title": "Eure Herausforderungen — unsere Stärken",
-    "centerImage": "images/hochzeitsplanerin-miriam-stabile-sueddeutschland-682x1024.jpg",
-    "problemsHeading": "Typische Herausforderungen",
+    "title": "Eure Herausforderungen — meine Antworten",
+    "lead": "Plant ihr eure Hochzeit nebenbei? Sucht ihr Klarheit zwischen Pinterest, Bauchgefühl und Excel? Hier sind die drei Dinge, die ich euch von den Schultern nehme.",
+    "image": "images/brautpaar-im-spiegel-rust.jpg",
+    "imageAccent": "Ich nehme euch mit.",
     "problems": [
-      { "title": "Zeitaufwand unterschätzt", "text": "200–300 Stunden stecken in einer vollständigen Hochzeitsplanung — neben Beruf und Alltag kaum machbar." },
-      { "title": "Budgetfallen", "text": "Versteckte Kosten, fehlender Überblick und der berüchtigte „Hochzeitsaufschlag\" sprengen schnell den Rahmen." },
-      { "title": "Stress am großen Tag", "text": "Wer koordiniert, kann nicht feiern. Viele Paare genießen ihren eigenen Tag kaum — weil sie funktionieren statt fühlen." }
+      { "title": "Habt ihr den Zeitaufwand unterschätzt?" },
+      { "title": "Sorgt ihr euch um Budgetfallen?" },
+      { "title": "Wer koordiniert am großen Tag?" }
     ],
-    "solutionsHeading": "So hilft be2gether",
     "solutions": [
-      { "title": "Strukturierte Planung", "text": "Ich übernehme die komplette Organisation — von der ersten Idee bis zum letzten Detail. Ihr genießt die Vorfreude." },
-      { "title": "Transparente Festpreise", "text": "Provisionsfrei, mit Agentur-Rabatten — ich handle stets in eurem Interesse, unabhängig vom Budget." },
-      { "title": "Voller Genuss am Hochzeitstag", "text": "Am Tag selbst koordiniere ich alles im Hintergrund — damit ihr jeden Moment mit euren Liebsten genießen könnt." }
+      { "text": "200–300 Stunden stecken in einer vollständigen Hochzeitsplanung — neben Beruf und Alltag kaum machbar. Ich übernehme die komplette Organisation, von der ersten Idee bis zum letzten Detail. Ihr genießt die Vorfreude." },
+      { "text": "Versteckte Kosten und der berüchtigte „Hochzeitsaufschlag\" sprengen schnell den Rahmen. Ich plane mit transparenten Festpreisen, provisionsfrei und mit Agentur-Rabatten — ich handle stets in eurem Interesse, unabhängig vom Budget." },
+      { "text": "Wer koordiniert, kann nicht feiern. Am Hochzeitstag selbst koordiniere ich alles im Hintergrund — damit ihr jeden Moment mit euren Liebsten genießen könnt, statt nur zu funktionieren." }
     ],
-    "ctaText": "Jetzt beraten lassen"
+    "ctaText": ""
   },
-  "ctaBanner1": {
+  "midCta": {
     "image": "images/save-the-date-blattwerkstatt.jpg",
-    "title": "Ich freue mich euch persönlich kennenzulernen",
-    "text": "Lasst uns gemeinsam euren Traumtag planen — unverbindlich und kostenfrei.",
-    "ctaText": "Erstgespräch anfragen"
+    "title": "Bereit für den ersten Schritt?",
+    "text": "Erzählt mir von eurem Tag — unverbindlich, persönlich und mit Zeit für eure Geschichte.",
+    "ctaText": "Kennenlerngespräch vereinbaren"
+  },
+  "reviewsCta": {
+    "image": "images/glueckliches-brautpaar.jpg",
+    "title": "Soll eure Geschichte die nächste sein?",
+    "text": "Wenn euch die Worte unserer Paare berühren — lasst uns reden, wie eure Geschichte aussehen kann.",
+    "ctaText": "Kennenlerngespräch vereinbaren"
   },
   "services": {
     "label": "Unsere Leistungen",
@@ -55,15 +61,16 @@
       { "image": "images/hochzeitsdekoration-blumenschmuck-200x300.jpg", "title": "Organisation", "text": "Von Dienstleisterauswahl bis Budgetplanung — ich kümmere mich um alle organisatorischen Details." },
       { "image": "images/brautpaar-basel-200x300.jpg", "title": "Hochzeitstag", "text": "Am großen Tag koordiniere ich alles vor Ort, damit ihr euren Tag in vollen Zügen genießen könnt." }
     ],
-    "ctaText": "Jetzt beraten lassen"
+    "ctaText": ""
   },
   "about": {
     "image": "images/hochzeitsplanerin-miriam-stabile-sueddeutschland-682x1024.jpg",
     "label": "Über mich",
-    "title": "Hi, ich bin Miriam!",
-    "paragraph1": "Ich lebe mit meiner Familie in Süddeutschland, direkt an der Grenze zur Schweiz und Frankreich. Unsere wunderschöne Region mit dem Schwarzwald, dem Bodensee und der Schweiz bietet die perfekte Kulisse für unvergessliche Hochzeiten.",
-    "paragraph2": "Mit über 18 Jahren Erfahrung, einer Ausbildung zur Veranstaltungskauffrau und einem Marketingstudium habe ich bereits Events aller Art begleitet. Eventplanung ist meine Leidenschaft — kreativ sein, Herausforderungen meistern und unvergessliche Momente schaffen.",
-    "ctaText": "Jetzt beraten lassen",
+    "title": "Hi, ich bin Miriam.",
+    "paragraph1": "Ich lebe mit meiner Familie am Dreiländereck zwischen Schwarzwald, Bodensee und der Schweiz — der perfekten Kulisse für unvergessliche Hochzeiten.",
+    "paragraph2": "Über 18 Jahre Eventerfahrung, eine Ausbildung zur Veranstaltungskauffrau und ein Marketingstudium begleiten mich. Was bleibt: die Liebe zum Detail und der Wunsch, eure Geschichte in einen Tag zu übersetzen, den ihr nie vergesst.",
+    "ctaText": "Mehr über mich",
+    "ctaHref": "ueber-mich.html",
     "funFacts": [
       "Nachts fallen mir die besten Ideen ein — teilen kann ich sie erst nach dem Frühstück.",
       "Die Tastenkombination fürs Ausschalten? Hunderte Screenshots sind die Folge.",
@@ -85,7 +92,7 @@
       { "text": "Auf Miriam ist absolut Verlass. Sie ist top organisiert, engagiert und hoch motiviert. Der Tag war klar strukturiert und gab mir als Dienstleister eine perfekte Orientierung.", "author": "Jacqueline Grundig" },
       { "text": "Wer eine kompetente und empathische Weddingplannerin im Raum Schweiz, Schwarzwald und Bodensee sucht, der ist bei Miriam bestens aufgehoben. Gemeinsam mit euch wird sie eure Traumhochzeit Wirklichkeit werden lassen.", "author": "Helene Müller" }
     ],
-    "ctaText": "Jetzt beraten lassen"
+    "ctaText": ""
   },
   "faq": {
     "label": "FAQ",
@@ -99,7 +106,7 @@
       { "question": "Was passiert, wenn ein Dienstleister kurzfristig absagt?", "answer": "Dank meinem Netzwerk kann ich schnell reagieren und finde zuverlässige Alternativen, sodass euer Hochzeitstag nicht gefährdet ist." },
       { "question": "Was passiert, wenn du als Hochzeitsplanerin ausfällst?", "answer": "Falls ich ausfalle, sorge ich selbstverständlich für qualifizierten Ersatz. Alle Details und Absprachen bleiben erhalten, sodass eure Hochzeit weiterhin reibungslos betreut wird." }
     ],
-    "ctaText": "Jetzt beraten lassen"
+    "ctaText": ""
   },
   "location": {
     "label": "Standort",
@@ -110,6 +117,6 @@
     "image": "images/brautstrauss-elegant.jpg",
     "title": "Bereit für euren Traumtag?",
     "text": "Fragt jetzt euer kostenfreies und unverbindliches Erstgespräch an.",
-    "ctaText": "Erstgespräch anfragen"
+    "ctaText": "Kennenlerngespräch vereinbaren"
   }
 }

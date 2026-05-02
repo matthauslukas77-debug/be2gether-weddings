@@ -4,7 +4,7 @@
     "description": "Tipps & Inspiration rund um die Hochzeitsplanung in Süddeutschland und der Schweiz."
   },
   "hero": {
-    "image": "images/braeutigam-mit-hochzeitsplaner.jpg",
+    "image": "images/vozradui-12298495.png",
     "title": "Hochzeitsblog",
     "subtitle": "Tipps, Inspiration und Einblicke rund um eure Hochzeitsplanung."
   },
@@ -113,6 +113,6 @@
   "ctaBanner": {
     "image": "images/brautstrauss-elegant.jpg",
     "title": "Bereit für euren Traumtag?",
-    "ctaText": "Erstgespräch anfragen"
+    "ctaText": "Kennenlerngespräch vereinbaren"
   }
 }

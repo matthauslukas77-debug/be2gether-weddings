@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - be2gether weddings | Hochzeitsplanung in Süddeutschland und Schweiz</title>
   <meta name="description" content="Anspruchsvolle Hochzeitsplanung aus Süddeutschland, aktiv in der Schweiz, Bodensee-Region und im Südschwarzwald.">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/components.css?v=2">
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
@@ -21,6 +21,7 @@
       <div class="navbar__links" id="navLinks">
         <a href="index.html" class="active">Home</a>
         <a href="leistungen.html">Leistungen</a>
+        <a href="ueber-mich.html">Über mich</a>
         <a href="impressionen.html">Impressionen</a>
         <a href="blog.html">Blog</a>
         <div class="navbar__cta">
@@ -42,96 +43,59 @@
       </video>
     </div>
     <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <span class="hero__label" data-cms="hero.label">Hochzeitsplanung mit Herz</span>
-      <h1 class="hero__title" data-cms="hero.title">Euer perfekter Tag.<br><em>Unsere Leidenschaft.</em></h1>
-      <p class="hero__subtitle" data-cms="hero.subtitle">Professionelle Hochzeitsplanung in Süddeutschland und der Schweiz – damit ihr euren Tag in vollen Zügen genießen könnt.</p>
+    <div class="hero__content hero__content--wordmark">
+      <h1 class="hero__wordmark" data-cms="hero.title">be2gether</h1>
+      <p class="hero__subtitle" data-cms="hero.subtitle">Hochzeitsplanung in Süddeutschland und der Schweiz.</p>
       <div class="hero__cta">
-        <a href="kontakt.html" class="btn btn--primary" data-cms="hero.ctaText">Kostenfreies Erstgespräch</a>
+        <a href="kontakt.html" class="btn btn--primary" data-cms="hero.ctaText">Jetzt anfragen</a>
       </div>
-    </div>
-    <div class="hero__scroll">
-      <span data-cms="hero.scrollText">Entdecken</span>
-      <div class="hero__scroll-line"></div>
     </div>
   </section>
 
-  <!-- ═══ 1. HERAUSFORDERUNGEN → LÖSUNG (first after hero) ═══ -->
+  <!-- ═══ 1. ÜBER MICH (compact — meet the human first) ═══ -->
+  <section class="section" id="ueber-mich-home">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal-left">
+          <img data-cms-src="about.image" src="images/hochzeitsplanerin-miriam-stabile-sueddeutschland-682x1024.jpg" alt="Miriam Stabile — Hochzeitsplanerin">
+        </div>
+        <div class="about-content reveal-right">
+          <span class="section-label" data-cms="about.label">Über mich</span>
+          <h2 data-cms="about.title">Hi, ich bin Miriam.</h2>
+          <p data-cms="about.paragraph1">Ich lebe mit meiner Familie am Dreiländereck zwischen Schwarzwald, Bodensee und der Schweiz &mdash; der perfekten Kulisse für unvergessliche Hochzeiten.</p>
+          <p data-cms="about.paragraph2">Über 18 Jahre Eventerfahrung, eine Ausbildung zur Veranstaltungskauffrau und ein Marketingstudium begleiten mich. Was bleibt: die Liebe zum Detail und der Wunsch, eure Geschichte in einen Tag zu übersetzen, den ihr nie vergesst.</p>
+          <a href="ueber-mich.html" class="btn btn--outline" data-cms="about.ctaText">Mehr über mich</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 3. HERAUSFORDERUNGEN als FAQ ═══ -->
   <section class="section section--cream" id="herausforderungen">
     <div class="container">
-      <div class="text-center reveal" style="margin-bottom:var(--space-xl)">
+      <div class="herausforderungen-header text-center reveal">
         <span class="section-label" data-cms="challenges.label">Warum eine Hochzeitsplanerin?</span>
-        <h2 class="section-title" data-cms="challenges.title">Eure Herausforderungen — unsere Stärken</h2>
+        <h2 class="section-title" data-cms="challenges.title">Eure Herausforderungen &mdash; meine Antworten</h2>
+        <p class="herausforderungen-lead" data-cms="challenges.lead">Plant ihr eure Hochzeit nebenbei? Sucht ihr Klarheit zwischen Pinterest, Bauchgefühl und Excel? Hier sind die drei Dinge, die ich euch von den Schultern nehme.</p>
+        <span class="herausforderungen-script" data-cms="challenges.imageAccent">Ich nehme euch mit.</span>
       </div>
-      <div class="challenges-grid challenges-grid--with-image">
-        <div class="challenge-list reveal-left">
-          <span class="challenge-list-heading challenge-list-heading--dark" data-cms="challenges.problemsHeading">Typische Herausforderungen</span>
-          <div class="challenge-item">
-            <div class="challenge-item__icon"><i class="ph ph-clock-countdown"></i></div>
-            <div class="challenge-item__content">
-              <h4 data-cms="challenges.problems.0.title">Zeitaufwand unterschätzt</h4>
-              <p data-cms="challenges.problems.0.text">200–300 Stunden stecken in einer vollständigen Hochzeitsplanung — neben Beruf und Alltag kaum machbar.</p>
-            </div>
-          </div>
-          <div class="challenge-item">
-            <div class="challenge-item__icon"><i class="ph ph-currency-circle-dollar"></i></div>
-            <div class="challenge-item__content">
-              <h4 data-cms="challenges.problems.1.title">Budgetfallen</h4>
-              <p data-cms="challenges.problems.1.text">Versteckte Kosten, fehlender Überblick und der berüchtigte „Hochzeitsaufschlag" sprengen schnell den Rahmen.</p>
-            </div>
-          </div>
-          <div class="challenge-item">
-            <div class="challenge-item__icon"><i class="ph ph-heart-break"></i></div>
-            <div class="challenge-item__content">
-              <h4 data-cms="challenges.problems.2.title">Stress am großen Tag</h4>
-              <p data-cms="challenges.problems.2.text">Wer koordiniert, kann nicht feiern. Viele Paare genießen ihren eigenen Tag kaum — weil sie funktionieren statt fühlen.</p>
-            </div>
-          </div>
+
+      <div class="faq-list reveal" style="max-width:780px;margin:0 auto">
+        <div class="faq-item">
+          <button class="faq-question"><span class="faq-num">01</span><span data-cms="challenges.problems.0.title">Habt ihr den Zeitaufwand unterschätzt?</span><span class="faq-icon"></span></button>
+          <div class="faq-answer"><div class="faq-answer__inner" data-cms="challenges.solutions.0.text">200–300 Stunden stecken in einer vollständigen Hochzeitsplanung &mdash; neben Beruf und Alltag kaum machbar. Ich übernehme die komplette Organisation, von der ersten Idee bis zum letzten Detail. Ihr genießt die Vorfreude.</div></div>
         </div>
-        <div class="challenges-center-image reveal">
-          <img data-cms-src="challenges.centerImage" src="images/hochzeitsplanerin-miriam-stabile-sueddeutschland-682x1024.jpg" alt="Hochzeitsplanerin Miriam Stabile">
+        <div class="faq-item">
+          <button class="faq-question"><span class="faq-num">02</span><span data-cms="challenges.problems.1.title">Sorgt ihr euch um Budgetfallen?</span><span class="faq-icon"></span></button>
+          <div class="faq-answer"><div class="faq-answer__inner" data-cms="challenges.solutions.1.text">Versteckte Kosten und der berüchtigte „Hochzeitsaufschlag" sprengen schnell den Rahmen. Ich plane mit transparenten Festpreisen, provisionsfrei und mit Agentur-Rabatten &mdash; ich handle stets in eurem Interesse, unabhängig vom Budget.</div></div>
         </div>
-        <div class="challenge-list solution-list reveal-right">
-          <span class="challenge-list-heading challenge-list-heading--gold" data-cms="challenges.solutionsHeading">So hilft be2gether</span>
-          <div class="challenge-item">
-            <div class="challenge-item__icon"><i class="ph ph-check-circle"></i></div>
-            <div class="challenge-item__content">
-              <h4 data-cms="challenges.solutions.0.title">Strukturierte Planung</h4>
-              <p data-cms="challenges.solutions.0.text">Ich übernehme die komplette Organisation — von der ersten Idee bis zum letzten Detail. Ihr genießt die Vorfreude.</p>
-            </div>
-          </div>
-          <div class="challenge-item">
-            <div class="challenge-item__icon"><i class="ph ph-shield-check"></i></div>
-            <div class="challenge-item__content">
-              <h4 data-cms="challenges.solutions.1.title">Transparente Festpreise</h4>
-              <p data-cms="challenges.solutions.1.text">Provisionsfrei, mit Agentur-Rabatten — ich handle stets in eurem Interesse, unabhängig vom Budget.</p>
-            </div>
-          </div>
-          <div class="challenge-item">
-            <div class="challenge-item__icon"><i class="ph ph-champagne"></i></div>
-            <div class="challenge-item__content">
-              <h4 data-cms="challenges.solutions.2.title">Voller Genuss am Hochzeitstag</h4>
-              <p data-cms="challenges.solutions.2.text">Am Tag selbst koordiniere ich alles im Hintergrund — damit ihr jeden Moment mit euren Liebsten genießen könnt.</p>
-            </div>
-          </div>
+        <div class="faq-item">
+          <button class="faq-question"><span class="faq-num">03</span><span data-cms="challenges.problems.2.title">Wer koordiniert am großen Tag?</span><span class="faq-icon"></span></button>
+          <div class="faq-answer"><div class="faq-answer__inner" data-cms="challenges.solutions.2.text">Wer koordiniert, kann nicht feiern. Am Hochzeitstag selbst koordiniere ich alles im Hintergrund &mdash; damit ihr jeden Moment mit euren Liebsten genießen könnt, statt nur zu funktionieren.</div></div>
         </div>
-      </div>
-      <div class="text-center reveal" style="margin-top:var(--space-xl)">
-        <a href="kontakt.html" class="btn btn--primary" data-cms="challenges.ctaText">Jetzt beraten lassen</a>
       </div>
     </div>
   </section>
-
-  <!-- ═══ 2. CTA BANNER ═══ -->
-  <div class="cta-banner">
-    <div class="cta-banner__bg"><img data-cms-src="ctaBanner1.image" src="images/save-the-date-blattwerkstatt.jpg" alt=""></div>
-    <div class="cta-banner__overlay"></div>
-    <div class="cta-banner__content reveal">
-      <h2 data-cms="ctaBanner1.title">Ich freue mich euch persönlich kennenzulernen</h2>
-      <p data-cms="ctaBanner1.text">Lasst uns gemeinsam euren Traumtag planen — unverbindlich und kostenfrei.</p>
-      <a href="kontakt.html" class="btn btn--white" data-cms="ctaBanner1.ctaText">Erstgespräch anfragen</a>
-    </div>
-  </div>
 
   <!-- ═══ 3. SERVICES ═══ -->
   <section class="section" id="leistungen">
@@ -222,44 +186,45 @@
           </div>
         </div>
       </div>
-      <div class="text-center reveal" style="margin-top:var(--space-xl)">
-        <a href="kontakt.html" class="btn btn--primary" data-cms="steps.ctaText">Jetzt beraten lassen</a>
-      </div>
     </div>
   </section>
 
-  <!-- ═══ ÜBER MICH ═══ -->
-  <section class="section" id="ueber-mich">
+  <!-- ═══ 5. MID CTA — first ask, after they understand the path ═══ -->
+  <div class="cta-banner">
+    <div class="cta-banner__bg"><img data-cms-src="midCta.image" src="images/save-the-date-blattwerkstatt.jpg" alt=""></div>
+    <div class="cta-banner__overlay"></div>
+    <div class="cta-banner__content reveal">
+      <h2 data-cms="midCta.title">Bereit für den ersten Schritt?</h2>
+      <p data-cms="midCta.text">Erzählt mir von eurem Tag &mdash; unverbindlich, persönlich und mit Zeit für eure Geschichte.</p>
+      <a href="kontakt.html" class="btn btn--white" data-cms="midCta.ctaText">Kennenlerngespräch vereinbaren</a>
+    </div>
+  </div>
+
+  <!-- ═══ 6. VALUES BANNER (Background / Perfektion / Familie) ═══ -->
+  <section class="values-banner section--cream">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-image reveal-left">
-          <img data-cms-src="about.image" src="images/hochzeitsplanerin-miriam-stabile-sueddeutschland-682x1024.jpg" alt="Miriam Stabile — Hochzeitsplanerin">
+      <div class="values-banner__grid stagger-children">
+        <div class="values-banner__item">
+          <div class="values-banner__icon"><i class="ph ph-graduation-cap"></i></div>
+          <span class="values-banner__num">01 / 03</span>
+          <h3 class="values-banner__title">Background</h3>
+          <p class="values-banner__text">Über 18 Jahre Eventerfahrung, ausgebildete Veranstaltungskauffrau und Marketingstudium &mdash; Eventplanung ist meine Leidenschaft.</p>
         </div>
-        <div class="about-content reveal-right">
-          <span class="section-label" data-cms="about.label">Über mich</span>
-          <h2 data-cms="about.title">Hi, ich bin Miriam!</h2>
-          <p data-cms="about.paragraph1">Ich lebe mit meiner Familie in Süddeutschland, direkt an der Grenze zur Schweiz und Frankreich. Unsere wunderschöne Region mit dem Schwarzwald, dem Bodensee und der Schweiz bietet die perfekte Kulisse für unvergessliche Hochzeiten.</p>
-          <p data-cms="about.paragraph2">Mit über 18 Jahren Erfahrung, einer Ausbildung zur Veranstaltungskauffrau und einem Marketingstudium habe ich bereits Events aller Art begleitet. Eventplanung ist meine Leidenschaft — kreativ sein, Herausforderungen meistern und unvergessliche Momente schaffen.</p>
-          <a href="kontakt.html" class="btn btn--primary" data-cms="about.ctaText">Jetzt beraten lassen</a>
-          <div class="fun-facts">
-            <div class="fun-fact"><span class="fun-fact__emoji"><i class="ph ph-lightbulb"></i></span> <span data-cms="about.funFacts.0">Nachts fallen mir die besten Ideen ein — teilen kann ich sie erst nach dem Frühstück.</span></div>
-            <div class="fun-fact"><span class="fun-fact__emoji"><i class="ph ph-device-mobile"></i></span> <span data-cms="about.funFacts.1">Die Tastenkombination fürs Ausschalten? Hunderte Screenshots sind die Folge.</span></div>
-            <div class="fun-fact"><span class="fun-fact__emoji"><i class="ph ph-chat-teardrop-text"></i></span> <span data-cms="about.funFacts.2">Sprichwörter durcheinander bringen ist meine Spezialität.</span></div>
-            <div class="fun-fact"><span class="fun-fact__emoji"><i class="ph ph-sneaker-move"></i></span> <span data-cms="about.funFacts.3">Matschparcours mit Freundinnen? Immer! Just for fun.</span></div>
-          </div>
-          <div class="partner-logos">
-            <img src="images/avantgarde-academy.png" alt="Avantgarde Academy">
-            <img src="images/Listed-on-Hochzeitsportal24-350x350px.png" alt="Hochzeitsportal24">
-            <img src="images/badge-weddyplace.png" alt="WeddyPlace">
-            <img src="images/Hochrheinwedding.png" alt="Hochrheinwedding">
-            <img src="images/ehemomente-hochzeitswebseite-badge.webp" alt="ehemomente">
-          </div>
+        <div class="values-banner__item">
+          <div class="values-banner__icon"><i class="ph ph-sparkle"></i></div>
+          <span class="values-banner__num">02 / 03</span>
+          <h3 class="values-banner__title">Perfektion</h3>
+          <p class="values-banner__text">Liebe zum Detail, strukturierte Planung und ein wachsames Auge auf jeden Moment &mdash; von der ersten Idee bis zum letzten Tanz.</p>
+        </div>
+        <div class="values-banner__item">
+          <div class="values-banner__icon"><i class="ph ph-heart"></i></div>
+          <span class="values-banner__num">03 / 03</span>
+          <h3 class="values-banner__title">Familie</h3>
+          <p class="values-banner__text">Familie ist mein Anker. Ich begleite eure Hochzeit mit Wärme, Empathie und einem offenen Ohr für eure Geschichte.</p>
         </div>
       </div>
     </div>
   </section>
-
-
 
   <!-- ═══ TESTIMONIALS (Real Google Reviews — Marquee) ═══ -->
   <section class="section" id="bewertungen">
@@ -290,9 +255,29 @@
         <div class="testimonial-card"><div class="testimonial-card__header"><i class="ph ph-google-logo"></i><div class="testimonial-card__stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div></div><p class="testimonial-card__text">Wer eine kompetente und empathische Weddingplannerin im Raum Schweiz, Schwarzwald und Bodensee sucht, der ist bei Miriam bestens aufgehoben. Gemeimsam mit euch wird sie eure Traumhochzeit Wirklichkeit werden lassen.</p><div class="testimonial-card__author">Helene Müller</div></div>
       </div>
     </div>
-    <div class="container">
-      <div class="text-center reveal" style="margin-top:var(--space-xl)">
-        <a href="kontakt.html" class="btn btn--outline">Jetzt beraten lassen</a>
+  </section>
+
+  <!-- ═══ POST-TESTIMONIALS CTA — riding the social-proof wave ═══ -->
+  <div class="cta-banner">
+    <div class="cta-banner__bg"><img data-cms-src="reviewsCta.image" src="images/glueckliches-brautpaar.jpg" alt=""></div>
+    <div class="cta-banner__overlay"></div>
+    <div class="cta-banner__content reveal">
+      <h2 data-cms="reviewsCta.title">Soll eure Geschichte die nächste sein?</h2>
+      <p data-cms="reviewsCta.text">Wenn euch die Worte unserer Paare berühren &mdash; lasst uns reden, wie eure Geschichte aussehen kann.</p>
+      <a href="kontakt.html" class="btn btn--white" data-cms="reviewsCta.ctaText">Kennenlerngespräch vereinbaren</a>
+    </div>
+  </div>
+
+  <!-- ═══ PARTNER BANNER (round logos, full-width) ═══ -->
+  <section class="partner-banner reveal">
+    <div class="partner-banner__inner">
+      <span class="partner-banner__label">Empfohlen &amp; ausgezeichnet</span>
+      <div class="partner-banner__logos">
+        <div class="partner-banner__logo"><img src="images/avantgarde-academy.png" alt="Avantgarde Academy"></div>
+        <div class="partner-banner__logo"><img src="images/Listed-on-Hochzeitsportal24-350x350px.png" alt="Hochzeitsportal24"></div>
+        <div class="partner-banner__logo"><img src="images/badge-weddyplace.png" alt="WeddyPlace"></div>
+        <div class="partner-banner__logo"><img src="images/Hochrheinwedding.png" alt="Hochrheinwedding"></div>
+        <div class="partner-banner__logo"><img src="images/ehemomente-hochzeitswebseite-badge.webp" alt="ehemomente"></div>
       </div>
     </div>
   </section>
@@ -334,26 +319,6 @@
           <div class="faq-answer"><div class="faq-answer__inner" data-cms="faq.items.6.answer">Falls ich ausfalle, sorge ich selbstverständlich für qualifizierten Ersatz. Alle Details und Absprachen bleiben erhalten, sodass eure Hochzeit weiterhin reibungslos betreut wird.</div></div>
         </div>
       </div>
-      <div class="text-center reveal" style="margin-top:var(--space-xl)">
-        <a href="kontakt.html" class="btn btn--primary" data-cms="faq.ctaText">Jetzt beraten lassen</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ STANDORT / GOOGLE MAPS ═══ -->
-  <section class="section" id="standort">
-    <div class="container">
-      <div class="text-center reveal" style="margin-bottom:var(--space-xl)">
-        <span class="section-label" data-cms="location.label">Standort</span>
-        <h2 class="section-title" data-cms="location.title">Hier findet ihr uns</h2>
-        <p class="section-subtitle mx-auto" data-cms="location.subtitle">Laufenburg (Baden) — im Herzen des Dreiländerecks, zwischen Schwarzwald, Bodensee und der Schweiz.</p>
-      </div>
-      <div class="reveal" style="border-radius:var(--border-radius);overflow:hidden;box-shadow:var(--shadow-md)">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2727.5!2d8.0426034!3d47.5602943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479045bbc03c84f7%3A0x53c5c2e89d6877f8!2sbe2gether%20weddings%20%26%20events%20-%20Hochzeitsplanung!5e0!3m2!1sde!2sde!4v1700000000000!5m2!1sde!2sde"
-          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade" title="Standort be2gether weddings"></iframe>
-      </div>
     </div>
   </section>
 
@@ -363,8 +328,8 @@
     <div class="cta-banner__overlay"></div>
     <div class="cta-banner__content reveal">
       <h2 data-cms="ctaBanner2.title">Bereit für euren Traumtag?</h2>
-      <p data-cms="ctaBanner2.text">Fragt jetzt euer kostenfreies und unverbindliches Erstgespräch an.</p>
-      <a href="kontakt.html" class="btn btn--white" data-cms="ctaBanner2.ctaText">Erstgespräch anfragen</a>
+      <p data-cms="ctaBanner2.text">Lasst uns reden &mdash; unverbindlich, persönlich, kostenfrei.</p>
+      <a href="kontakt.html" class="btn btn--white" data-cms="ctaBanner2.ctaText">Kennenlerngespräch vereinbaren</a>
     </div>
   </div>
 
@@ -380,6 +345,7 @@
         <div class="footer__links">
           <a href="index.html">Home</a>
           <a href="leistungen.html">Leistungen</a>
+          <a href="ueber-mich.html">Über mich</a>
           <a href="impressionen.html">Impressionen</a>
           <a href="blog.html">Blog</a>
           <a href="kontakt.html">Kontakt</a>
@@ -414,6 +380,7 @@
       <div class="footer__seo" data-cms="site.footer.seo">Hochzeit Freiburg &middot; Hochzeit Basel &middot; Hochzeit Zürich &middot; Hochzeit Schweiz &middot; Hochzeit Deutschland</div>
     </div>
   </footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/cms-config.js"></script>

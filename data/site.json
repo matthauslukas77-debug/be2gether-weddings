@@ -17,6 +17,15 @@
     "instagram": "https://www.instagram.com/be2gether_weddings/",
     "facebook": "https://www.facebook.com/people/Be2gether-weddings-events/61560067391708/"
   },
+  "cta": {
+    "label": "Kennenlerngespräch vereinbaren",
+    "labelShort": "Kennenlerngespräch",
+    "href": "kontakt.html"
+  },
+  "whatsapp": {
+    "number": "+49 173 4758590",
+    "href": "https://wa.me/491734758590?text=Hallo%20Miriam%2C%20ich%20interessiere%20mich%20f%C3%BCr%20deine%20Hochzeitsplanung."
+  },
   "footer": {
     "copyright": "© 2026 be2gether weddings & events. Alle Rechte vorbehalten.",
     "seo": "Hochzeit Freiburg · Hochzeit Basel · Hochzeit Zürich · Hochzeit Schweiz · Hochzeit Deutschland"

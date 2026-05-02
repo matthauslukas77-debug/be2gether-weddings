@@ -1,56 +1,53 @@
 {
   "meta": {
     "title": "Leistungen - be2gether weddings | Hochzeitsplaner",
-    "description": "Anspruchsvolle Hochzeitsplanung aus Süddeutschland, aktiv in der Schweiz, der Bodensee-Region und im Südschwarzwald."
+    "description": "Komplettplanung, Teilplanung, Tagesbegleitung, Location-Scouting — anspruchsvolle Hochzeitsplanung aus Süddeutschland, aktiv in der Schweiz."
   },
   "hero": {
-    "image": "images/eheringe-juwelier.png",
-    "title": "Meine Leistungen",
-    "subtitle": "Individuelle Hochzeitsplanung — so einzigartig wie eure Liebe."
+    "label": "Meine Leistungen",
+    "title": "Vier Wege, <em>einen Tag</em><br>zu schenken.",
+    "subtitle": "Ob alles aus einer Hand oder nur am Tag selbst — ich begleite euch genau so, wie ihr es braucht."
   },
   "services": [
     {
       "id": "komplett",
       "image": "images/braut-mit-fascinator-731x1024.jpg",
-      "label": "Full Service",
-      "title": "Komplettplanung",
-      "paragraph1": "Bei der Komplettplanung übernehme ich die gesamte Organisation eurer Hochzeit — von den ersten Ideen bis zum großen Tag. Gemeinsam erarbeiten wir ein individuelles Konzept, das eure Liebe und Persönlichkeit in jedem Detail widerspiegelt.",
-      "paragraph2": "Ich kümmere mich um die Auswahl der perfekten Location, die passenden Dienstleister, Design und Dekoration. Alle organisatorischen Aufgaben, Termine und Absprachen halte ich im Blick. Am Hochzeitstag bin ich vor Ort und koordiniere jeden Ablauf.",
-      "ctaText": "Jetzt beraten lassen"
+      "num": "01 / 04 — Full Service",
+      "title": "Komplettplanung.",
+      "body": "<p>Bei der Komplettplanung übernehme ich die gesamte Organisation eurer Hochzeit — von den ersten Ideen bis zum großen Tag. Gemeinsam erarbeiten wir ein Konzept, das eure Liebe und Persönlichkeit in jedem Detail widerspiegelt.</p><p>Ich kümmere mich um Location, Dienstleister, Design und Dekoration. Termine, Absprachen und Abläufe halte ich im Blick. Am Hochzeitstag bin ich vor Ort und koordiniere alles — ihr feiert.</p>"
     },
     {
       "id": "teil",
       "image": "images/brautkleid-details-683x1024.jpg",
-      "label": "Flexibel",
-      "title": "Teilplanung",
-      "paragraph1": "Habt ihr eure Wunschlocation bereits gesichert? Großartig! Mit meiner Teilplanung greife ich genau dort auf, wo ihr aufgehört habt, und übernehme die restlichen organisatorischen Aufgaben.",
-      "paragraph2": "In einem unverbindlichen Erstgespräch schauen wir uns gemeinsam eure bisherigen Planungen an und klären, welche Unterstützung ihr euch wünscht.",
-      "ctaText": "Jetzt beraten lassen"
+      "num": "02 / 04 — Flexibel",
+      "title": "Teilplanung.",
+      "body": "<p>Habt ihr eure Wunschlocation schon gesichert? Großartig. Mit der Teilplanung greife ich genau dort auf, wo ihr aufgehört habt — und übernehme die Aufgaben, die ihr abgeben wollt.</p><p>In einem unverbindlichen Erstgespräch schauen wir uns gemeinsam eure Planung an und klären, welche Unterstützung ihr euch wünscht.</p>"
     },
     {
       "id": "tages",
       "image": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg",
-      "label": "Am großen Tag",
-      "title": "Tagesbegleitung",
-      "paragraph1": "Eure Location steht und alle Dienstleister sind gebucht? Super, dann kann die Hochzeit kommen! Vor der Hochzeit übergebt Ihr mir die komplette Planung und ich halte Euch den Rücken frei.",
-      "paragraph2": "Ich koordiniere am Hochzeitstag den reibungslosen Ablauf mit allen Dienstleistern — damit ihr euren Tag in vollen Zügen genießen könnt.",
-      "ctaText": "Jetzt beraten lassen"
+      "num": "03 / 04 — Am großen Tag",
+      "title": "Tagesbegleitung.",
+      "body": "<p>Eure Location steht, alle Dienstleister sind gebucht? Dann kann die Hochzeit kommen. Vor dem Tag übergebt ihr mir die komplette Planung — und ich halte euch den Rücken frei.</p><p>Ich koordiniere den reibungslosen Ablauf mit allen Dienstleistern, damit ihr euren Tag in vollen Zügen genießen könnt.</p>"
     },
     {
       "id": "location",
       "image": "images/brautstrauss-boho-683x1024.jpg",
-      "label": "Traumort finden",
-      "title": "Location-Scouting",
-      "paragraph1": "Die richtige Location ist der Schlüssel zu einer unvergesslichen Hochzeit. Ob romantisches Schloss, moderne Stadtlocation oder idyllischer Garten — ich kenne die versteckten Perlen und besten Plätze.",
-      "paragraph2": "Mit meinem Location-Scouting erspare ich euch stundenlange Recherchen und zeige euch ausgewählte Orte, die eure Hochzeit einzigartig machen.",
-      "ctaText": "Jetzt beraten lassen"
+      "num": "04 / 04 — Traumort finden",
+      "title": "Location-Scouting.",
+      "body": "<p>Die richtige Location ist der Schlüssel zu einer unvergesslichen Hochzeit. Romantisches Schloss, moderne Stadtlocation oder idyllischer Garten — ich kenne die versteckten Perlen und besten Plätze in Süddeutschland und der Schweiz.</p><p>Mit dem Location-Scouting erspare ich euch stundenlange Recherchen und zeige euch ausgewählte Orte, die zu eurer Geschichte passen.</p>"
     }
   ],
   "promise": {
     "label": "Mein Versprechen",
-    "title": "Transparenz & Vertrauen",
-    "paragraph1": "Ich arbeite provisionsfrei und biete Festpreise an. Alle Dienstleister senden euch direkt den Vertrag und die Abrechnung zu. Häufig könnt ihr von meinem Agentur-Rabatt profitieren, den ich zu 100% an euch weitergebe.",
-    "paragraph2": "Auch eure Gäste können sich jederzeit an mich wenden — für Fragen zu Anreise, Übernachtung, Beiträgen und Überraschungen.",
-    "ctaText": "Erstgespräch anfragen"
+    "title": "Transparenz & Vertrauen.",
+    "paragraph1": "Ich arbeite provisionsfrei und biete Festpreise. Alle Dienstleister senden euch direkt den Vertrag und die Abrechnung. Häufig könnt ihr von meinem Agentur-Rabatt profitieren — den ich zu 100 % an euch weitergebe.",
+    "paragraph2": "Auch eure Gäste können sich jederzeit an mich wenden — für Fragen zu Anreise, Übernachtung, Beiträgen und Überraschungen."
+  },
+  "finalCta": {
+    "image": "images/brautstrauss-elegant.jpg",
+    "title": "Welcher Weg passt zu euch?",
+    "text": "Lasst uns reden — unverbindlich, persönlich und mit Zeit für eure Geschichte.",
+    "ctaText": "Kennenlerngespräch vereinbaren"
   }
 }

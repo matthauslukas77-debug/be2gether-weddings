@@ -17,12 +17,15 @@
     return path.split('.').reduce((acc, key) => (acc == null ? acc : acc[key]), obj);
   }
 
-  function deepMerge(base, override) {
+  function deepMerge(base, override, key) {
     if (override === undefined) return base;
+    // Galleries are JSON-authoritative — Supabase override of the gallery list
+    // would otherwise replace the full list with whatever is stored.
+    if (key === 'gallery' && Array.isArray(base)) return base;
     if (Array.isArray(override)) return override;
     if (base && override && typeof base === 'object' && typeof override === 'object') {
       const out = Array.isArray(base) ? base.slice() : { ...base };
-      for (const k of Object.keys(override)) out[k] = deepMerge(base[k], override[k]);
+      for (const k of Object.keys(override)) out[k] = deepMerge(base[k], override[k], k);
       return out;
     }
     return override;
@@ -135,23 +138,36 @@
     }
   }
 
-  async function init() {
-    const [siteBase, pageBase, overrides] = await Promise.all([
-      loadJson('data/site.json'),
-      loadJson('data/' + page + '.json'),
-      loadOverrides(),
-    ]);
-
-    const site = deepMerge(siteBase, overrides.site);
-    const pageData = deepMerge(pageBase, overrides.page);
-    const data = { ...pageData, site };
-
+  function render(data) {
     processArrays(document, data);
     applyBindings(document, data, { skipEach: true });
     applyMeta(data);
+  }
 
+  async function init() {
+    // Phase 1 — paint from local JSON immediately. No Supabase wait.
+    const [siteBase, pageBase] = await Promise.all([
+      loadJson('data/site.json'),
+      loadJson('data/' + page + '.json'),
+    ]);
+
+    let data = { ...pageBase, site: siteBase };
+    render(data);
     document.documentElement.classList.add('cms-ready');
     document.dispatchEvent(new CustomEvent('cms:ready', { detail: data }));
+
+    // Phase 2 — enhance with Supabase overrides if any (slower, may not arrive)
+    const overrides = await loadOverrides();
+    const hasOverrides =
+      Object.keys(overrides.site || {}).length ||
+      Object.keys(overrides.page || {}).length;
+    if (hasOverrides) {
+      const site = deepMerge(siteBase, overrides.site);
+      const pageData = deepMerge(pageBase, overrides.page);
+      data = { ...pageData, site };
+      render(data);
+      document.dispatchEvent(new CustomEvent('cms:enhanced', { detail: data }));
+    }
   }
 
   if (document.readyState === 'loading') {
