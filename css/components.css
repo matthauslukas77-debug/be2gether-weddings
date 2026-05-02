@@ -354,8 +354,10 @@
 
 /* ── Image-background hero variant ── */
 .aboutpage-hero--image{position:relative;background:transparent;min-height:min(58vh,540px);display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding-top:clamp(7rem,12vw,10rem);padding-bottom:clamp(4rem,8vw,6.5rem)}
-.aboutpage-hero__bg{position:absolute;inset:0;z-index:0}
-.aboutpage-hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center 32%;display:block;transform:scale(1.02)}
+.aboutpage-hero__bg{position:absolute;inset:0;z-index:0;background:#1a1a1a}
+@keyframes heroBgFadeIn{to{opacity:1}}
+.aboutpage-hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center 32%;display:block;transform:scale(1.02);opacity:0;animation:heroBgFadeIn .35s 1.2s ease forwards}
+html.cms-ready .aboutpage-hero__bg img{opacity:1;animation:none}
 .aboutpage-hero__bg::after{content:'';position:absolute;inset:0;background:rgba(20,20,20,0.8)}
 .aboutpage-hero--image>:not(.aboutpage-hero__bg){position:relative;z-index:1}
 .aboutpage-hero--image .aboutpage-hero__label{color:var(--clr-gold-light);text-shadow:0 2px 12px rgba(0,0,0,0.5)}
