@@ -32,13 +32,13 @@
     "image": "images/save-the-date-blattwerkstatt.jpg",
     "title": "Bereit für den ersten Schritt?",
     "text": "Erzählt mir von eurem Tag — unverbindlich, persönlich und mit Zeit für eure Geschichte.",
-    "ctaText": "Kennenlerngespräch vereinbaren"
+    "ctaText": "Erstgespräch vereinbaren"
   },
   "reviewsCta": {
     "image": "images/glueckliches-brautpaar.jpg",
     "title": "Soll eure Geschichte die nächste sein?",
     "text": "Wenn euch die Worte unserer Paare berühren — lasst uns reden, wie eure Geschichte aussehen kann.",
-    "ctaText": "Kennenlerngespräch vereinbaren"
+    "ctaText": "Erstgespräch vereinbaren"
   },
   "services": {
     "label": "Unsere Leistungen",
@@ -56,7 +56,7 @@
     "label": "Euer Weg zur Traumhochzeit",
     "title": "Schritte zu eurer Traumhochzeit",
     "items": [
-      { "image": "images/brautpaar-in-der-schweiz.jpg", "title": "Kennenlerngespräch", "text": "In einem lockeren Gespräch besprechen wir eure Vorstellungen und Wünsche für den großen Tag. Ihr erfahrt mehr über meine Leistungen." },
+      { "image": "images/brautpaar-in-der-schweiz.jpg", "title": "Erstgespräch", "text": "In einem lockeren Gespräch besprechen wir eure Vorstellungen und Wünsche für den großen Tag. Ihr erfahrt mehr über meine Leistungen." },
       { "image": "images/hochzeitspapeterie-200x300.jpg", "title": "Konzeptentwicklung", "text": "Basierend auf euren Ideen entwickle ich ein individuelles Hochzeitskonzept, das eure Persönlichkeit widerspiegelt." },
       { "image": "images/hochzeitsdekoration-blumenschmuck-200x300.jpg", "title": "Organisation", "text": "Von Dienstleisterauswahl bis Budgetplanung — ich kümmere mich um alle organisatorischen Details." },
       { "image": "images/brautpaar-basel-200x300.jpg", "title": "Hochzeitstag", "text": "Am großen Tag koordiniere ich alles vor Ort, damit ihr euren Tag in vollen Zügen genießen könnt." }
@@ -117,6 +117,6 @@
     "image": "images/brautstrauss-elegant.jpg",
     "title": "Bereit für euren Traumtag?",
     "text": "Fragt jetzt euer kostenfreies und unverbindliches Erstgespräch an.",
-    "ctaText": "Kennenlerngespräch vereinbaren"
+    "ctaText": "Erstgespräch vereinbaren"
   }
 }

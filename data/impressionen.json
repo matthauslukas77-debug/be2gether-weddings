@@ -12,21 +12,21 @@
     "text": "Weniger erzählen, mehr zeigen. Hier sind Augenblicke aus echten Hochzeiten — und ein paar leise Details, die zwischen den großen Momenten leben."
   },
   "gallery": [
-    { "image": "images/Herbsthochzeit.png", "alt": "Herbsthochzeit im Schwarzwald", "caption": "Herbsthochzeit, Schwarzwald." },
+    { "image": "images/Herbsthochzeit.jpg", "alt": "Herbsthochzeit im Schwarzwald", "caption": "Herbsthochzeit, Schwarzwald." },
     { "image": "images/glueckliches-brautpaar.jpg", "alt": "Glückliches Brautpaar", "caption": "Der Moment danach." },
     { "image": "images/braut-mit-fascinator-731x1024.jpg", "alt": "Braut mit Fascinator", "caption": "Detail, das bleibt." },
     { "image": "images/brautkleid-details-683x1024.jpg", "alt": "Brautkleid Details", "caption": "Stoff & Stille." },
     { "image": "images/brautpaar-aarau.jpg", "alt": "Brautpaar Aarau", "caption": "Aarau." },
-    { "image": "images/mari-lezhava-egz7W1zHYbU-unsplash-Kopie-scaled.png", "alt": "Hochzeitsdetail", "caption": "Ein leiser Augenblick." },
+    { "image": "images/mari-lezhava-egz7W1zHYbU-unsplash-Kopie-scaled.jpg", "alt": "Hochzeitsdetail", "caption": "Ein leiser Augenblick." },
     { "image": "images/heiraten-im-schwarzwald.jpg", "alt": "Heiraten im Schwarzwald", "caption": "Schwarzwald." },
     { "image": "images/brautstrauss-boho-683x1024.jpg", "alt": "Brautstrauß Boho", "caption": "Boho." },
     { "image": "images/brautpaar-mit-hochzeitsplanerin.jpg", "alt": "Brautpaar mit Hochzeitsplanerin", "caption": "Gemeinsam." },
-    { "image": "images/michael-morse-1463389.png", "alt": "Hochzeitsmoment", "caption": "Der Augenblick." },
+    { "image": "images/michael-morse-1463389.jpg", "alt": "Hochzeitsmoment", "caption": "Der Augenblick." },
     { "image": "images/eheringe.jpg", "alt": "Eheringe", "caption": "Versprochen." },
     { "image": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg", "alt": "Braut mit Pferd in Süddeutschland", "caption": "Süddeutschland." },
     { "image": "images/ringtausch-brautpaar.jpg", "alt": "Ringtausch", "caption": "Der Tausch." },
     { "image": "images/brautpaar-in-der-schweiz.jpg", "alt": "Brautpaar in der Schweiz", "caption": "Schweiz." },
-    { "image": "images/polina-tankilevitch-5255510.png", "alt": "Hochzeitsstimmung", "caption": "Atmosphäre." },
+    { "image": "images/polina-tankilevitch-5255510.jpg", "alt": "Hochzeitsstimmung", "caption": "Atmosphäre." },
     { "image": "images/brautstrauss-elegant.jpg", "alt": "Eleganter Brautstrauß", "caption": "Hände, die festhalten." },
     { "image": "images/save-the-date-blattwerkstatt.jpg", "alt": "Save the Date Papeterie", "caption": "Worte zum Tag." },
     { "image": "images/verlobung.jpg", "alt": "Verlobung", "caption": "Der Anfang." },
@@ -48,7 +48,7 @@
     { "image": "images/153-MZF_5421-200x300.jpg", "alt": "Hochzeitsdetail", "caption": "Detail." },
     { "image": "images/518844108-1-scaled.jpg", "alt": "Hochzeit", "caption": "Augenblick." },
     { "image": "images/mlkbnl-11652626-683x1024.jpg", "alt": "Brautpaar", "caption": "Zwischen den Zeilen." },
-    { "image": "images/eheringe-juwelier.png", "alt": "Eheringe", "caption": "Aus Gold." },
+    { "image": "images/eheringe-juwelier.jpg", "alt": "Eheringe", "caption": "Aus Gold." },
     { "image": "images/brautpaar-im-spiegel-rust.jpg", "alt": "Brautpaar im Spiegel", "caption": "Spiegelmoment." },
     { "image": "images/braeutigam-mit-hochzeitsplaner.jpg", "alt": "Bräutigam mit Hochzeitsplaner", "caption": "Vor dem Tag." },
     { "image": "images/brautpaar-mit-hochzeitsplanerin-300x200.jpg", "alt": "Brautpaar mit Hochzeitsplanerin", "caption": "Hand in Hand." },
@@ -64,6 +64,6 @@
     "image": "images/save-the-date-blattwerkstatt.jpg",
     "title": "Lasst uns reden.",
     "text": "Unverbindlich, persönlich, mit Zeit für eure Vision.",
-    "ctaText": "Kennenlerngespräch vereinbaren"
+    "ctaText": "Erstgespräch vereinbaren"
   }
 }

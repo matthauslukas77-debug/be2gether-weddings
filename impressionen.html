@@ -20,7 +20,7 @@
         <a href="ueber-mich.html">Über mich</a>
         <a href="impressionen.html" class="active">Impressionen</a>
         <a href="blog.html">Blog</a>
-        <div class="navbar__cta"><a href="kontakt.html" class="btn btn--primary">Kennenlerngespräch</a></div>
+        <div class="navbar__cta"><a href="kontakt.html" class="btn btn--primary">Erstgespräch</a></div>
       </div>
       <button class="navbar__hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
     </div>
@@ -29,7 +29,7 @@
 
   <!-- ═══ EDITORIAL HERO ═══ -->
   <section class="aboutpage-hero aboutpage-hero--image">
-    <div class="aboutpage-hero__bg"><img src="images/vozradui-12298495.png" alt=""></div>
+    <div class="aboutpage-hero__bg"><img src="images/vozradui-12298495.jpg" alt=""></div>
     <h1 class="aboutpage-hero__title" data-cms="hero.title">Momente, die <em>bleiben.</em></h1>
     <p class="aboutpage-hero__subtitle" data-cms="hero.subtitle">Ein Blick auf Details, Geschichten und Augenblicke aus Hochzeiten, die ich begleiten durfte.</p>
   </section>
@@ -39,7 +39,7 @@
     <div class="impressions-gallery__grid reveal" data-cms-each="gallery">
       <template>
         <figure class="impressions-gallery__item">
-          <img data-cms-src="image" data-cms-alt="alt" loading="lazy">
+          <img loading="lazy" decoding="async" data-cms-src="image" data-cms-alt="alt" loading="lazy">
           <figcaption class="impressions-gallery__caption" data-cms="caption"></figcaption>
         </figure>
       </template>
@@ -60,12 +60,12 @@
 
   <!-- ═══ FINAL CTA ═══ -->
   <div class="cta-banner">
-    <div class="cta-banner__bg"><img data-cms-src="finalCta.image" src="images/save-the-date-blattwerkstatt.jpg" alt=""></div>
+    <div class="cta-banner__bg"><img loading="lazy" decoding="async" data-cms-src="finalCta.image" src="images/save-the-date-blattwerkstatt.jpg" alt=""></div>
     <div class="cta-banner__overlay"></div>
     <div class="cta-banner__content reveal">
       <h2 data-cms="finalCta.title">Lasst uns reden.</h2>
       <p data-cms="finalCta.text">Unverbindlich, persönlich, mit Zeit für eure Vision.</p>
-      <a href="kontakt.html" class="btn btn--white" data-cms="finalCta.ctaText">Kennenlerngespräch vereinbaren</a>
+      <a href="kontakt.html" class="btn btn--white" data-cms="finalCta.ctaText">Erstgespräch vereinbaren</a>
     </div>
   </div>
 
@@ -73,14 +73,14 @@
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox__close" id="lightboxClose" aria-label="Schließen"><i class="ph ph-x"></i></button>
     <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Vorheriges Bild"><i class="ph ph-caret-left"></i></button>
-    <img class="lightbox__img" id="lightboxImg" alt="">
+    <img loading="lazy" decoding="async" class="lightbox__img" id="lightboxImg" alt="">
     <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Nächstes Bild"><i class="ph ph-caret-right"></i></button>
     <div class="lightbox__caption" id="lightboxCaption"></div>
   </div>
 
   <footer class="footer">
     <div class="footer__grid">
-      <div class="footer__brand"><img data-cms-src="site.brand.logo" src="images/180-Design-ohne-Titel2.png" alt="be2gether" class="footer__logo"><p data-cms="site.brand.taglineShort">Professionelle Hochzeitsplanung in Süddeutschland und der Schweiz.</p></div>
+      <div class="footer__brand"><img loading="lazy" decoding="async" data-cms-src="site.brand.logo" src="images/180-Design-ohne-Titel2.png" alt="be2gether" class="footer__logo"><p data-cms="site.brand.taglineShort">Professionelle Hochzeitsplanung in Süddeutschland und der Schweiz.</p></div>
       <div><h4>Navigation</h4><div class="footer__links"><a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="ueber-mich.html">Über mich</a><a href="impressionen.html">Impressionen</a><a href="blog.html">Blog</a><a href="kontakt.html">Kontakt</a></div></div>
       <div><h4>Kontakt</h4><div class="footer__contact"><p data-cms="site.contact.name">Miriam Stabile</p><a data-cms-href="site.contact.phoneLink" data-cms="site.contact.phone" href="tel:+491734758590">+49 (0)173 4758590</a><a data-cms-href="site.contact.emailLink" data-cms="site.contact.email" href="mailto:info@be2gether-weddings.de">info@be2gether-weddings.de</a></div></div>
       <div><h4>Rechtliches</h4><div class="footer__links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div>

@@ -38,7 +38,7 @@
   <!-- ═══ HERO — Video Background ═══ -->
   <section class="hero" id="hero">
     <div class="hero__bg">
-      <video autoplay muted loop playsinline id="heroVideo">
+      <video autoplay muted loop playsinline preload="metadata" poster="video-poster.jpg" id="heroVideo">
         <source src="video.mp4" type="video/mp4">
       </video>
     </div>
@@ -57,7 +57,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-image reveal-left">
-          <img data-cms-src="about.image" src="images/hochzeitsplanerin-miriam-stabile-sueddeutschland-682x1024.jpg" alt="Miriam Stabile — Hochzeitsplanerin">
+          <img loading="lazy" decoding="async" data-cms-src="about.image" src="images/hochzeitsplanerin-miriam-stabile-sueddeutschland-682x1024.jpg" alt="Miriam Stabile — Hochzeitsplanerin">
         </div>
         <div class="about-content reveal-right">
           <span class="section-label" data-cms="about.label">Über mich</span>
@@ -107,7 +107,7 @@
       </div>
       <div class="services-grid stagger-children">
         <a href="leistungen.html#komplett" class="service-card">
-          <img data-cms-src="services.items.0.image" src="images/braut-mit-fascinator-731x1024.jpg" alt="Komplettplanung" class="service-card__img">
+          <img loading="lazy" decoding="async" data-cms-src="services.items.0.image" src="images/braut-mit-fascinator-731x1024.jpg" alt="Komplettplanung" class="service-card__img">
           <div class="service-card__overlay">
             <h3 class="service-card__title" data-cms="services.items.0.title">Komplettplanung</h3>
             <p class="service-card__desc" data-cms="services.items.0.text">Von der ersten Idee bis zum letzten Tanz – ich übernehme die gesamte Organisation.</p>
@@ -115,7 +115,7 @@
           </div>
         </a>
         <a href="leistungen.html#teil" class="service-card">
-          <img data-cms-src="services.items.1.image" src="images/brautkleid-details-683x1024.jpg" alt="Teilplanung" class="service-card__img">
+          <img loading="lazy" decoding="async" data-cms-src="services.items.1.image" src="images/brautkleid-details-683x1024.jpg" alt="Teilplanung" class="service-card__img">
           <div class="service-card__overlay">
             <h3 class="service-card__title" data-cms="services.items.1.title">Teilplanung</h3>
             <p class="service-card__desc" data-cms="services.items.1.text">Ihr habt schon begonnen? Ich greife genau dort auf, wo ihr Unterstützung braucht.</p>
@@ -123,7 +123,7 @@
           </div>
         </a>
         <a href="leistungen.html#tages" class="service-card">
-          <img data-cms-src="services.items.2.image" src="images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg" alt="Tagesbegleitung" class="service-card__img">
+          <img loading="lazy" decoding="async" data-cms-src="services.items.2.image" src="images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg" alt="Tagesbegleitung" class="service-card__img">
           <div class="service-card__overlay">
             <h3 class="service-card__title" data-cms="services.items.2.title">Tagesbegleitung</h3>
             <p class="service-card__desc" data-cms="services.items.2.text">Am Hochzeitstag halte ich euch den Rücken frei und koordiniere den gesamten Ablauf.</p>
@@ -131,7 +131,7 @@
           </div>
         </a>
         <a href="leistungen.html#location" class="service-card">
-          <img data-cms-src="services.items.3.image" src="images/brautstrauss-boho-683x1024.jpg" alt="Location-Scouting" class="service-card__img">
+          <img loading="lazy" decoding="async" data-cms-src="services.items.3.image" src="images/brautstrauss-boho-683x1024.jpg" alt="Location-Scouting" class="service-card__img">
           <div class="service-card__overlay">
             <h3 class="service-card__title" data-cms="services.items.3.title">Location-Scouting</h3>
             <p class="service-card__desc" data-cms="services.items.3.text">Ich finde die versteckten Perlen und besten Plätze für eure Traumhochzeit.</p>
@@ -154,15 +154,15 @@
       </div>
       <div class="steps-timeline stagger-children">
         <div class="step-timeline-item">
-          <div class="step-timeline-img"><img data-cms-src="steps.items.0.image" src="images/brautpaar-in-der-schweiz.jpg" alt="Kennenlernen"></div>
+          <div class="step-timeline-img"><img loading="lazy" decoding="async" data-cms-src="steps.items.0.image" src="images/brautpaar-in-der-schweiz.jpg" alt="Kennenlernen"></div>
           <div class="step-timeline-connector"><div class="step-timeline-dot"><i class="ph ph-chats-circle"></i><span>01</span></div><div class="step-timeline-line"></div></div>
           <div class="step-timeline-content">
-            <h3 data-cms="steps.items.0.title">Kennenlerngespräch</h3>
+            <h3 data-cms="steps.items.0.title">Erstgespräch</h3>
             <p data-cms="steps.items.0.text">In einem lockeren Gespräch besprechen wir eure Vorstellungen und Wünsche für den großen Tag. Ihr erfahrt mehr über meine Leistungen.</p>
           </div>
         </div>
         <div class="step-timeline-item">
-          <div class="step-timeline-img"><img data-cms-src="steps.items.1.image" src="images/hochzeitspapeterie-200x300.jpg" alt="Konzeptentwicklung"></div>
+          <div class="step-timeline-img"><img loading="lazy" decoding="async" data-cms-src="steps.items.1.image" src="images/hochzeitspapeterie-200x300.jpg" alt="Konzeptentwicklung"></div>
           <div class="step-timeline-connector"><div class="step-timeline-dot"><i class="ph ph-pencil-ruler"></i><span>02</span></div><div class="step-timeline-line"></div></div>
           <div class="step-timeline-content">
             <h3 data-cms="steps.items.1.title">Konzeptentwicklung</h3>
@@ -170,7 +170,7 @@
           </div>
         </div>
         <div class="step-timeline-item">
-          <div class="step-timeline-img"><img data-cms-src="steps.items.2.image" src="images/hochzeitsdekoration-blumenschmuck-200x300.jpg" alt="Organisation"></div>
+          <div class="step-timeline-img"><img loading="lazy" decoding="async" data-cms-src="steps.items.2.image" src="images/hochzeitsdekoration-blumenschmuck-200x300.jpg" alt="Organisation"></div>
           <div class="step-timeline-connector"><div class="step-timeline-dot"><i class="ph ph-clipboard-text"></i><span>03</span></div><div class="step-timeline-line"></div></div>
           <div class="step-timeline-content">
             <h3 data-cms="steps.items.2.title">Organisation</h3>
@@ -178,7 +178,7 @@
           </div>
         </div>
         <div class="step-timeline-item">
-          <div class="step-timeline-img"><img data-cms-src="steps.items.3.image" src="images/brautpaar-basel-200x300.jpg" alt="Hochzeitstag"></div>
+          <div class="step-timeline-img"><img loading="lazy" decoding="async" data-cms-src="steps.items.3.image" src="images/brautpaar-basel-200x300.jpg" alt="Hochzeitstag"></div>
           <div class="step-timeline-connector"><div class="step-timeline-dot"><i class="ph ph-heart"></i><span>04</span></div></div>
           <div class="step-timeline-content">
             <h3 data-cms="steps.items.3.title">Hochzeitstag</h3>
@@ -191,12 +191,12 @@
 
   <!-- ═══ 5. MID CTA — first ask, after they understand the path ═══ -->
   <div class="cta-banner">
-    <div class="cta-banner__bg"><img data-cms-src="midCta.image" src="images/save-the-date-blattwerkstatt.jpg" alt=""></div>
+    <div class="cta-banner__bg"><img loading="lazy" decoding="async" data-cms-src="midCta.image" src="images/save-the-date-blattwerkstatt.jpg" alt=""></div>
     <div class="cta-banner__overlay"></div>
     <div class="cta-banner__content reveal">
       <h2 data-cms="midCta.title">Bereit für den ersten Schritt?</h2>
       <p data-cms="midCta.text">Erzählt mir von eurem Tag &mdash; unverbindlich, persönlich und mit Zeit für eure Geschichte.</p>
-      <a href="kontakt.html" class="btn btn--white" data-cms="midCta.ctaText">Kennenlerngespräch vereinbaren</a>
+      <a href="kontakt.html" class="btn btn--white" data-cms="midCta.ctaText">Erstgespräch vereinbaren</a>
     </div>
   </div>
 
@@ -259,12 +259,12 @@
 
   <!-- ═══ POST-TESTIMONIALS CTA — riding the social-proof wave ═══ -->
   <div class="cta-banner">
-    <div class="cta-banner__bg"><img data-cms-src="reviewsCta.image" src="images/glueckliches-brautpaar.jpg" alt=""></div>
+    <div class="cta-banner__bg"><img loading="lazy" decoding="async" data-cms-src="reviewsCta.image" src="images/glueckliches-brautpaar.jpg" alt=""></div>
     <div class="cta-banner__overlay"></div>
     <div class="cta-banner__content reveal">
       <h2 data-cms="reviewsCta.title">Soll eure Geschichte die nächste sein?</h2>
       <p data-cms="reviewsCta.text">Wenn euch die Worte unserer Paare berühren &mdash; lasst uns reden, wie eure Geschichte aussehen kann.</p>
-      <a href="kontakt.html" class="btn btn--white" data-cms="reviewsCta.ctaText">Kennenlerngespräch vereinbaren</a>
+      <a href="kontakt.html" class="btn btn--white" data-cms="reviewsCta.ctaText">Erstgespräch vereinbaren</a>
     </div>
   </div>
 
@@ -324,12 +324,12 @@
 
   <!-- ═══ FINAL CTA ═══ -->
   <div class="cta-banner">
-    <div class="cta-banner__bg"><img data-cms-src="ctaBanner2.image" src="images/brautstrauss-elegant.jpg" alt=""></div>
+    <div class="cta-banner__bg"><img loading="lazy" decoding="async" data-cms-src="ctaBanner2.image" src="images/brautstrauss-elegant.jpg" alt=""></div>
     <div class="cta-banner__overlay"></div>
     <div class="cta-banner__content reveal">
       <h2 data-cms="ctaBanner2.title">Bereit für euren Traumtag?</h2>
       <p data-cms="ctaBanner2.text">Lasst uns reden &mdash; unverbindlich, persönlich, kostenfrei.</p>
-      <a href="kontakt.html" class="btn btn--white" data-cms="ctaBanner2.ctaText">Kennenlerngespräch vereinbaren</a>
+      <a href="kontakt.html" class="btn btn--white" data-cms="ctaBanner2.ctaText">Erstgespräch vereinbaren</a>
     </div>
   </div>
 
@@ -337,7 +337,7 @@
   <footer class="footer">
     <div class="footer__grid">
       <div class="footer__brand">
-        <img data-cms-src="site.brand.logo" src="images/180-Design-ohne-Titel2.png" alt="be2gether weddings" class="footer__logo">
+        <img loading="lazy" decoding="async" data-cms-src="site.brand.logo" src="images/180-Design-ohne-Titel2.png" alt="be2gether weddings" class="footer__logo">
         <p data-cms="site.brand.tagline">Professionelle Hochzeitsplanung in Süddeutschland und der Schweiz. Von der ersten Idee bis zum Hochzeitstag — mit Herz und Struktur.</p>
       </div>
       <div>
