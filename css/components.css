@@ -861,7 +861,7 @@ html.cms-ready .aboutpage-hero__bg img{opacity:1;animation:none}
 .wedding-detail__feedback-icon{position:absolute;top:clamp(1rem,2vw,1.5rem);left:clamp(1rem,2vw,1.5rem);font-size:1.6rem;color:var(--clr-gold-light);opacity:0.55}
 .wedding-detail__feedback-text{font-family:var(--ff-heading);font-style:italic;font-size:clamp(0.95rem,1.2vw,1.05rem);line-height:1.7;color:var(--clr-charcoal);margin:0;padding-top:clamp(0.5rem,1vw,1rem);border:0}
 
-.wedding-detail__gallery{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:minmax(220px,1fr);gap:clamp(0.75rem,1.5vw,1.25rem)}
+.wedding-detail__gallery{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:minmax(150px,1fr);gap:clamp(0.5rem,1vw,0.85rem)}
 .wedding-detail__img{margin:0;overflow:hidden;background:var(--clr-cream-dark);cursor:zoom-in}
 .wedding-detail__img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.1s cubic-bezier(0.4,0,0.2,1)}
 .wedding-detail__img:hover img{transform:scale(1.03)}

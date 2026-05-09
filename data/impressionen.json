@@ -70,6 +70,7 @@
       "feedback": "Ohne Miriam wäre dieser Tag nicht möglich gewesen. Sie hat jedes Detail bedacht und uns das Gefühl gegeben, einfach Gäste auf unserer eigenen Hochzeit zu sein.",
       "images": [
         { "src": "images/braut-mit-fascinator-731x1024.jpg", "alt": "Braut mit Fascinator" },
+        { "src": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg", "alt": "Romina vor der Trauung" },
         { "src": "images/save-the-daten-hochzeit.jpg", "alt": "Save the Date" },
         { "src": "images/hochzeitspapeterie-200x300.jpg", "alt": "Hochzeitspapeterie" },
         { "src": "images/verlobung.jpg", "alt": "Verlobung" }
@@ -96,12 +97,12 @@
       "names": "Julia & Thomas",
       "initials": "J & T",
       "location": "Hochzeit in Süddeutschland",
-      "cover": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg",
+      "cover": "images/brautpaar-im-spiegel-rust.jpg",
       "coverAlt": "Julia & Thomas — Süddeutschland",
       "photographer": "Fabian Espinoza",
       "feedback": "Wir haben Miriam nicht als Planerin, sondern als Freundin in Erinnerung. Genau das macht den Unterschied.",
       "images": [
-        { "src": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg", "alt": "Braut auf dem Land" },
+        { "src": "images/brautpaar-im-spiegel-rust.jpg", "alt": "Julia & Thomas im Spiegel" },
         { "src": "images/eheringe.jpg", "alt": "Eheringe" },
         { "src": "images/brautstrauss-elegant-200x300.jpg", "alt": "Brautstrauß" },
         { "src": "images/brautkleid-details-683x1024.jpg", "alt": "Brautkleid Details" }
