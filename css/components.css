@@ -212,7 +212,7 @@
 .footer{background:var(--clr-charcoal);color:rgba(255,255,255,0.7);padding:var(--space-2xl) clamp(1.5rem,5vw,4rem) var(--space-lg)}
 .footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:var(--space-xl);max-width:var(--max-width);margin:0 auto}
 .footer__brand p{font-size:var(--fs-small);line-height:1.7;margin-top:var(--space-sm);max-width:280px}
-.footer__logo{height:150px;width:auto;margin-bottom:var(--space-md);filter:brightness(0) invert(1)}
+.footer__logo{height:150px;width:auto;margin-bottom:var(--space-md)}
 .footer h4{font-family:var(--ff-heading);font-size:1.1rem;color:var(--clr-white);margin-bottom:var(--space-md);font-weight:var(--fw-medium)}
 .footer__links a{display:block;font-size:var(--fs-small);color:rgba(255,255,255,0.6);padding:0.25rem 0;transition:color var(--transition)}
 .footer__links a:hover{color:var(--clr-gold-light)}
