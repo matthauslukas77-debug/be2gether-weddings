@@ -66,10 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', toggleMenu);
     if (overlay) overlay.addEventListener('click', toggleMenu);
 
-    // Close on link click
-    navLinks.querySelectorAll('a:not(.btn)').forEach(link => {
-      link.addEventListener('click', () => {
-        if (navLinks.classList.contains('open')) toggleMenu();
+    // Close on link click — explicitly navigate so the menu state change
+    // can never block the browser's default click→navigate behavior.
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (!navLinks.classList.contains('open')) return;
+        const href = link.getAttribute('href');
+        const isExternal = link.target === '_blank' || /^https?:|^mailto:|^tel:/i.test(href || '');
+        // Tear down menu state immediately
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+        if (overlay) overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        // Same-tab internal nav: take over so a stalled animation can't swallow the click
+        if (href && !isExternal) {
+          e.preventDefault();
+          window.location.href = href;
+        }
       });
     });
   }

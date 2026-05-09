@@ -908,3 +908,101 @@ html.cms-ready .aboutpage-hero__bg img{opacity:1;animation:none}
 /* Lift FAB above cookie banner when banner is open (mobile especially) */
 .cookie-banner.open ~ .wa-fab,
 body:has(.cookie-banner.open) .wa-fab{bottom:clamp(7rem,18vw,9rem)}
+
+/* ═══════════════════════════════════════════════════
+   MOBILE TIGHTENING — focused overrides for narrow viewports
+   ═══════════════════════════════════════════════════ */
+@media(max-width:600px){
+  /* Section padding floors: clamp() floors of 4-6rem are too generous on phones */
+  .mag-hero{padding-top:calc(var(--nav-height) + 1rem);padding-bottom:1.25rem}
+  .mag-statement{padding:3rem 1.25rem}
+  .mag-strip{padding:0.5rem 1.25rem 2.25rem}
+  .mag-intro{padding:3rem 1.25rem}
+  .mag-trio{padding:3rem 1.25rem}
+  .mag-family{padding:3.25rem 1.25rem}
+  .mag-philosophy{padding:3.25rem 1.25rem}
+  .mag-expect{padding:3rem 1.25rem}
+  .mag-closer{padding:2.5rem 1.25rem 2rem}
+
+  /* Hero — clean vertical stack, smaller secondary overlap */
+  .mag-hero__inner{gap:1.25rem}
+  .mag-hero__primary{aspect-ratio:4/5;box-shadow:0 14px 32px rgba(44,44,44,0.14)}
+  .mag-hero__secondary{width:46%;margin-top:-2.25rem;box-shadow:0 10px 24px rgba(44,44,44,0.18)}
+  .mag-hero__title{font-size:clamp(2.2rem,9vw,2.8rem);line-height:1.02}
+  .mag-hero__signature{font-size:clamp(1.7rem,7vw,2.2rem);margin-top:0.25em}
+  .mag-hero__caption{font-size:0.88rem;margin-top:0.5rem}
+  .mag-hero__eyebrow{margin-bottom:0.5rem}
+
+  /* Statement — tighter line-height + body */
+  .mag-statement__num{margin-bottom:1rem}
+  .mag-statement__lead{font-size:clamp(1.5rem,6.4vw,2rem);line-height:1.22}
+  .mag-statement__body{margin-top:1.25rem;font-size:0.95rem}
+
+  /* Strip — 2-col, wide on top, gap tightened */
+  .mag-strip__row{gap:0.5rem}
+  .mag-strip__item{aspect-ratio:3/4;align-self:auto;margin-top:0}
+
+  /* Intro */
+  .mag-intro__inner{gap:1.75rem}
+  .mag-intro__num{margin-bottom:0.6rem}
+  .mag-intro__title{font-size:clamp(1.9rem,7.5vw,2.4rem);margin-bottom:0.6rem}
+  .mag-intro__role{font-size:1rem;margin-bottom:1rem;line-height:1.45}
+  .mag-intro__body{font-size:0.95rem}
+  .mag-intro__media{aspect-ratio:4/5;box-shadow:0 14px 32px rgba(44,44,44,0.16)}
+
+  /* Trio — single col, tighter */
+  .mag-trio__inner{gap:1.5rem}
+  .mag-trio__col{gap:1rem}
+  .mag-trio__hero{aspect-ratio:3/4;box-shadow:0 14px 32px rgba(44,44,44,0.14)}
+  .mag-trio__title{font-size:clamp(1.7rem,6.5vw,2.1rem);line-height:1.15}
+  .mag-trio__body{font-size:0.95rem}
+  .mag-trio__details{gap:0.5rem;margin-top:0.5rem}
+
+  /* Family — text on top, two small images side-by-side below */
+  .mag-family__inner{gap:0.6rem}
+  .mag-family__text{margin-bottom:1rem;padding:0}
+  .mag-family__title{font-size:clamp(1.6rem,6vw,2rem);line-height:1.18;margin-bottom:0.6rem}
+  .mag-family__body{font-size:0.95rem;text-align:center;max-width:38ch}
+  .mag-family__media--1,.mag-family__media--2{margin:0;aspect-ratio:3/4}
+
+  /* Philosophy */
+  .mag-philosophy__head{margin-bottom:1.5rem}
+  .mag-philosophy__title{font-size:clamp(1.7rem,6.4vw,2.2rem)}
+  .mag-philosophy__grid{gap:1.25rem}
+  .mag-philosophy__pillar{padding-top:0.75rem}
+  .mag-philosophy__pillar h3{font-size:1.2rem;margin-bottom:0.4rem}
+  .mag-philosophy__pillar p{font-size:0.92rem}
+
+  /* Expect */
+  .mag-expect__title{font-size:clamp(1.6rem,6.2vw,2.1rem);margin-bottom:1rem}
+  .mag-expect__nots{font-size:1rem;gap:0.4rem;margin-bottom:1rem}
+  .mag-expect__body{font-size:0.95rem}
+
+  /* Closer */
+  .mag-closer__text{font-size:clamp(1.4rem,5.8vw,1.8rem);margin-bottom:1.25rem}
+
+  /* Wedding-detail page — already small, just tighten meta header */
+  .wedding-detail__title{font-size:clamp(2rem,8vw,2.6rem)}
+  .wedding-detail__body{padding-bottom:3rem;gap:1.5rem}
+  .wedding-detail__meta-title{font-size:1.6rem}
+
+  /* Existing about-page chapters (used by Leistungen too) */
+  .chapter{padding-top:3rem;padding-bottom:3rem}
+  .chapter__title{font-size:clamp(1.8rem,7vw,2.4rem)}
+  .chapter--editorial .chapter__megatitle{font-size:clamp(2.2rem,11vw,3.6rem);margin-bottom:1rem}
+
+  /* About-page hero (chapter pages) */
+  .aboutpage-hero{padding-top:6rem;padding-bottom:2.5rem}
+  .aboutpage-hero--split .aboutpage-hero__inner{gap:1.5rem}
+
+  /* Pull-quote tightening */
+  .pull-quote{padding-top:3rem;padding-bottom:3rem}
+  .pull-quote__text{font-size:clamp(2rem,9vw,2.8rem)}
+
+  /* CTA banner */
+  .cta-banner{min-height:auto;padding:3rem 1.25rem}
+  .cta-banner__content h2{font-size:clamp(1.8rem,7vw,2.4rem)}
+
+  /* Section padding (generic .section) — not too tall on small phones */
+  .section{padding:3rem 1.25rem}
+}
