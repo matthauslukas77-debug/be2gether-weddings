@@ -1,45 +1,120 @@
 {
   "meta": {
     "title": "Über mich - be2gether weddings | Miriam Stabile, Hochzeitsplanerin",
-    "description": "Hi, ich bin Miriam. Hochzeitsplanerin in Süddeutschland und der Schweiz. Background, Familie, Perfektion — meine Geschichte hinter be2gether."
+    "description": "Hi, ich bin Miriam. Hochzeitsplanerin im Dreiländereck zwischen Deutschland, der Schweiz und Frankreich. Stilvolle Hochzeiten, die sich nach euch anfühlen."
   },
   "hero": {
-    "label": "Über mich",
-    "title": "Hi, ich bin <em>Miriam.</em>",
-    "subtitle": "Herz, Struktur und ein offenes Ohr für eure Geschichte.",
-    "image": "images/hochzeitsplanerin-miriam-stabile-sueddeutschland-682x1024.jpg"
+    "eyebrow": "Über mich",
+    "title": "Hi, ich bin <em>Miriam.</em><span class=\"mag-hero__signature\">be2gether weddings</span>",
+    "primaryImage": "images/hochzeitsplanerin-miriam-stabile-sueddeutschland-682x1024.jpg",
+    "secondaryImage": "images/hochzeitsplanerin-miriam-stabile-deutschland-682x1024.jpg",
+    "caption": "Planerin im Dreiländereck — zwischen Deutschland, der Schweiz und Frankreich."
+  },
+  "statement": {
+    "num": "01 — Mein Versprechen",
+    "lead": "Nicht einfach Hochzeiten planen.<br>Sondern <em>Erinnerungen erschaffen,</em> die sich nach euch anfühlen.",
+    "body": "<p>Ich glaube daran, dass die schönsten Hochzeiten nicht perfekt wirken müssen — sondern echt. Stilvoll. Emotional. Mit einer Atmosphäre, die man nicht nur sieht, sondern spürt.</p><p>Genau dafür habe ich be2gether weddings & events gegründet.</p>"
+  },
+  "strip": {
+    "image1": "images/brautpaar-aarau.jpg",
+    "image2": "images/glueckliches-brautpaar.jpg",
+    "image3": "images/brautpaar-im-spiegel-rust.jpg"
   },
   "intro": {
-    "text": "Hochzeitsplanung ist für mich kein Job — sie ist die Verbindung aus 18 Jahren Eventerfahrung, einem unermüdlichen Blick fürs Detail und der festen Überzeugung, dass kein Tag im Leben mehr Aufmerksamkeit verdient als dieser."
+    "num": "02 — Wer ich bin",
+    "title": "Hi, ich bin <em>Miriam.</em>",
+    "role": "Planerin mit Struktur. Kreativer Kopf mit einem Auge fürs Detail. Ruhepol an Tagen voller Emotionen.",
+    "body": "<p>Ich lebe im Dreiländereck zwischen Deutschland, der Schweiz und Frankreich — einer Region voller besonderer Orte, einzigartiger Locations und unvergesslicher Kulissen. Genau hier begleite ich Paare, die sich eine Hochzeit wünschen, die nicht nach Trends aussieht, sondern nach ihnen selbst.</p><p>Mit vielen Jahren Erfahrung im Event- und Marketingbereich weiß ich: Die Magie steckt nie nur in schönen Blumen oder perfekter Dekoration. Sie entsteht aus dem Zusammenspiel von Emotionen, Menschen, Atmosphäre und den kleinen Details, die kaum jemand bemerkt — aber jeder fühlt.</p>",
+    "image": "images/Miriam-Stabile_Klein-1024x538.jpg"
   },
-  "chapters": [
-    {
-      "image": "images/braeutigam-mit-hochzeitsplaner.jpg",
-      "num": "01 — Background",
-      "title": "Wo <em>Erfahrung</em> anfängt.",
-      "body": "<p>18 Jahre Eventerfahrung, eine Ausbildung zur Veranstaltungskauffrau und ein Marketingstudium — auf dem Weg zur Hochzeitsplanerin habe ich Events von der Tagung bis zum Familienfest begleitet.</p><p>Was geblieben ist: die Liebe zum Detail, der Blick fürs Ganze und die Lust, Geschichten in Erlebnisse zu verwandeln. Wenn ich heute einen Tag plane, dann weiß ich, wo die Stolpersteine liegen — und wie ich sie für euch aus dem Weg räume, bevor ihr überhaupt davon erfahrt.</p>"
-    },
-    {
-      "image": "images/brautpaar-in-der-schweiz.jpg",
-      "num": "02 — Familie",
-      "title": "Mein <em>Anker.</em>",
-      "body": "<p>Ich lebe mit meiner Familie in Süddeutschland, direkt am Dreiländereck zwischen Schwarzwald, Bodensee und der Schweiz. Familie ist mein Zuhause und mein Maßstab.</p><p>Sie erinnert mich daran, dass die schönsten Hochzeiten dort entstehen, wo Menschen sich nahe sind. Genau diese Wärme bringe ich in eure Planung — mit dem Ohr einer Vertrauten und der Ruhe einer, die weiß, wie wertvoll der Tag mit den Liebsten ist.</p>"
-    },
-    {
-      "image": "images/hochzeitspapeterie-200x300.jpg",
-      "num": "03 — Perfektion",
-      "title": "Im <em>Detail</em> liegt das Gefühl.",
-      "body": "<p>Eine Hochzeit lebt von tausend kleinen Entscheidungen — und davon, dass keine davon auf eurem Rücken landet.</p><p>Ich plane strukturiert, transparent und mit einem wachsamen Auge auf jeden Moment. So müsst ihr am Tag selbst nichts mehr koordinieren, sondern nur noch genießen — jedes Lachen, jede Träne, jedes \"Ja\".</p>"
-    }
-  ],
-  "pullQuote": {
-    "text": "Eine Hochzeit ist kein Termin. Sie ist eure Geschichte.",
-    "attribution": "— Miriam Stabile"
+  "path": {
+    "num": "03 — Mein Weg",
+    "title": "Mein Weg zu <em>be2gether weddings.</em>",
+    "body": "<p>Schon immer haben mich besondere Erlebnisse, Ästhetik und die Kunst begeistert, Menschen zusammenzubringen. Durch meine langjährige Erfahrung im Event- und Marketingbereich habe ich früh gelernt, wie wichtig Atmosphäre, Organisation und ein stimmiges Gesamtkonzept sind.</p><p>Doch Hochzeiten sind für mich mehr als nur Planung. Sie verbinden Emotionen, Familie, Erinnerungen und all die kleinen Momente, die für immer bleiben.</p><p>Aus genau dieser Leidenschaft entstand be2gether weddings & events — mit dem Wunsch, Hochzeiten zu kreieren, die nicht nur wunderschön aussehen, sondern sich genauso anfühlen.</p>",
+    "heroImage": "images/miriam-weddingplanerin.jpg",
+    "detail1": "images/eheringe.jpg",
+    "detail2": "images/brautstrauss-elegant.jpg"
+  },
+  "family": {
+    "num": "04 — Familie",
+    "title": "Warum Familie eine besondere <em>Bedeutung</em> für mich hat.",
+    "body": "<p>Eine Hochzeit ist für mich nicht nur ein Event. Sie ist ein Moment, in dem Menschen zusammenkommen, Erinnerungen entstehen und Generationen miteinander verbunden werden.</p><p>Vielleicht liebe ich Hochzeiten genau deshalb so sehr: Weil es am Ende nie nur um Dekoration oder Abläufe geht — sondern um Nähe, Emotionen und gemeinsame Augenblicke.</p><p>Familie bedeutet für mich Zuhause, Vertrauen und Zusammenhalt. Genau dieses Gefühl möchte ich auch für meine Paare schaffen.</p>",
+    "image1": "images/brautpaar-in-der-schweiz.jpg",
+    "image2": "images/Herbsthochzeit.jpg"
+  },
+  "detail": {
+    "num": "05 — Perfektion",
+    "title": "Die Schönheit liegt im <em>Detail.</em>",
+    "body": "<p>Ich glaube nicht an Perfektion im klassischen Sinn. Ich glaube an das Gefühl, wenn alles stimmig ist.</p><p>Wenn Abläufe leicht wirken. Wenn jedes Detail seinen Platz hat. Wenn Design, Atmosphäre und Emotion miteinander harmonieren.</p><p>Genau dafür arbeite ich mit viel Feingefühl, Struktur und einem hohen Anspruch an Qualität — damit ihr euren Tag nicht organisieren müsst, sondern ihn wirklich erleben könnt.</p>",
+    "heroImage": "images/brautkleid-details-683x1024.jpg",
+    "detail1": "images/hochzeitspapeterie-200x300.jpg",
+    "detail2": "images/hochzeitsdekoration-blumenschmuck-200x300.jpg"
+  },
+  "philosophy": {
+    "eyebrow": "Meine Philosophie",
+    "title": "Drei Überzeugungen, die <em>jede Hochzeit</em> prägen.",
+    "pillars": [
+      {
+        "num": "i.",
+        "title": "Ästhetik mit Gefühl",
+        "text": "Stilvolle Hochzeiten dürfen hochwertig aussehen und sich trotzdem leicht, herzlich und persönlich anfühlen."
+      },
+      {
+        "num": "ii.",
+        "title": "Vertrauen statt Kontrolle",
+        "text": "Meine Paare sollen loslassen können. Deshalb arbeite ich strukturiert, transparent und mit einem starken Netzwerk."
+      },
+      {
+        "num": "iii.",
+        "title": "Qualität vor Inszenierung",
+        "text": "Keine Hochzeit „für Instagram\". Sondern ein Erlebnis, das zu euch passt — ehrlich, modern und mit Charakter."
+      }
+    ]
+  },
+  "expect": {
+    "eyebrow": "Was euch erwartet",
+    "title": "Was euch <em>mit mir</em> erwartet.",
+    "nots": "<span>Keine Standardkonzepte.</span><span>Keine unpersönliche Planung.</span><span>Kein „das macht man eben so\".</span>",
+    "body": "<p>Sondern eine Begleitung, die euch wirklich entlastet. Mit Klarheit, Erfahrung und einem Gespür für Stil, Menschen und besondere Momente.</p><p>Ich bin nicht einfach Dienstleisterin an eurer Hochzeit — ich bin die Person, die im Hintergrund dafür sorgt, dass ihr euch vollkommen auf euren Tag konzentrieren könnt.</p>"
+  },
+  "closer": {
+    "text": "Wenn ihr euch eine Hochzeit wünscht, die sich modern, stilvoll und <em>nach euch</em> anfühlt — dann freue ich mich darauf, eure Geschichte kennenzulernen.",
+    "ctaText": "Erstgespräch vereinbaren"
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Häufig gestellte Fragen",
+    "items": [
+      {
+        "question": "Was kostet eine Hochzeitsplanung mit dir?",
+        "answer": "Die Kosten hängen vom Umfang eurer Wünsche und der Größe der Hochzeit ab. Nach einem unverbindlichen Erstgespräch erstelle ich euch ein individuelles Angebot — transparent, mit Festpreisen und ohne Provisionsmodell."
+      },
+      {
+        "question": "Wie früh sollten wir mit der Planung starten?",
+        "answer": "Im Idealfall 12 bis 18 Monate vor dem Hochzeitstag — vor allem dann, wenn ihr eine bestimmte Location oder ein bestimmtes Datum im Kopf habt. Auch kürzere Vorlaufzeiten sind möglich, einfach im Erstgespräch besprechen."
+      },
+      {
+        "question": "Plant ihr auch nur einzelne Bausteine?",
+        "answer": "Ja, sehr gerne. Ob Full-Planning, Teilplanung oder reine Tagesbegleitung am Hochzeitstag — wir finden gemeinsam genau den Umfang, der zu euch und eurem Tag passt."
+      },
+      {
+        "question": "In welcher Region arbeitest du?",
+        "answer": "Mein Schwerpunkt liegt im Dreiländereck zwischen Süddeutschland, der Schweiz und Frankreich — also Schwarzwald, Bodensee, Basel, Aarau, Zürich und Umgebung. Auf Anfrage begleite ich euch auch deutschlandweit oder international."
+      },
+      {
+        "question": "Wie läuft das Erstgespräch ab?",
+        "answer": "Das Erstgespräch ist kostenlos und unverbindlich. Wir nehmen uns rund 60 Minuten Zeit — telefonisch, per Video oder persönlich — um eure Vision, eure Vorstellungen und eure Fragen kennenzulernen. Im Anschluss bekommt ihr ein individuelles Angebot."
+      },
+      {
+        "question": "Was unterscheidet dich von anderen Planerinnen?",
+        "answer": "Mein Anspruch ist nicht, viele Hochzeiten gleichzeitig zu planen — sondern eure mit voller Aufmerksamkeit. Ich arbeite provisionsfrei, mit einem starken Netzwerk und einem klaren Blick für Ästhetik, Struktur und Menschen. Ihr bekommt keine Schablone, sondern eine Begleitung, die sich nach euch anfühlt."
+      }
+    ]
   },
   "finalCta": {
     "image": "images/brautstrauss-elegant.jpg",
-    "title": "Lust, dich kennenzulernen?",
-    "text": "Erzähl mir von deinem Tag — unverbindlich, persönlich und mit Zeit für deine Geschichte.",
+    "title": "Lust, mich kennenzulernen?",
+    "text": "Erzählt mir von eurem Tag — unverbindlich, persönlich und mit Zeit für eure Geschichte.",
     "ctaText": "Erstgespräch vereinbaren"
   }
 }
