@@ -22,7 +22,6 @@
       "images": [
         { "src": "images/glueckliches-brautpaar.jpg", "alt": "Molly & Tim in Heidelberg" },
         { "src": "images/eheringe.jpg", "alt": "Eheringe" },
-        { "src": "images/ringtausch-brautpaar.jpg", "alt": "Der Ringtausch" },
         { "src": "images/brautstrauss-elegant.jpg", "alt": "Eleganter Brautstrauß" }
       ]
     },
@@ -70,8 +69,7 @@
       "images": [
         { "src": "images/braut-mit-fascinator-731x1024.jpg", "alt": "Braut mit Fascinator" },
         { "src": "images/save-the-daten-hochzeit.jpg", "alt": "Save the Date" },
-        { "src": "images/hochzeitspapeterie-200x300.jpg", "alt": "Hochzeitspapeterie" },
-        { "src": "images/vozradui-12298495.jpg", "alt": "Atmosphäre" }
+        { "src": "images/hochzeitspapeterie-200x300.jpg", "alt": "Hochzeitspapeterie" }
       ]
     },
     {
@@ -85,9 +83,7 @@
       "feedback": "Wir sind aus der ganzen Schweiz und Deutschland gekommen, und Miriam hat es geschafft, dass sich alle Gäste sofort wohl gefühlt haben. Eine warme, ruhige Hand, die alles im Blick hatte.",
       "images": [
         { "src": "images/brautpaar-in-der-schweiz.jpg", "alt": "Anna & Felix in der Schweiz" },
-        { "src": "images/mari-lezhava-egz7W1zHYbU-unsplash-Kopie-scaled.jpg", "alt": "Hochzeitsstimmung" },
-        { "src": "images/polina-tankilevitch-5255510.jpg", "alt": "Atmosphäre" },
-        { "src": "images/518844108-1-scaled.jpg", "alt": "Hochzeitsmoment" }
+        { "src": "images/save-the-date-blattwerkstatt.jpg", "alt": "Save the Date" }
       ]
     },
     {
@@ -100,10 +96,7 @@
       "photographer": "Fabian Espinoza",
       "feedback": "Wir haben Miriam nicht als Planerin, sondern als Freundin in Erinnerung. Genau das macht den Unterschied.",
       "images": [
-        { "src": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg", "alt": "Braut auf dem Land" },
-        { "src": "images/24-DSC04983.jpg", "alt": "Hochzeitsmoment" },
-        { "src": "images/mlkbnl-11652626-683x1024.jpg", "alt": "Stimmung" },
-        { "src": "images/michael-morse-1463389.jpg", "alt": "Atmosphäre" }
+        { "src": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg", "alt": "Braut auf dem Land" }
       ]
     }
   ],
