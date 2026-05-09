@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /cms-export/
+
+Sitemap: https://be2gether-weddings.de/sitemap.xml

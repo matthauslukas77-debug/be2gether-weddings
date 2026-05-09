@@ -55,6 +55,10 @@
     "text": "Wenn euch die Worte unserer Paare berühren — lasst uns reden, wie eure Geschichte aussehen kann.",
     "ctaText": "Erstgespräch vereinbaren"
   },
+  "fullbleedBand": {
+    "image": "images/hochzeit-schweiz.jpg",
+    "caption": "Yours, truly."
+  },
   "services": {
     "label": "Meine Leistungen",
     "title": "Eure Hochzeit ist ein Erlebnis, in dem <em>ihr die Hauptrolle</em> spielt.",

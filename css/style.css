@@ -5,6 +5,7 @@
 
 :root {
   --clr-gold: #C5A47E; --clr-gold-light: #D4BA9A; --clr-gold-dark: #A88B66;
+  --clr-gold-text: #7A6440; /* AA-safe gold for body labels on white/cream (~4.6:1) */
   --clr-cream: #FDF8F0; --clr-cream-dark: #F5EDE0;
   --clr-charcoal: #2C2C2C; --clr-charcoal-light: #4A4A4A;
   --clr-sage: #A3B18A; --clr-white: #FFFFFF;
@@ -38,7 +39,7 @@ ul,ol{list-style:none}
 h1,h2,h3,h4,h5{font-family:var(--ff-heading);font-weight:var(--fw-regular);line-height:1.2;color:var(--clr-charcoal)}
 h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2);letter-spacing:0.02em} h3{font-size:var(--fs-h3)}
 
-.section-label{font-family:var(--ff-body);font-size:var(--fs-small);font-weight:var(--fw-semibold);text-transform:uppercase;letter-spacing:0.2em;color:var(--clr-gold);margin-bottom:var(--space-sm);display:block}
+.section-label{font-family:var(--ff-body);font-size:var(--fs-small);font-weight:var(--fw-semibold);text-transform:uppercase;letter-spacing:0.2em;color:var(--clr-gold-text);margin-bottom:var(--space-sm);display:block}
 .section-title{font-family:var(--ff-heading);font-size:var(--fs-h2);font-weight:var(--fw-regular);margin-bottom:var(--space-md);line-height:1.25}
 .section-subtitle{font-size:var(--fs-body);color:var(--clr-charcoal-light);max-width:600px;line-height:1.8}
 

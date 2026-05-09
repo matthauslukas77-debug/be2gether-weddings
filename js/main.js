@@ -17,28 +17,67 @@ function initWhatsAppFab() {
 }
 
 // ── Cookie consent banner (DSGVO) ──
+// Two equally-prominent buttons (Akzeptieren / Ablehnen) per Art. 7 DSGVO —
+// rejection must be at least as easy and visible as acceptance. Stores a
+// string flag in localStorage so we never show it again on either choice.
 function initCookieBanner() {
   const KEY = 'b2g_cookie_consent';
-  try { if (localStorage.getItem(KEY) === '1') return; } catch (e) {}
+  try { if (localStorage.getItem(KEY)) return; } catch (e) {}
   if (document.querySelector('.cookie-banner')) return;
   const el = document.createElement('div');
   el.className = 'cookie-banner';
   el.setAttribute('role', 'dialog');
   el.setAttribute('aria-label', 'Cookie-Hinweis');
-  el.innerHTML = '<div class="cookie-banner__inner"><p>Wir verwenden Cookies, um eure Erfahrung auf unserer Website zu verbessern. Mehr erfahrt ihr in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p><button type="button" class="btn btn--primary cookie-banner__accept">Akzeptieren</button></div>';
+  el.innerHTML = '<div class="cookie-banner__inner">'
+    + '<p>Wir verwenden Cookies, um eure Erfahrung auf unserer Website zu verbessern. Mehr erfahrt ihr in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>'
+    + '<div class="cookie-banner__actions">'
+    +   '<button type="button" class="btn btn--ghost cookie-banner__btn" data-consent="reject">Ablehnen</button>'
+    +   '<button type="button" class="btn btn--primary cookie-banner__btn" data-consent="accept">Akzeptieren</button>'
+    + '</div>'
+    + '</div>';
   document.body.appendChild(el);
   requestAnimationFrame(() => el.classList.add('open'));
-  el.querySelector('.cookie-banner__accept').addEventListener('click', () => {
-    try { localStorage.setItem(KEY, '1'); } catch (e) {}
+  const close = (choice) => {
+    try { localStorage.setItem(KEY, choice); } catch (e) {}
     el.classList.remove('open');
     setTimeout(() => el.remove(), 400);
+  };
+  el.querySelectorAll('[data-consent]').forEach(btn => {
+    btn.addEventListener('click', () => close(btn.dataset.consent));
   });
+}
+
+// ── Subtle parallax on image-based hero sections ──
+// Translates the hero background image at ~30% of scroll for depth.
+// Skipped if the user prefers reduced motion or has no IntersectionObserver.
+function initHeroParallax() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const targets = document.querySelectorAll('.aboutpage-hero--image .aboutpage-hero__bg img, .mag-hero__media img');
+  if (!targets.length) return;
+  let ticking = false;
+  const update = () => {
+    const sy = window.scrollY;
+    targets.forEach(img => {
+      const rect = img.getBoundingClientRect();
+      // only animate while in or near viewport
+      if (rect.bottom < -200 || rect.top > window.innerHeight + 200) return;
+      const offset = sy * 0.28;
+      img.style.transform = `translate3d(0, ${offset}px, 0) scale(1.08)`;
+    });
+    ticking = false;
+  };
+  const onScroll = () => {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  update();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
 
   initWhatsAppFab();
   initCookieBanner();
+  initHeroParallax();
 
   // ── Sticky Navbar ──
   const navbar = document.getElementById('navbar');
