@@ -6,10 +6,25 @@
   "hero": {
     "label": "",
     "title": "be2gether",
+    "tagline": "weddings & events",
     "subtitle": "Hochzeitsplanung in Süddeutschland und der Schweiz.",
     "ctaText": "Jetzt anfragen",
     "scrollText": "Entdecken"
   },
+  "homeIntro": {
+    "label": "be2gether weddings & events — für Hochzeiten voller Schönheit und Gefühl",
+    "title": "Besondere Veranstaltungen, die <em>eure Geschichte</em> & eure Werte lebendig werden lassen.",
+    "body": "<p>Stell dir vor: deine Trauung an einem lichtdurchfluteten Mittag, umgeben von deinen liebsten Menschen. Geschmückte Wege führen dich zu genau dem Moment, auf den du so lange gewartet hast. Liebevoll gedeckte Tische, feine Details und harmonische Farben schaffen eine Atmosphäre, die sich einfach richtig anfühlt. Und dann dieser eine Augenblick — dein grosser Auftritt, bei dem für einen Moment alles stillzustehen scheint.</p>",
+    "accent": "Genau so kann sich deine Hochzeit anfühlen. Lass uns gemeinsam daraus Wirklichkeit machen.",
+    "imageLarge": "images/brautpaar-im-spiegel-rust.jpg",
+    "imageSmall1": "images/hochzeitsdekoration-blumenschmuck-200x300.jpg",
+    "imageSmall2": "images/brautstrauss-elegant.jpg"
+  },
+  "stats": [
+    { "label": "Jahre Erfahrung", "desc": "im Event- & Projektmanagement" },
+    { "label": "Persönliche Betreuung", "desc": "vom ersten Gespräch bis zum Hochzeitstag" },
+    { "label": "Gäste begeistert", "desc": "mit stilvollen & perfekt organisierten Events" }
+  ],
   "challenges": {
     "label": "Warum eine Hochzeitsplanerin?",
     "title": "Eure Herausforderungen — meine Antworten",
@@ -65,10 +80,11 @@
   },
   "about": {
     "image": "images/hochzeitsplanerin-miriam-stabile-sueddeutschland-682x1024.jpg",
-    "label": "Über mich",
-    "title": "Hi, ich bin Miriam.",
-    "paragraph1": "Ich lebe mit meiner Familie am Dreiländereck zwischen Schwarzwald, Bodensee und der Schweiz — der perfekten Kulisse für unvergessliche Hochzeiten.",
-    "paragraph2": "Über 18 Jahre Eventerfahrung, eine Ausbildung zur Veranstaltungskauffrau und ein Marketingstudium begleiten mich. Was bleibt: die Liebe zum Detail und der Wunsch, eure Geschichte in einen Tag zu übersetzen, den ihr nie vergesst.",
+    "imageSecondary": "images/brautpaar-mit-hochzeitsplanerin.jpg",
+    "label": "Was auch immer ihr euch vorstellt — ich mache es möglich",
+    "title": "Genießt die <em>perfekte Planung</em> & Umsetzung eurer Hochzeit.",
+    "paragraph1": "Ich gestalte stilvolle Hochzeiten in Süddeutschland, der Bodenseeregion und der Schweiz. Bei be2gether weddings & events übernehme ich Design, Planung und Umsetzung eurer gesamten Hochzeit — das bedeutet: Vom ersten Moment eurer Planungsreise an habt ihr mich als persönliche Ansprechpartnerin an eurer Seite, die alles dafür tut, eure Erwartungen nicht nur zu erfüllen, sondern zu übertreffen.",
+    "paragraph2": "Ich entwickle mit euch neue Konzepte und verschiebe die Grenzen des Machbaren, damit eure Vision genau so umgesetzt wird, wie ihr sie euch vorstellt — oder sogar noch schöner.",
     "ctaText": "Mehr über mich",
     "ctaHref": "ueber-mich.html",
     "funFacts": [

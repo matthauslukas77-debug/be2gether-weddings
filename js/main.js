@@ -81,6 +81,39 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => el.classList.add('visible'));
   }
 
+  // ── Count-up stat counters (data-count-to / data-count-suffix) ──
+  const counters = document.querySelectorAll('[data-count-to]');
+  if (counters.length > 0 && 'IntersectionObserver' in window) {
+    const fmt = (n) => Math.round(n).toLocaleString('de-DE');
+    const tween = (el, target, suffix, duration = 1800) => {
+      const start = performance.now();
+      const tick = (t) => {
+        const p = Math.min(1, (t - start) / duration);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = fmt(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    const counterIO = new IntersectionObserver((entries, obs) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseFloat(el.dataset.countTo);
+        const suffix = el.dataset.countSuffix || '';
+        if (!isNaN(target)) tween(el, target, suffix);
+        obs.unobserve(el);
+      });
+    }, { threshold: 0.45 });
+    counters.forEach((el) => counterIO.observe(el));
+  } else {
+    counters.forEach((el) => {
+      const t = parseFloat(el.dataset.countTo);
+      const s = el.dataset.countSuffix || '';
+      if (!isNaN(t)) el.textContent = Math.round(t).toLocaleString('de-DE') + s;
+    });
+  }
+
   // ── Smooth anchor scrolling ──
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {

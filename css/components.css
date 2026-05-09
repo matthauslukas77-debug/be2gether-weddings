@@ -76,7 +76,8 @@
 .about-image{position:relative;border-radius:var(--border-radius);overflow:hidden}
 .about-image img{width:100%;height:auto;border-radius:var(--border-radius)}
 .about-image::after{content:'';position:absolute;bottom:-15px;right:-15px;width:200px;height:200px;border:2px solid var(--clr-gold-light);border-radius:var(--border-radius);z-index:-1}
-.about-content h2{margin-bottom:var(--space-md)}
+.about-content h2{font-family:var(--ff-heading);font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:var(--fw-light);line-height:1.1;letter-spacing:-0.018em;color:var(--clr-charcoal);margin-bottom:var(--space-md)}
+.about-content h2 em{font-style:italic;color:var(--clr-gold-dark)}
 .about-content p{margin-bottom:var(--space-sm);color:var(--clr-charcoal-light)}
 .about-content p:last-of-type{margin-bottom:var(--space-lg)}
 .fun-facts{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-sm);margin-top:var(--space-lg)}
