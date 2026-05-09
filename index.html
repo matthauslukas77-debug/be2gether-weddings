@@ -296,8 +296,8 @@
     <div class="container">
       <div class="text-center reveal">
         <span class="section-label" data-cms="testimonials.label">Kundenstimmen</span>
-        <h2 class="section-title" style="margin-bottom:var(--space-xs)" data-cms="testimonials.title">Was Paare über uns sagen</h2>
-        <p class="section-subtitle mx-auto" style="margin-bottom:var(--space-sm)" data-cms="testimonials.subtitle">5.0 Sterne — basierend auf 28 Google-Bewertungen</p>
+        <h2 class="services-headline" style="margin-bottom:var(--space-sm)" data-cms="testimonials.title"><em>Wenn Erinnerungen</em> sprechen könnten — sagen sie das hier.</h2>
+        <p class="section-subtitle mx-auto" style="margin-bottom:var(--space-sm)" data-cms="testimonials.subtitle">5.0 Sterne &mdash; basierend auf 28 Google-Bewertungen</p>
         <a href="https://www.google.com/maps/place/be2gether+weddings+%26+events+-+Hochzeitsplanung/@47.5602943,8.0426034,17z/data=!4m8!3m7!1s0x479045bbc03c84f7:0x53c5c2e89d6877f8!8m2!3d47.5602907!4d8.0451783!9m1!1b1!16s%2Fg%2F11vyrj8hcj" target="_blank" rel="noopener" class="google-review-link" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:var(--fs-small);color:var(--clr-gold-dark);margin-bottom:var(--space-xl)">
           <i class="ph ph-google-logo"></i> Alle Bewertungen auf Google ansehen
         </a>
@@ -331,6 +331,89 @@
       <p data-cms="reviewsCta.text">Wenn euch die Worte unserer Paare berühren &mdash; lasst uns reden, wie eure Geschichte aussehen kann.</p>
       <a href="kontakt.html" class="btn btn--white" data-cms="reviewsCta.ctaText">Erstgespräch vereinbaren</a>
     </div>
+  </div>
+
+  <!-- ═══ IMPRESSIONEN (3 big clickable boxes — lightbox carousel) ═══ -->
+  <section class="home-impressions section" id="impressionen-home">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:clamp(2.5rem,5vw,4rem)">
+        <span class="section-label" data-cms="impressions.label">Impressionen</span>
+        <h2 class="services-headline" data-cms="impressions.title">Es geht um mehr als nur den Tag &mdash; <em>lasst euch inspirieren.</em></h2>
+      </div>
+      <div class="home-impressions__grid stagger-children">
+        <button type="button" class="home-impressions__box" data-impression-key="brautpaare">
+          <img loading="lazy" decoding="async" data-cms-src="impressions.boxes.0.cover" src="images/brautpaar-im-spiegel-rust.jpg" alt="">
+          <div class="home-impressions__overlay">
+            <span class="home-impressions__count" data-cms="impressions.boxes.0.count">+ 6 Bilder</span>
+            <h3 class="home-impressions__title" data-cms="impressions.boxes.0.title">Brautpaare &amp; Momente</h3>
+            <span class="home-impressions__cta">Mehr ansehen <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </button>
+        <button type="button" class="home-impressions__box" data-impression-key="braut">
+          <img loading="lazy" decoding="async" data-cms-src="impressions.boxes.1.cover" src="images/braut-mit-fascinator-731x1024.jpg" alt="">
+          <div class="home-impressions__overlay">
+            <span class="home-impressions__count" data-cms="impressions.boxes.1.count">+ 6 Bilder</span>
+            <h3 class="home-impressions__title" data-cms="impressions.boxes.1.title">Stil &amp; Details</h3>
+            <span class="home-impressions__cta">Mehr ansehen <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </button>
+        <button type="button" class="home-impressions__box" data-impression-key="deko">
+          <img loading="lazy" decoding="async" data-cms-src="impressions.boxes.2.cover" src="images/hochzeitsdekoration-blumenschmuck-200x300.jpg" alt="">
+          <div class="home-impressions__overlay">
+            <span class="home-impressions__count" data-cms="impressions.boxes.2.count">+ 5 Bilder</span>
+            <h3 class="home-impressions__title" data-cms="impressions.boxes.2.title">Dekoration &amp; Location</h3>
+            <span class="home-impressions__cta">Mehr ansehen <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impressions lightbox dataset (keyed per box) -->
+  <script type="application/json" id="impressionsData">
+  {
+    "brautpaare": {
+      "title": "Brautpaare & Momente",
+      "images": [
+        "images/brautpaar-im-spiegel-rust.jpg",
+        "images/brautpaar-aarau.jpg",
+        "images/brautpaar-in-der-schweiz.jpg",
+        "images/glueckliches-brautpaar.jpg",
+        "images/ringtausch-brautpaar.jpg",
+        "images/brautpaar-mit-hochzeitsplanerin.jpg"
+      ]
+    },
+    "braut": {
+      "title": "Stil & Details",
+      "images": [
+        "images/braut-mit-fascinator-731x1024.jpg",
+        "images/brautkleid-details-683x1024.jpg",
+        "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg",
+        "images/brautstrauss-boho-683x1024.jpg",
+        "images/brautstrauss-elegant.jpg",
+        "images/boho-braut-214x300.jpg"
+      ]
+    },
+    "deko": {
+      "title": "Dekoration & Location",
+      "images": [
+        "images/hochzeitsdekoration-blumenschmuck-200x300.jpg",
+        "images/hochzeitspapeterie-200x300.jpg",
+        "images/hochzeitstorte-schwarzwald-200x300.jpg",
+        "images/save-the-date-blattwerkstatt.jpg",
+        "images/Herbsthochzeit.jpg"
+      ]
+    }
+  }
+  </script>
+
+  <!-- ═══ LIGHTBOX (carousel for Impressionen boxes) ═══ -->
+  <div class="lightbox" id="impressionsLightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox__close" type="button" aria-label="Schließen"><i class="ph ph-x"></i></button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Vorheriges Bild"><i class="ph ph-caret-left"></i></button>
+    <img class="lightbox__img" alt="">
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Nächstes Bild"><i class="ph ph-caret-right"></i></button>
+    <p class="lightbox__caption"></p>
   </div>
 
   <!-- ═══ FAQ ═══ -->
