@@ -4,6 +4,7 @@
     "description": "Echte Hochzeiten in Süddeutschland und der Schweiz — Geschichten von Paaren, die ich begleiten durfte."
   },
   "hero": {
+    "image": "images/hochzeit-schweiz.jpg",
     "label": "Impressionen",
     "title": "Portfolio",
     "subtitle": "Echte Hochzeiten, echte Paare, echte Momente — ein Blick in die Tage, die ich begleiten durfte."
@@ -17,12 +18,12 @@
       "cover": "images/glueckliches-brautpaar.jpg",
       "coverAlt": "Molly & Tim — Heidelberg",
       "photographer": "Guerel Sahin",
-      "feedback": "We live in New York and we were married in Heidelberg, and although we contracted Miriam to take care of the decorations she went truly above and beyond. She helped us navigate working with our venue, transportation to and from the venue, as well as finding other vendors for any sort of request we had.",
+      "feedback": "Wir leben in New York und haben in Heidelberg geheiratet. Obwohl wir Miriam ursprünglich nur für die Dekoration gebucht hatten, ist sie weit über das hinaus gegangen, was wir uns vorstellen konnten. Sie hat uns mit der Location, dem Transport und der Auswahl unserer Dienstleister geholfen. Sie war wirklich ein Geschenk für unseren Tag.",
       "images": [
-        { "src": "images/glueckliches-brautpaar.jpg", "alt": "Brautpaar Molly & Tim in Heidelberg" },
-        { "src": "images/brautstrauss-elegant.jpg", "alt": "Eleganter Brautstrauß" },
+        { "src": "images/glueckliches-brautpaar.jpg", "alt": "Molly & Tim in Heidelberg" },
         { "src": "images/eheringe.jpg", "alt": "Eheringe" },
-        { "src": "images/brautpaar-im-spiegel-rust.jpg", "alt": "Brautpaar im Spiegel" }
+        { "src": "images/ringtausch-brautpaar.jpg", "alt": "Der Ringtausch" },
+        { "src": "images/brautstrauss-elegant.jpg", "alt": "Eleganter Brautstrauß" }
       ]
     },
     {
@@ -36,9 +37,9 @@
       "feedback": "Miriam hat unseren Tag mit so viel Ruhe und Sorgfalt begleitet — wir konnten uns einfach fallen lassen und alles genießen. Wir sind unendlich dankbar.",
       "images": [
         { "src": "images/Herbsthochzeit.jpg", "alt": "Herbsthochzeit im Schwarzwald" },
-        { "src": "images/heiraten-im-schwarzwald.jpg", "alt": "Heiraten im Schwarzwald" },
         { "src": "images/brautstrauss-boho-683x1024.jpg", "alt": "Boho Brautstrauß" },
-        { "src": "images/hochzeitstorte-schwarzwald-200x300.jpg", "alt": "Hochzeitstorte Schwarzwald" }
+        { "src": "images/brautkleid-details-683x1024.jpg", "alt": "Brautkleid Details" },
+        { "src": "images/hochzeitstorte-schwarzwald-200x300.jpg", "alt": "Hochzeitstorte im Schwarzwald" }
       ]
     },
     {
@@ -51,10 +52,10 @@
       "photographer": "Katrin Haberstock",
       "feedback": "",
       "images": [
-        { "src": "images/brautpaar-aarau.jpg", "alt": "Brautpaar in Aarau" },
-        { "src": "images/bride-to-be-2025-aarau.jpg", "alt": "Bride to be Aarau" },
-        { "src": "images/brautstrauss-elegant-200x300.jpg", "alt": "Eleganter Brautstrauß" },
-        { "src": "images/ringtausch-brautpaar.jpg", "alt": "Ringtausch" }
+        { "src": "images/brautpaar-aarau.jpg", "alt": "Laura & Sebastian in Aarau" },
+        { "src": "images/eheringe-juwelier.jpg", "alt": "Eheringe vom Juwelier" },
+        { "src": "images/hochzeitsdekoration-blumenschmuck-200x300.jpg", "alt": "Blumenschmuck" },
+        { "src": "images/bride-to-be-2025-rainbow-schuhe-240x300.jpg", "alt": "Hochzeitsschuhe" }
       ]
     },
     {
@@ -62,15 +63,15 @@
       "names": "Romina & Max",
       "initials": "R & M",
       "location": "Hochzeit in Basel",
-      "cover": "images/brautpaar-basel-200x300.jpg",
+      "cover": "images/braut-mit-fascinator-731x1024.jpg",
       "coverAlt": "Romina & Max — Basel",
       "photographer": "Photostudio M",
       "feedback": "Ohne Miriam wäre dieser Tag nicht möglich gewesen. Sie hat jedes Detail bedacht und uns das Gefühl gegeben, einfach Gäste auf unserer eigenen Hochzeit zu sein.",
       "images": [
-        { "src": "images/brautpaar-basel-200x300.jpg", "alt": "Brautpaar in Basel" },
-        { "src": "images/brautkleid-details-683x1024.jpg", "alt": "Brautkleid Details" },
         { "src": "images/braut-mit-fascinator-731x1024.jpg", "alt": "Braut mit Fascinator" },
-        { "src": "images/hochzeitspapeterie-200x300.jpg", "alt": "Hochzeitspapeterie" }
+        { "src": "images/save-the-daten-hochzeit.jpg", "alt": "Save the Date" },
+        { "src": "images/hochzeitspapeterie-200x300.jpg", "alt": "Hochzeitspapeterie" },
+        { "src": "images/vozradui-12298495.jpg", "alt": "Atmosphäre" }
       ]
     },
     {
@@ -81,28 +82,28 @@
       "cover": "images/brautpaar-in-der-schweiz.jpg",
       "coverAlt": "Anna & Felix — Schweiz",
       "photographer": "Photo Emilia Jarosch",
-      "feedback": "",
+      "feedback": "Wir sind aus der ganzen Schweiz und Deutschland gekommen, und Miriam hat es geschafft, dass sich alle Gäste sofort wohl gefühlt haben. Eine warme, ruhige Hand, die alles im Blick hatte.",
       "images": [
-        { "src": "images/brautpaar-in-der-schweiz.jpg", "alt": "Brautpaar in der Schweiz" },
-        { "src": "images/hochzeit-schweiz.jpg", "alt": "Hochzeit in der Schweiz" },
-        { "src": "images/bride-to-be-schweiz.jpg", "alt": "Bride to be Schweiz" },
-        { "src": "images/eheringe-juwelier.jpg", "alt": "Eheringe vom Juwelier" }
+        { "src": "images/brautpaar-in-der-schweiz.jpg", "alt": "Anna & Felix in der Schweiz" },
+        { "src": "images/mari-lezhava-egz7W1zHYbU-unsplash-Kopie-scaled.jpg", "alt": "Hochzeitsstimmung" },
+        { "src": "images/polina-tankilevitch-5255510.jpg", "alt": "Atmosphäre" },
+        { "src": "images/518844108-1-scaled.jpg", "alt": "Hochzeitsmoment" }
       ]
     },
     {
-      "slug": "julia-thomas-hochrhein",
+      "slug": "julia-thomas-sueddeutschland",
       "names": "Julia & Thomas",
       "initials": "J & T",
-      "location": "Hochzeit am Hochrhein",
-      "cover": "images/Hochrheinwedding.png",
-      "coverAlt": "Julia & Thomas — Hochrhein",
+      "location": "Hochzeit in Süddeutschland",
+      "cover": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg",
+      "coverAlt": "Julia & Thomas — Süddeutschland",
       "photographer": "Fabian Espinoza",
       "feedback": "Wir haben Miriam nicht als Planerin, sondern als Freundin in Erinnerung. Genau das macht den Unterschied.",
       "images": [
-        { "src": "images/Hochrheinwedding.png", "alt": "Hochzeit am Hochrhein" },
-        { "src": "images/braut-bad-saeckingen-200x300.jpg", "alt": "Braut in Bad Säckingen" },
-        { "src": "images/hochzeitsdekoration-blumenschmuck-200x300.jpg", "alt": "Blumenschmuck" },
-        { "src": "images/save-the-daten-hochzeit.jpg", "alt": "Save the Date" }
+        { "src": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg", "alt": "Braut auf dem Land" },
+        { "src": "images/24-DSC04983.jpg", "alt": "Hochzeitsmoment" },
+        { "src": "images/mlkbnl-11652626-683x1024.jpg", "alt": "Stimmung" },
+        { "src": "images/michael-morse-1463389.jpg", "alt": "Atmosphäre" }
       ]
     }
   ],
