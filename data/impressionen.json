@@ -1,61 +1,120 @@
 {
   "meta": {
     "title": "Impressionen - be2gether weddings",
-    "description": "Einblicke in Hochzeiten in Süddeutschland und der Schweiz — Momente, Details, Geschichten."
+    "description": "Echte Hochzeiten in Süddeutschland und der Schweiz — Geschichten von Paaren, die ich begleiten durfte."
   },
   "hero": {
     "label": "Impressionen",
-    "title": "Momente, die <em>bleiben.</em>",
-    "subtitle": "Ein Blick auf Details, Geschichten und Augenblicke aus Hochzeiten, die ich begleiten durfte."
+    "title": "Eure <em>Geschichte</em>.",
+    "subtitle": "Echte Hochzeiten, echte Paare, echte Momente — ein Blick in die Tage, die ich begleiten durfte.",
+    "featured": {
+      "image": "images/glueckliches-brautpaar.jpg",
+      "alt": "Glückliches Brautpaar",
+      "initials": "M & T",
+      "names": "Molly & Tim",
+      "location": "Hochzeit in Heidelberg"
+    }
   },
-  "intro": {
-    "text": "Weniger erzählen, mehr zeigen. Hier sind Augenblicke aus echten Hochzeiten — und ein paar leise Details, die zwischen den großen Momenten leben."
-  },
-  "gallery": [
-    { "image": "images/Herbsthochzeit.jpg", "alt": "Herbsthochzeit im Schwarzwald", "caption": "Herbsthochzeit, Schwarzwald." },
-    { "image": "images/glueckliches-brautpaar.jpg", "alt": "Glückliches Brautpaar", "caption": "Der Moment danach." },
-    { "image": "images/braut-mit-fascinator-731x1024.jpg", "alt": "Braut mit Fascinator", "caption": "Detail, das bleibt." },
-    { "image": "images/brautkleid-details-683x1024.jpg", "alt": "Brautkleid Details", "caption": "Stoff & Stille." },
-    { "image": "images/brautpaar-aarau.jpg", "alt": "Brautpaar Aarau", "caption": "Aarau." },
-    { "image": "images/mari-lezhava-egz7W1zHYbU-unsplash-Kopie-scaled.jpg", "alt": "Hochzeitsdetail", "caption": "Ein leiser Augenblick." },
-    { "image": "images/heiraten-im-schwarzwald.jpg", "alt": "Heiraten im Schwarzwald", "caption": "Schwarzwald." },
-    { "image": "images/brautstrauss-boho-683x1024.jpg", "alt": "Brautstrauß Boho", "caption": "Boho." },
-    { "image": "images/brautpaar-mit-hochzeitsplanerin.jpg", "alt": "Brautpaar mit Hochzeitsplanerin", "caption": "Gemeinsam." },
-    { "image": "images/michael-morse-1463389.jpg", "alt": "Hochzeitsmoment", "caption": "Der Augenblick." },
-    { "image": "images/eheringe.jpg", "alt": "Eheringe", "caption": "Versprochen." },
-    { "image": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg", "alt": "Braut mit Pferd in Süddeutschland", "caption": "Süddeutschland." },
-    { "image": "images/ringtausch-brautpaar.jpg", "alt": "Ringtausch", "caption": "Der Tausch." },
-    { "image": "images/brautpaar-in-der-schweiz.jpg", "alt": "Brautpaar in der Schweiz", "caption": "Schweiz." },
-    { "image": "images/polina-tankilevitch-5255510.jpg", "alt": "Hochzeitsstimmung", "caption": "Atmosphäre." },
-    { "image": "images/brautstrauss-elegant.jpg", "alt": "Eleganter Brautstrauß", "caption": "Hände, die festhalten." },
-    { "image": "images/save-the-date-blattwerkstatt.jpg", "alt": "Save the Date Papeterie", "caption": "Worte zum Tag." },
-    { "image": "images/verlobung.jpg", "alt": "Verlobung", "caption": "Der Anfang." },
-    { "image": "images/hochzeit-schweiz.jpg", "alt": "Hochzeit in der Schweiz", "caption": "Eine Geschichte beginnt." },
-    { "image": "images/Hochrheinwedding.png", "alt": "Hochrheinwedding", "caption": "Hochrheinwedding." },
-    { "image": "images/save-the-daten-hochzeit.jpg", "alt": "Save the Date Detail", "caption": "Save the Date." },
-    { "image": "images/hochzeitsdekoration-blumenschmuck-200x300.jpg", "alt": "Blumenschmuck", "caption": "Blütenwerk." },
-    { "image": "images/hochzeitspapeterie-200x300.jpg", "alt": "Hochzeitspapeterie", "caption": "Papier & Tinte." },
-    { "image": "images/hochzeitstorte-schwarzwald-200x300.jpg", "alt": "Hochzeitstorte Schwarzwald", "caption": "Süßer Schluss." },
-    { "image": "images/brautstrauss-elegant-200x300.jpg", "alt": "Eleganter Brautstrauß", "caption": "Eleganz." },
-    { "image": "images/braut-bad-saeckingen-200x300.jpg", "alt": "Braut Bad Säckingen", "caption": "Bad Säckingen." },
-    { "image": "images/brautpaar-basel-200x300.jpg", "alt": "Brautpaar Basel", "caption": "Basel." },
-    { "image": "images/boho-braut-214x300.jpg", "alt": "Boho Braut", "caption": "Boho-Braut." },
-    { "image": "images/bride-to-be-2025-aarau.jpg", "alt": "Bride to be Aarau", "caption": "Bride to Be." },
-    { "image": "images/bride-to-be-schweiz.jpg", "alt": "Bride to be Schweiz", "caption": "Schweiz, vor dem Tag." },
-    { "image": "images/bride-to-be-2025-rainbow-schuhe-240x300.jpg", "alt": "Hochzeitsschuhe", "caption": "Schritt für Schritt." },
-    { "image": "images/bride-to-be-2025-serravalle-200x300.jpg", "alt": "Bride to be Serravalle", "caption": "Serravalle." },
-    { "image": "images/24-DSC04983.jpg", "alt": "Hochzeitsmoment", "caption": "Stillstand." },
-    { "image": "images/153-MZF_5421-200x300.jpg", "alt": "Hochzeitsdetail", "caption": "Detail." },
-    { "image": "images/518844108-1-scaled.jpg", "alt": "Hochzeit", "caption": "Augenblick." },
-    { "image": "images/mlkbnl-11652626-683x1024.jpg", "alt": "Brautpaar", "caption": "Zwischen den Zeilen." },
-    { "image": "images/eheringe-juwelier.jpg", "alt": "Eheringe", "caption": "Aus Gold." },
-    { "image": "images/brautpaar-im-spiegel-rust.jpg", "alt": "Brautpaar im Spiegel", "caption": "Spiegelmoment." },
-    { "image": "images/braeutigam-mit-hochzeitsplaner.jpg", "alt": "Bräutigam mit Hochzeitsplaner", "caption": "Vor dem Tag." },
-    { "image": "images/brautpaar-mit-hochzeitsplanerin-300x200.jpg", "alt": "Brautpaar mit Hochzeitsplanerin", "caption": "Hand in Hand." },
-    { "image": "images/Miriam-Stabile_Klein-1024x538.jpg", "alt": "Hochzeitsplanung", "caption": "Hinter den Kulissen." }
+  "portfolio": [
+    {
+      "slug": "molly-tim-heidelberg",
+      "names": "Molly & Tim",
+      "initials": "M & T",
+      "location": "Hochzeit in Heidelberg",
+      "cover": "images/glueckliches-brautpaar.jpg",
+      "coverAlt": "Molly & Tim — Heidelberg",
+      "photographer": "Guerel Sahin",
+      "feedback": "We live in New York and we were married in Heidelberg, and although we contracted Miriam to take care of the decorations she went truly above and beyond. She helped us navigate working with our venue, transportation to and from the venue, as well as finding other vendors for any sort of request we had.",
+      "images": [
+        { "src": "images/glueckliches-brautpaar.jpg", "alt": "Brautpaar Molly & Tim in Heidelberg" },
+        { "src": "images/brautstrauss-elegant.jpg", "alt": "Eleganter Brautstrauß" },
+        { "src": "images/eheringe.jpg", "alt": "Eheringe" },
+        { "src": "images/brautpaar-im-spiegel-rust.jpg", "alt": "Brautpaar im Spiegel" }
+      ]
+    },
+    {
+      "slug": "sarah-dominic-schwarzwald",
+      "names": "Sarah & Dominic",
+      "initials": "S & D",
+      "location": "Hochzeit im Schwarzwald",
+      "cover": "images/Herbsthochzeit.jpg",
+      "coverAlt": "Sarah & Dominic — Schwarzwald",
+      "photographer": "Michel Sieber",
+      "feedback": "Miriam hat unseren Tag mit so viel Ruhe und Sorgfalt begleitet — wir konnten uns einfach fallen lassen und alles genießen. Wir sind unendlich dankbar.",
+      "images": [
+        { "src": "images/Herbsthochzeit.jpg", "alt": "Herbsthochzeit im Schwarzwald" },
+        { "src": "images/heiraten-im-schwarzwald.jpg", "alt": "Heiraten im Schwarzwald" },
+        { "src": "images/brautstrauss-boho-683x1024.jpg", "alt": "Boho Brautstrauß" },
+        { "src": "images/hochzeitstorte-schwarzwald-200x300.jpg", "alt": "Hochzeitstorte Schwarzwald" }
+      ]
+    },
+    {
+      "slug": "laura-sebastian-aarau",
+      "names": "Laura & Sebastian",
+      "initials": "L & S",
+      "location": "Hochzeit in Aarau",
+      "cover": "images/brautpaar-aarau.jpg",
+      "coverAlt": "Laura & Sebastian — Aarau",
+      "photographer": "Katrin Haberstock",
+      "feedback": "",
+      "images": [
+        { "src": "images/brautpaar-aarau.jpg", "alt": "Brautpaar in Aarau" },
+        { "src": "images/bride-to-be-2025-aarau.jpg", "alt": "Bride to be Aarau" },
+        { "src": "images/brautstrauss-elegant-200x300.jpg", "alt": "Eleganter Brautstrauß" },
+        { "src": "images/ringtausch-brautpaar.jpg", "alt": "Ringtausch" }
+      ]
+    },
+    {
+      "slug": "romina-max-basel",
+      "names": "Romina & Max",
+      "initials": "R & M",
+      "location": "Hochzeit in Basel",
+      "cover": "images/brautpaar-basel-200x300.jpg",
+      "coverAlt": "Romina & Max — Basel",
+      "photographer": "Photostudio M",
+      "feedback": "Ohne Miriam wäre dieser Tag nicht möglich gewesen. Sie hat jedes Detail bedacht und uns das Gefühl gegeben, einfach Gäste auf unserer eigenen Hochzeit zu sein.",
+      "images": [
+        { "src": "images/brautpaar-basel-200x300.jpg", "alt": "Brautpaar in Basel" },
+        { "src": "images/brautkleid-details-683x1024.jpg", "alt": "Brautkleid Details" },
+        { "src": "images/braut-mit-fascinator-731x1024.jpg", "alt": "Braut mit Fascinator" },
+        { "src": "images/hochzeitspapeterie-200x300.jpg", "alt": "Hochzeitspapeterie" }
+      ]
+    },
+    {
+      "slug": "anna-felix-schweiz",
+      "names": "Anna & Felix",
+      "initials": "A & F",
+      "location": "Hochzeit in der Schweiz",
+      "cover": "images/brautpaar-in-der-schweiz.jpg",
+      "coverAlt": "Anna & Felix — Schweiz",
+      "photographer": "Photo Emilia Jarosch",
+      "feedback": "",
+      "images": [
+        { "src": "images/brautpaar-in-der-schweiz.jpg", "alt": "Brautpaar in der Schweiz" },
+        { "src": "images/hochzeit-schweiz.jpg", "alt": "Hochzeit in der Schweiz" },
+        { "src": "images/bride-to-be-schweiz.jpg", "alt": "Bride to be Schweiz" },
+        { "src": "images/eheringe-juwelier.jpg", "alt": "Eheringe vom Juwelier" }
+      ]
+    },
+    {
+      "slug": "julia-thomas-hochrhein",
+      "names": "Julia & Thomas",
+      "initials": "J & T",
+      "location": "Hochzeit am Hochrhein",
+      "cover": "images/Hochrheinwedding.png",
+      "coverAlt": "Julia & Thomas — Hochrhein",
+      "photographer": "Fabian Espinoza",
+      "feedback": "Wir haben Miriam nicht als Planerin, sondern als Freundin in Erinnerung. Genau das macht den Unterschied.",
+      "images": [
+        { "src": "images/Hochrheinwedding.png", "alt": "Hochzeit am Hochrhein" },
+        { "src": "images/braut-bad-saeckingen-200x300.jpg", "alt": "Braut in Bad Säckingen" },
+        { "src": "images/hochzeitsdekoration-blumenschmuck-200x300.jpg", "alt": "Blumenschmuck" },
+        { "src": "images/save-the-daten-hochzeit.jpg", "alt": "Save the Date" }
+      ]
+    }
   ],
   "creditsLabel": "Mit Dank an",
-  "credits": "Michel Sieber · Katrin Haberstock · Photostudio M · Photo Emilia Jarosch · Fabian Espinoza · Melina Zeiser · Wedding Crew · Yourmoments_ff · Nicole Janke",
+  "credits": "Michel Sieber · Katrin Haberstock · Photostudio M · Photo Emilia Jarosch · Fabian Espinoza · Melina Zeiser · Wedding Crew · Yourmoments_ff · Nicole Janke · Guerel Sahin",
   "pullQuote": {
     "text": "Soll eure Geschichte die nächste sein?",
     "attribution": "— Miriam"

@@ -71,13 +71,12 @@ h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2);letter-spacing:0.02em} h3{f
 .navbar{position:fixed;top:0;left:0;width:100%;height:var(--nav-height);z-index:1000;display:flex;align-items:center;transition:all var(--transition);background:transparent}
 .navbar.scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);box-shadow:var(--shadow-sm)}
 .navbar__inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max-width);margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem)}
-.navbar__logo img{height:70px;width:auto;transition:height var(--transition),filter var(--transition)}
+.navbar__logo img{height:70px;width:auto;transition:height var(--transition)}
 /* Home page hero: navbar grows + logo bigger when not yet scrolled. Other pages always carry .scrolled, so they keep 70px. */
 @media(min-width:1025px){
   body:not(.page-light) .navbar:not(.scrolled){height:115px}
   body:not(.page-light) .navbar:not(.scrolled) .navbar__logo img{height:96px}
 }
-.navbar.scrolled .navbar__logo img{filter:brightness(0) saturate(100%) invert(15%)}
 .navbar__links{display:flex;align-items:center;gap:var(--space-lg)}
 .navbar__links a{font-family:var(--ff-body);font-size:var(--fs-nav);font-weight:var(--fw-medium);color:var(--clr-white);text-transform:uppercase;letter-spacing:0.12em;position:relative;padding:0.25rem 0}
 .navbar__links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:var(--clr-gold);transition:width var(--transition)}

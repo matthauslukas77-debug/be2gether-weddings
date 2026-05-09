@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impressionen - be2gether weddings</title>
-  <meta name="description" content="Einblicke in Hochzeiten in Süddeutschland und der Schweiz — Momente, Details, Geschichten.">
-  <link rel="stylesheet" href="css/style.css?v=3">
-  <link rel="stylesheet" href="css/components.css?v=3">
+  <meta name="description" content="Echte Hochzeiten in Süddeutschland und der Schweiz — Geschichten von Paaren, die ich begleiten durfte.">
+  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/components.css?v=4">
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
 <body class="page-light" data-cms-page="impressionen">
@@ -27,21 +27,39 @@
   </nav>
   <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <!-- ═══ EDITORIAL HERO ═══ -->
-  <section class="aboutpage-hero aboutpage-hero--image">
-    <div class="aboutpage-hero__bg"><img src="images/vozradui-12298495.jpg" alt=""></div>
-    <h1 class="aboutpage-hero__title" data-cms="hero.title">Momente, die <em>bleiben.</em></h1>
-    <p class="aboutpage-hero__subtitle" data-cms="hero.subtitle">Ein Blick auf Details, Geschichten und Augenblicke aus Hochzeiten, die ich begleiten durfte.</p>
+  <!-- ═══ FEATURED COUPLE HERO ═══ -->
+  <section class="wedding-hero">
+    <div class="wedding-hero__bg"><img loading="eager" decoding="async" data-cms-src="hero.featured.image" data-cms-alt="hero.featured.alt" src="images/glueckliches-brautpaar.jpg" alt=""></div>
+    <div class="wedding-hero__overlay"></div>
+    <div class="wedding-hero__content reveal">
+      <span class="wedding-hero__label" data-cms="hero.label">Impressionen</span>
+      <h1 class="wedding-hero__initials" data-cms="hero.featured.initials">M &amp; T</h1>
+      <p class="wedding-hero__names" data-cms="hero.featured.names">Molly &amp; Tim</p>
+      <p class="wedding-hero__location" data-cms="hero.featured.location">Hochzeit in Heidelberg</p>
+    </div>
+    <div class="wedding-hero__scroll" aria-hidden="true"><span></span></div>
   </section>
 
-  <!-- ═══ MASONRY GALLERY ═══ -->
-  <section class="impressions-gallery">
-    <div class="impressions-gallery__grid reveal" data-cms-each="gallery">
+  <!-- ═══ INTRO ═══ -->
+  <section class="portfolio-intro reveal">
+    <h2 class="portfolio-intro__title" data-cms="hero.title">Eure <em>Geschichte</em>.</h2>
+    <p class="portfolio-intro__subtitle" data-cms="hero.subtitle">Echte Hochzeiten, echte Paare, echte Momente — ein Blick in die Tage, die ich begleiten durfte.</p>
+  </section>
+
+  <!-- ═══ PORTFOLIO GRID ═══ -->
+  <section class="portfolio-grid-section">
+    <span class="portfolio-grid-section__label">Portfolio</span>
+    <div class="portfolio-grid reveal" data-cms-each="portfolio">
       <template>
-        <figure class="impressions-gallery__item">
-          <img loading="lazy" decoding="async" data-cms-src="image" data-cms-alt="alt">
-          <figcaption class="impressions-gallery__caption" data-cms="caption"></figcaption>
-        </figure>
+        <a class="portfolio-card" data-cms-href-tpl="impressionen-detail.html?slug={slug}">
+          <div class="portfolio-card__media">
+            <img loading="lazy" decoding="async" data-cms-src="cover" data-cms-alt="coverAlt">
+          </div>
+          <div class="portfolio-card__overlay">
+            <span class="portfolio-card__names" data-cms="names"></span>
+            <span class="portfolio-card__location" data-cms="location"></span>
+          </div>
+        </a>
       </template>
     </div>
   </section>
@@ -69,15 +87,6 @@
     </div>
   </div>
 
-  <!-- ═══ LIGHTBOX ═══ -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox__close" id="lightboxClose" aria-label="Schließen"><i class="ph ph-x"></i></button>
-    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Vorheriges Bild"><i class="ph ph-caret-left"></i></button>
-    <img loading="lazy" decoding="async" class="lightbox__img" id="lightboxImg" alt="">
-    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Nächstes Bild"><i class="ph ph-caret-right"></i></button>
-    <div class="lightbox__caption" id="lightboxCaption"></div>
-  </div>
-
   <footer class="footer">
     <div class="footer__grid">
       <div class="footer__brand"><img loading="lazy" decoding="async" data-cms-src="site.brand.logo" src="images/180-Design-ohne-Titel2.png" alt="be2gether" class="footer__logo"><p data-cms="site.brand.taglineShort">Professionelle Hochzeitsplanung in Süddeutschland und der Schweiz.</p></div>
@@ -88,49 +97,9 @@
     <div class="footer__bottom"><span data-cms="site.footer.copyright">© 2026 be2gether weddings & events</span></div>
   </footer>
 
-
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/cms-config.js"></script>
   <script src="js/cms-loader.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    document.addEventListener('cms:ready', () => {
-      const lb = document.getElementById('lightbox');
-      const img = document.getElementById('lightboxImg');
-      const cap = document.getElementById('lightboxCaption');
-      const closeBtn = document.getElementById('lightboxClose');
-      const prevBtn = document.getElementById('lightboxPrev');
-      const nextBtn = document.getElementById('lightboxNext');
-      const items = Array.from(document.querySelectorAll('.impressions-gallery__item img'));
-      let idx = 0;
-      const open = (i) => {
-        idx = i;
-        const el = items[i];
-        img.src = el.src;
-        img.alt = el.alt;
-        cap.textContent = el.alt || '';
-        lb.classList.add('open');
-        lb.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      };
-      const close = () => {
-        lb.classList.remove('open');
-        lb.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      };
-      const step = (d) => open((idx + d + items.length) % items.length);
-      items.forEach((el, i) => { el.style.cursor = 'zoom-in'; el.addEventListener('click', () => open(i)); });
-      closeBtn.addEventListener('click', close);
-      prevBtn.addEventListener('click', () => step(-1));
-      nextBtn.addEventListener('click', () => step(1));
-      lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
-      document.addEventListener('keydown', (e) => {
-        if (!lb.classList.contains('open')) return;
-        if (e.key === 'Escape') close();
-        if (e.key === 'ArrowLeft') step(-1);
-        if (e.key === 'ArrowRight') step(1);
-      });
-    });
-  </script>
 </body>
 </html>

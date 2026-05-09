@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impression - be2gether weddings</title>
+  <meta name="description" content="Eine Hochzeit, die ich begleiten durfte.">
+  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/components.css?v=4">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+</head>
+<body class="page-light" data-cms-page="impressionen">
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><img src="images/180-Design-ohne-Titel2.png" alt="be2gether weddings Logo"></a>
+      <div class="navbar__links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="leistungen.html">Leistungen</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="impressionen.html" class="active">Impressionen</a>
+        <a href="blog.html">Blog</a>
+        <div class="navbar__cta"><a href="kontakt.html" class="btn btn--primary">Erstgespräch</a></div>
+      </div>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <main class="wedding-detail">
+
+    <!-- ═══ DETAIL HEADER ═══ -->
+    <section class="wedding-detail__header reveal">
+      <a href="impressionen.html" class="wedding-detail__back"><i class="ph ph-arrow-left"></i> Zurück zum Portfolio</a>
+      <h1 class="wedding-detail__title" data-detail="names">Molly &amp; Tim</h1>
+      <p class="wedding-detail__location" data-detail="location">Hochzeit in Heidelberg</p>
+    </section>
+
+    <!-- ═══ DETAIL BODY: META + GALLERY ═══ -->
+    <section class="wedding-detail__body">
+
+      <aside class="wedding-detail__meta reveal">
+        <h2 class="wedding-detail__meta-title">Pictures.</h2>
+        <p class="wedding-detail__photographer" data-detail="photographer">—</p>
+
+        <figure class="wedding-detail__feedback" data-feedback-block>
+          <i class="ph-fill ph-quotes wedding-detail__feedback-icon" aria-hidden="true"></i>
+          <blockquote class="wedding-detail__feedback-text" data-detail="feedback"></blockquote>
+        </figure>
+      </aside>
+
+      <div class="wedding-detail__gallery reveal" data-gallery>
+        <!-- images injected by inline script -->
+      </div>
+
+    </section>
+
+    <!-- ═══ PULL QUOTE ═══ -->
+    <section class="pull-quote pull-quote--cream reveal">
+      <p class="pull-quote__text">Eure Hochzeit ist einzigartig.</p>
+      <span class="pull-quote__attribution">&mdash; Miriam</span>
+    </section>
+
+    <!-- ═══ FINAL CTA ═══ -->
+    <div class="cta-banner">
+      <div class="cta-banner__bg"><img loading="lazy" decoding="async" data-cms-src="finalCta.image" src="images/save-the-date-blattwerkstatt.jpg" alt=""></div>
+      <div class="cta-banner__overlay"></div>
+      <div class="cta-banner__content reveal">
+        <h2 data-cms="finalCta.title">Lasst uns reden.</h2>
+        <p data-cms="finalCta.text">Unverbindlich, persönlich, mit Zeit für eure Vision.</p>
+        <a href="kontakt.html" class="btn btn--white" data-cms="finalCta.ctaText">Erstgespräch vereinbaren</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand"><img loading="lazy" decoding="async" data-cms-src="site.brand.logo" src="images/180-Design-ohne-Titel2.png" alt="be2gether" class="footer__logo"><p data-cms="site.brand.taglineShort">Professionelle Hochzeitsplanung in Süddeutschland und der Schweiz.</p></div>
+      <div><h4>Navigation</h4><div class="footer__links"><a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="ueber-mich.html">Über mich</a><a href="impressionen.html">Impressionen</a><a href="blog.html">Blog</a><a href="kontakt.html">Kontakt</a></div></div>
+      <div><h4>Kontakt</h4><div class="footer__contact"><p data-cms="site.contact.name">Miriam Stabile</p><a data-cms-href="site.contact.phoneLink" data-cms="site.contact.phone" href="tel:+491734758590">+49 (0)173 4758590</a><a data-cms-href="site.contact.emailLink" data-cms="site.contact.email" href="mailto:info@be2gether-weddings.de">info@be2gether-weddings.de</a></div></div>
+      <div><h4>Rechtliches</h4><div class="footer__links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div>
+    </div>
+    <div class="footer__bottom"><span data-cms="site.footer.copyright">© 2026 be2gether weddings & events</span></div>
+  </footer>
+
+  <!-- ═══ LIGHTBOX ═══ -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Schließen"><i class="ph ph-x"></i></button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Vorheriges Bild"><i class="ph ph-caret-left"></i></button>
+    <img class="lightbox__img" id="lightboxImg" alt="">
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Nächstes Bild"><i class="ph ph-caret-right"></i></button>
+    <div class="lightbox__caption" id="lightboxCaption"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/cms-config.js"></script>
+  <script src="js/cms-loader.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const params = new URLSearchParams(location.search);
+      const slug = params.get('slug');
+
+      function bindEntry(entry) {
+        if (!entry) return false;
+        document.title = entry.names + ' — be2gether weddings';
+        document.querySelectorAll('[data-detail]').forEach(el => {
+          const key = el.dataset.detail;
+          const v = entry[key];
+          if (v != null && v !== '') el.textContent = v;
+        });
+        if (!entry.feedback || entry.feedback.trim() === '') {
+          const fb = document.querySelector('[data-feedback-block]');
+          if (fb) fb.remove();
+        }
+        const gallery = document.querySelector('[data-gallery]');
+        if (gallery && Array.isArray(entry.images)) {
+          gallery.innerHTML = '';
+          entry.images.forEach((img, i) => {
+            const f = document.createElement('figure');
+            f.className = 'wedding-detail__img wedding-detail__img--' + (i + 1);
+            const im = document.createElement('img');
+            im.loading = 'lazy';
+            im.decoding = 'async';
+            im.src = img.src;
+            im.alt = img.alt || entry.names;
+            im.style.cursor = 'zoom-in';
+            f.appendChild(im);
+            gallery.appendChild(f);
+          });
+        }
+        return true;
+      }
+
+      function findEntry(data) {
+        if (!data || !Array.isArray(data.portfolio)) return null;
+        if (slug) return data.portfolio.find(e => e.slug === slug) || data.portfolio[0];
+        return data.portfolio[0];
+      }
+
+      document.addEventListener('cms:ready', (ev) => {
+        const data = ev.detail || {};
+        bindEntry(findEntry(data));
+        initLightbox();
+      });
+      document.addEventListener('cms:enhanced', (ev) => {
+        bindEntry(findEntry(ev.detail || {}));
+      });
+
+      function initLightbox() {
+        const lb = document.getElementById('lightbox');
+        const img = document.getElementById('lightboxImg');
+        const cap = document.getElementById('lightboxCaption');
+        const closeBtn = document.getElementById('lightboxClose');
+        const prevBtn = document.getElementById('lightboxPrev');
+        const nextBtn = document.getElementById('lightboxNext');
+        const items = Array.from(document.querySelectorAll('.wedding-detail__gallery img'));
+        let idx = 0;
+        const open = (i) => {
+          idx = i;
+          const el = items[i];
+          img.src = el.src;
+          img.alt = el.alt;
+          cap.textContent = el.alt || '';
+          lb.classList.add('open');
+          lb.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        };
+        const close = () => {
+          lb.classList.remove('open');
+          lb.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        };
+        const step = (d) => open((idx + d + items.length) % items.length);
+        items.forEach((el, i) => el.addEventListener('click', () => open(i)));
+        closeBtn.addEventListener('click', close);
+        prevBtn.addEventListener('click', () => step(-1));
+        nextBtn.addEventListener('click', () => step(1));
+        lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+        document.addEventListener('keydown', (e) => {
+          if (!lb.classList.contains('open')) return;
+          if (e.key === 'Escape') close();
+          if (e.key === 'ArrowLeft') step(-1);
+          if (e.key === 'ArrowRight') step(1);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
