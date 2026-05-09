@@ -68,13 +68,38 @@
     "ctaText": "Entdeckt eure Möglichkeiten"
   },
   "steps": {
-    "label": "Euer Weg zur Traumhochzeit",
-    "title": "Vier <em>Schritte</em> zu eurer Traumhochzeit.",
+    "label": "Euer Weg — Schritt für Schritt",
+    "title": "Vom ersten Gedanken bis zum <em>schönsten Tag</em> eures Lebens.",
+    "lead": "Vier Etappen, in denen aus eurer Idee Wirklichkeit wird — und ihr in jedem Moment wisst, wo wir gerade stehen.",
     "items": [
-      { "image": "images/brautpaar-in-der-schweiz.jpg", "title": "Erstgespräch", "text": "In einem lockeren Gespräch besprechen wir eure Vorstellungen und Wünsche für den großen Tag. Ihr erfahrt mehr über meine Leistungen." },
-      { "image": "images/hochzeitspapeterie-200x300.jpg", "title": "Konzeptentwicklung", "text": "Basierend auf euren Ideen entwickle ich ein individuelles Hochzeitskonzept, das eure Persönlichkeit widerspiegelt." },
-      { "image": "images/hochzeitsdekoration-blumenschmuck-200x300.jpg", "title": "Organisation", "text": "Von Dienstleisterauswahl bis Budgetplanung — ich kümmere mich um alle organisatorischen Details." },
-      { "image": "images/brautpaar-basel-200x300.jpg", "title": "Hochzeitstag", "text": "Am großen Tag koordiniere ich alles vor Ort, damit ihr euren Tag in vollen Zügen genießen könnt." }
+      {
+        "image": "images/brautpaar-in-der-schweiz.jpg",
+        "kicker": "Schritt eins",
+        "title": "Erstgespräch.",
+        "lead": "Wenn aus dem ersten „Vielleicht\" ein „Genau das.\" wird.",
+        "text": "Wir setzen uns zusammen — bei einem Tee, einem Glas Wein oder per Video. Ihr erzählt mir von eurem Traumtag, von der Stimmung, die ihr euch wünscht, von den kleinen Bildern im Kopf. Ich höre zu, stelle die richtigen Fragen — und ihr spürt: Das hier kann etwas werden."
+      },
+      {
+        "image": "images/hochzeitspapeterie-200x300.jpg",
+        "kicker": "Schritt zwei",
+        "title": "Konzeptentwicklung.",
+        "lead": "Aus euren Ideen wird ein roter Faden, der euren Tag trägt.",
+        "text": "Jetzt nehme ich alles, was ihr mir mitgegeben habt — eure Geschichte, euren Stil, eure Werte — und entwickle daraus ein Konzept, das nicht nach Trend, sondern nach euch klingt. Farben, Atmosphäre, Ablauf, Details. Stimmig. Persönlich. Eures."
+      },
+      {
+        "image": "images/hochzeitsdekoration-blumenschmuck-200x300.jpg",
+        "kicker": "Schritt drei",
+        "title": "Organisation.",
+        "lead": "Während ihr die Vorfreude lebt, läuft im Hintergrund alles auf Linie.",
+        "text": "Locations, Dienstleister, Verträge, Zeitpläne, Sitzordnungen, der eine handgeschriebene Brief am Stuhl. Ich kümmere mich um die hundert kleinen Details, die niemand sieht — damit ihr beim Aufwachen am Hochzeitsmorgen nur einen einzigen Gedanken habt: Endlich."
+      },
+      {
+        "image": "images/brautpaar-basel-200x300.jpg",
+        "kicker": "Schritt vier",
+        "title": "Euer Tag.",
+        "lead": "Heute seid ihr nur Braut und Bräutigam — sonst nichts.",
+        "text": "Ich bin da, bevor ihr da seid. Begrüße die Dienstleister, koordiniere die Übergaben, fange jede kleine Welle ab, bevor sie euch erreicht. Während ihr in den schönsten Tag eures Lebens hineingeht, halte ich im Hintergrund still die Fäden zusammen — damit ihr nichts müsst, außer einander zu lieben."
+      }
     ],
     "ctaText": ""
   },
