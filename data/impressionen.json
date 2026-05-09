@@ -5,15 +5,8 @@
   },
   "hero": {
     "label": "Impressionen",
-    "title": "Eure <em>Geschichte</em>.",
-    "subtitle": "Echte Hochzeiten, echte Paare, echte Momente — ein Blick in die Tage, die ich begleiten durfte.",
-    "featured": {
-      "image": "images/glueckliches-brautpaar.jpg",
-      "alt": "Glückliches Brautpaar",
-      "initials": "M & T",
-      "names": "Molly & Tim",
-      "location": "Hochzeit in Heidelberg"
-    }
+    "title": "Portfolio",
+    "subtitle": "Echte Hochzeiten, echte Paare, echte Momente — ein Blick in die Tage, die ich begleiten durfte."
   },
   "portfolio": [
     {

@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impressionen - be2gether weddings</title>
   <meta name="description" content="Echte Hochzeiten in Süddeutschland und der Schweiz — Geschichten von Paaren, die ich begleiten durfte.">
-  <link rel="stylesheet" href="css/style.css?v=4">
-  <link rel="stylesheet" href="css/components.css?v=4">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/components.css?v=5">
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
 <body class="page-light" data-cms-page="impressionen">
@@ -27,37 +30,28 @@
   </nav>
   <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <!-- ═══ FEATURED COUPLE HERO ═══ -->
-  <section class="wedding-hero">
-    <div class="wedding-hero__bg"><img loading="eager" decoding="async" data-cms-src="hero.featured.image" data-cms-alt="hero.featured.alt" src="images/glueckliches-brautpaar.jpg" alt=""></div>
-    <div class="wedding-hero__overlay"></div>
-    <div class="wedding-hero__content reveal">
-      <span class="wedding-hero__label" data-cms="hero.label">Impressionen</span>
-      <h1 class="wedding-hero__initials" data-cms="hero.featured.initials">M &amp; T</h1>
-      <p class="wedding-hero__names" data-cms="hero.featured.names">Molly &amp; Tim</p>
-      <p class="wedding-hero__location" data-cms="hero.featured.location">Hochzeit in Heidelberg</p>
-    </div>
-    <div class="wedding-hero__scroll" aria-hidden="true"><span></span></div>
-  </section>
-
-  <!-- ═══ INTRO ═══ -->
-  <section class="portfolio-intro reveal">
-    <h2 class="portfolio-intro__title" data-cms="hero.title">Eure <em>Geschichte</em>.</h2>
-    <p class="portfolio-intro__subtitle" data-cms="hero.subtitle">Echte Hochzeiten, echte Paare, echte Momente — ein Blick in die Tage, die ich begleiten durfte.</p>
+  <!-- ═══ PAGE HEADER ═══ -->
+  <section class="portfolio-header reveal">
+    <span class="portfolio-header__label" data-cms="hero.label">Impressionen</span>
+    <h1 class="portfolio-header__title" data-cms="hero.title">Portfolio</h1>
+    <p class="portfolio-header__subtitle" data-cms="hero.subtitle">Echte Hochzeiten, echte Paare, echte Momente — ein Blick in die Tage, die ich begleiten durfte.</p>
   </section>
 
   <!-- ═══ PORTFOLIO GRID ═══ -->
   <section class="portfolio-grid-section">
-    <span class="portfolio-grid-section__label">Portfolio</span>
     <div class="portfolio-grid reveal" data-cms-each="portfolio">
       <template>
         <a class="portfolio-card" data-cms-href-tpl="impressionen-detail.html?slug={slug}">
           <div class="portfolio-card__media">
             <img loading="lazy" decoding="async" data-cms-src="cover" data-cms-alt="coverAlt">
           </div>
-          <div class="portfolio-card__overlay">
-            <span class="portfolio-card__names" data-cms="names"></span>
-            <span class="portfolio-card__location" data-cms="location"></span>
+          <div class="portfolio-card__caption">
+            <span class="portfolio-card__caption-text" data-cms="names"></span>
+          </div>
+          <div class="portfolio-card__hover">
+            <h2 class="portfolio-card__hover-title" data-cms="names"></h2>
+            <p class="portfolio-card__hover-location" data-cms="location"></p>
+            <span class="portfolio-card__hover-cta">mehr</span>
           </div>
         </a>
       </template>
