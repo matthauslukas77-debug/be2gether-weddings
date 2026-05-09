@@ -374,6 +374,31 @@
   .chapter--editorial .chapter__content{padding-bottom:0}
 }
 
+/* ═══ ABOUT COLLAGE — portrait + offset bridal-couple inset ═══ */
+.about-collage{position:relative;max-width:520px;margin:0 auto}
+.about-collage__main{margin:0;overflow:hidden;aspect-ratio:3/4;box-shadow:0 20px 56px rgba(20,20,20,0.12)}
+.about-collage__main img{width:100%;height:100%;object-fit:cover;display:block}
+.about-collage__inset{position:absolute;right:-1.5rem;bottom:-2rem;width:clamp(140px,30%,210px);aspect-ratio:4/5;margin:0;overflow:hidden;border:6px solid var(--clr-white);box-shadow:0 16px 40px rgba(20,20,20,0.18);background:var(--clr-cream)}
+.about-collage__inset img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:768px){
+  .about-collage{max-width:340px}
+  .about-collage__inset{right:-1rem;bottom:-1.25rem;width:130px;border-width:4px}
+}
+
+/* ═══ STATS BANNER — Fahrschule-style oversized counters with count-up ═══ */
+.stats-banner{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,4rem)}
+.stats-banner__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(2rem,5vw,5rem);text-align:center;align-items:start}
+.stat-counter{display:flex;flex-direction:column;align-items:center}
+.stat-counter__num{font-family:var(--ff-heading);font-size:clamp(3.6rem,7.5vw,6.4rem);font-weight:var(--fw-light);line-height:1;color:var(--clr-charcoal);letter-spacing:-0.025em;display:inline-block}
+.stat-counter__value{font-variant-numeric:tabular-nums;display:inline-block}
+.stat-counter__divider{display:block;width:48px;height:1px;background:var(--clr-gold);margin:var(--space-md) auto var(--space-sm)}
+.stat-counter__label{font-family:var(--ff-body);font-size:0.82rem;font-weight:var(--fw-semibold);letter-spacing:0.32em;text-transform:uppercase;color:var(--clr-gold-dark);margin-bottom:var(--space-xs);display:block}
+.stat-counter__desc{font-family:var(--ff-body);font-size:0.95rem;font-weight:var(--fw-light);line-height:1.55;color:var(--clr-charcoal-light);max-width:24ch;margin:0 auto}
+@media(max-width:768px){
+  .stats-banner__inner{grid-template-columns:1fr;gap:var(--space-xl)}
+  .stat-counter__num{font-size:clamp(3rem,12vw,4.5rem)}
+}
+
 /* ═══ HOME EDITORIAL INTRO — text column + 3-image collage (1 large + 2 small) ═══ */
 .home-intro{padding:clamp(5rem,10vw,9rem) clamp(1.5rem,5vw,4rem);background:var(--clr-white)}
 .home-intro__inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
