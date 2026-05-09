@@ -2,7 +2,43 @@
    be2gether weddings — JavaScript Interactions
    ═══════════════════════════════════════════════════ */
 
+// ── WhatsApp floating action button (injected on every page) ──
+function initWhatsAppFab() {
+  if (document.querySelector('.wa-fab')) return;
+  const href = 'https://wa.me/491734758590?text=Hallo%20Miriam%2C%20ich%20interessiere%20mich%20f%C3%BCr%20deine%20Hochzeitsplanung.';
+  const a = document.createElement('a');
+  a.className = 'wa-fab';
+  a.href = href;
+  a.target = '_blank';
+  a.rel = 'noopener';
+  a.setAttribute('aria-label', 'Direkt per WhatsApp anfragen');
+  a.innerHTML = '<svg viewBox="0 0 24 24" width="26" height="26" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.47-.149-.669.15-.198.297-.768.967-.941 1.166-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span class="wa-fab__label">Direkt anfragen</span>';
+  document.body.appendChild(a);
+}
+
+// ── Cookie consent banner (DSGVO) ──
+function initCookieBanner() {
+  const KEY = 'b2g_cookie_consent';
+  try { if (localStorage.getItem(KEY) === '1') return; } catch (e) {}
+  if (document.querySelector('.cookie-banner')) return;
+  const el = document.createElement('div');
+  el.className = 'cookie-banner';
+  el.setAttribute('role', 'dialog');
+  el.setAttribute('aria-label', 'Cookie-Hinweis');
+  el.innerHTML = '<div class="cookie-banner__inner"><p>Wir verwenden Cookies, um eure Erfahrung auf unserer Website zu verbessern. Mehr erfahrt ihr in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p><button type="button" class="btn btn--primary cookie-banner__accept">Akzeptieren</button></div>';
+  document.body.appendChild(el);
+  requestAnimationFrame(() => el.classList.add('open'));
+  el.querySelector('.cookie-banner__accept').addEventListener('click', () => {
+    try { localStorage.setItem(KEY, '1'); } catch (e) {}
+    el.classList.remove('open');
+    setTimeout(() => el.remove(), 400);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  initWhatsAppFab();
+  initCookieBanner();
 
   // ── Sticky Navbar ──
   const navbar = document.getElementById('navbar');

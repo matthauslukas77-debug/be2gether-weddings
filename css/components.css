@@ -876,3 +876,35 @@ html.cms-ready .aboutpage-hero__bg img{opacity:1;animation:none}
   .wedding-detail__gallery{grid-template-columns:1fr;grid-auto-rows:auto}
   .wedding-detail__img,.wedding-detail__img--1,.wedding-detail__img--4{grid-row:auto;grid-column:auto;aspect-ratio:4/5}
 }
+
+/* ═══════════════════════════════════════════════════
+   GLOBAL WIDGETS — WhatsApp FAB + Cookie banner
+   ═══════════════════════════════════════════════════ */
+
+/* WhatsApp floating action button (every page, bottom right) */
+.wa-fab{position:fixed;right:clamp(1rem,2vw,1.5rem);bottom:clamp(1rem,2vw,1.5rem);z-index:9000;display:inline-flex;align-items:center;gap:0.65rem;height:58px;padding:0 1.2rem 0 0.95rem;background:#25D366;color:#fff;text-decoration:none;border-radius:999px;box-shadow:0 8px 24px rgba(37,211,102,0.35),0 2px 8px rgba(0,0,0,0.18);transition:transform .3s ease,box-shadow .3s ease,background .3s ease;font-family:var(--ff-body);font-size:0.85rem;font-weight:var(--fw-semibold);letter-spacing:0.05em;animation:waFabIn .55s .4s ease both}
+.wa-fab:hover{transform:translateY(-2px);background:#1ebe57;box-shadow:0 12px 32px rgba(37,211,102,0.45),0 4px 12px rgba(0,0,0,0.22);color:#fff}
+.wa-fab svg{flex-shrink:0;display:block}
+.wa-fab__label{white-space:nowrap;line-height:1}
+@keyframes waFabIn{from{opacity:0;transform:translateY(20px) scale(0.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:560px){
+  .wa-fab{height:54px;width:54px;padding:0;justify-content:center;gap:0}
+  .wa-fab__label{display:none}
+}
+
+/* Cookie consent banner (DSGVO) */
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;background:var(--clr-charcoal);color:rgba(255,255,255,0.92);z-index:9100;transform:translateY(100%);transition:transform .45s cubic-bezier(0.22,1,0.36,1);box-shadow:0 -8px 32px rgba(0,0,0,0.25)}
+.cookie-banner.open{transform:translateY(0)}
+.cookie-banner__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-md);max-width:1280px;margin:0 auto;padding:var(--space-md) clamp(1rem,3vw,2rem)}
+.cookie-banner p{margin:0;font-size:0.88rem;line-height:1.55;font-family:var(--ff-body);font-weight:var(--fw-light);max-width:60ch;color:rgba(255,255,255,0.88)}
+.cookie-banner a{color:var(--clr-gold-light);text-decoration:underline;text-underline-offset:2px}
+.cookie-banner a:hover{color:var(--clr-gold)}
+.cookie-banner__accept{flex-shrink:0;white-space:nowrap;padding:0.75rem 1.5rem;font-size:0.78rem}
+@media(max-width:680px){
+  .cookie-banner__inner{flex-direction:column;align-items:stretch;gap:var(--space-sm);text-align:left}
+  .cookie-banner__accept{align-self:flex-start}
+}
+
+/* Lift FAB above cookie banner when banner is open (mobile especially) */
+.cookie-banner.open ~ .wa-fab,
+body:has(.cookie-banner.open) .wa-fab{bottom:clamp(7rem,18vw,9rem)}

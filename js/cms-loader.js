@@ -47,6 +47,9 @@
       // Strip everything except the <template> itself.
       Array.from(container.children).forEach(c => { if (c.tagName !== 'TEMPLATE') c.remove(); });
       arr.forEach(item => {
+        // Skip items flagged as hidden — used for staged content (e.g. a service
+        // slot that's prepared in CMS but not yet ready to go live).
+        if (item && item.hidden === true) return;
         const frag = tpl.content.cloneNode(true);
         applyBindings(frag, item);
         container.appendChild(frag);
