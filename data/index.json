@@ -57,15 +57,15 @@
   },
   "services": {
     "label": "Unsere Leistungen",
-    "title": "Individuelle Pakete für euren großen Tag",
-    "subtitle": "Ob Komplettplanung oder Tagesbegleitung — ich begleite euch genau so, wie ihr es braucht.",
+    "title": "Eure Hochzeit ist ein Erlebnis, in dem <em>ihr die Hauptrolle</em> spielt.",
+    "subtitle": "Ich begleite euch auf dem Weg zu genau diesem Erlebnis — individuell, persönlich und mit einem klaren Blick für das große Ganze. Ob Komplettplanung von Anfang an oder Teilplanung, wenn ihr bereits gestartet seid: Ich steige genau dort ein, wo ihr Unterstützung braucht. Mit einem gezielten Location Scouting finde ich den Ort, der eure Geschichte trägt und eure Vision zum Leben erweckt. Und am Hochzeitstag selbst sorgt meine Tagesbegleitung dafür, dass alles im Hintergrund reibungslos zusammenläuft — damit ihr euch vollkommen auf das konzentrieren könnt, was wirklich zählt: euren Moment.",
     "items": [
-      { "image": "images/braut-mit-fascinator-731x1024.jpg", "title": "Komplettplanung", "text": "Von der ersten Idee bis zum letzten Tanz – ich übernehme die gesamte Organisation." },
-      { "image": "images/brautkleid-details-683x1024.jpg", "title": "Teilplanung", "text": "Ihr habt schon begonnen? Ich greife genau dort auf, wo ihr Unterstützung braucht." },
-      { "image": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg", "title": "Tagesbegleitung", "text": "Am Hochzeitstag halte ich euch den Rücken frei und koordiniere den gesamten Ablauf." },
-      { "image": "images/brautstrauss-boho-683x1024.jpg", "title": "Location-Scouting", "text": "Ich finde die versteckten Perlen und besten Plätze für eure Traumhochzeit." }
+      { "image": "images/braut-mit-fascinator-731x1024.jpg", "title": "Komplettplanung", "text": "" },
+      { "image": "images/brautkleid-details-683x1024.jpg", "title": "Teilplanung", "text": "" },
+      { "image": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg", "title": "Tagesbegleitung", "text": "" },
+      { "image": "images/brautstrauss-boho-683x1024.jpg", "title": "Location-Scouting", "text": "" }
     ],
-    "ctaText": "Alle Leistungen ansehen"
+    "ctaText": "Entdeckt eure Möglichkeiten"
   },
   "steps": {
     "label": "Euer Weg zur Traumhochzeit",
