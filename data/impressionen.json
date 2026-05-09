@@ -22,7 +22,8 @@
       "images": [
         { "src": "images/glueckliches-brautpaar.jpg", "alt": "Molly & Tim in Heidelberg" },
         { "src": "images/eheringe.jpg", "alt": "Eheringe" },
-        { "src": "images/brautstrauss-elegant.jpg", "alt": "Eleganter Brautstrauß" }
+        { "src": "images/brautstrauss-elegant.jpg", "alt": "Eleganter Brautstrauß" },
+        { "src": "images/ringtausch-brautpaar.jpg", "alt": "Der Ringtausch" }
       ]
     },
     {
@@ -36,6 +37,7 @@
       "feedback": "Miriam hat unseren Tag mit so viel Ruhe und Sorgfalt begleitet — wir konnten uns einfach fallen lassen und alles genießen. Wir sind unendlich dankbar.",
       "images": [
         { "src": "images/Herbsthochzeit.jpg", "alt": "Herbsthochzeit im Schwarzwald" },
+        { "src": "images/heiraten-im-schwarzwald.jpg", "alt": "Schwarzwald Stimmung" },
         { "src": "images/brautstrauss-boho-683x1024.jpg", "alt": "Boho Brautstrauß" },
         { "src": "images/brautkleid-details-683x1024.jpg", "alt": "Brautkleid Details" },
         { "src": "images/hochzeitstorte-schwarzwald-200x300.jpg", "alt": "Hochzeitstorte im Schwarzwald" }
@@ -69,7 +71,8 @@
       "images": [
         { "src": "images/braut-mit-fascinator-731x1024.jpg", "alt": "Braut mit Fascinator" },
         { "src": "images/save-the-daten-hochzeit.jpg", "alt": "Save the Date" },
-        { "src": "images/hochzeitspapeterie-200x300.jpg", "alt": "Hochzeitspapeterie" }
+        { "src": "images/hochzeitspapeterie-200x300.jpg", "alt": "Hochzeitspapeterie" },
+        { "src": "images/verlobung.jpg", "alt": "Verlobung" }
       ]
     },
     {
@@ -83,7 +86,9 @@
       "feedback": "Wir sind aus der ganzen Schweiz und Deutschland gekommen, und Miriam hat es geschafft, dass sich alle Gäste sofort wohl gefühlt haben. Eine warme, ruhige Hand, die alles im Blick hatte.",
       "images": [
         { "src": "images/brautpaar-in-der-schweiz.jpg", "alt": "Anna & Felix in der Schweiz" },
-        { "src": "images/save-the-date-blattwerkstatt.jpg", "alt": "Save the Date" }
+        { "src": "images/hochzeit-schweiz.jpg", "alt": "Hochzeit in der Schweiz" },
+        { "src": "images/save-the-date-blattwerkstatt.jpg", "alt": "Save the Date" },
+        { "src": "images/eheringe-juwelier.jpg", "alt": "Eheringe vom Juwelier" }
       ]
     },
     {
@@ -96,7 +101,10 @@
       "photographer": "Fabian Espinoza",
       "feedback": "Wir haben Miriam nicht als Planerin, sondern als Freundin in Erinnerung. Genau das macht den Unterschied.",
       "images": [
-        { "src": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg", "alt": "Braut auf dem Land" }
+        { "src": "images/braut-mit-pferd-in-sueddeutschland-731x1024.jpg", "alt": "Braut auf dem Land" },
+        { "src": "images/eheringe.jpg", "alt": "Eheringe" },
+        { "src": "images/brautstrauss-elegant-200x300.jpg", "alt": "Brautstrauß" },
+        { "src": "images/brautkleid-details-683x1024.jpg", "alt": "Brautkleid Details" }
       ]
     }
   ],
