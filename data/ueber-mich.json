@@ -82,9 +82,21 @@
     "ctaText": "Erstgespräch vereinbaren"
   },
   "faq": {
-    "label": "FAQ",
+    "label": "Warum eine Hochzeitsplanerin?",
     "title": "Häufig gestellte Fragen",
     "items": [
+      {
+        "question": "Habt ihr den Zeitaufwand unterschätzt?",
+        "answer": "200–300 Stunden stecken in einer vollständigen Hochzeitsplanung — neben Beruf und Alltag kaum machbar. Ich übernehme die komplette Organisation, von der ersten Idee bis zum letzten Detail. Ihr genießt die Vorfreude."
+      },
+      {
+        "question": "Sorgt ihr euch um Budgetfallen?",
+        "answer": "Versteckte Kosten und der berüchtigte „Hochzeitsaufschlag\" sprengen schnell den Rahmen. Ich plane mit transparenten Festpreisen, provisionsfrei und mit Agentur-Rabatten — ich handle stets in eurem Interesse, unabhängig vom Budget."
+      },
+      {
+        "question": "Wer koordiniert am großen Tag?",
+        "answer": "Wer koordiniert, kann nicht feiern. Am Hochzeitstag selbst koordiniere ich alles im Hintergrund — damit ihr jeden Moment mit euren Liebsten genießen könnt, statt nur zu funktionieren."
+      },
       {
         "question": "Was kostet eine Hochzeitsplanung mit dir?",
         "answer": "Die Kosten hängen vom Umfang eurer Wünsche und der Größe der Hochzeit ab. Nach einem unverbindlichen Erstgespräch erstelle ich euch ein individuelles Angebot — transparent, mit Festpreisen und ohne Provisionsmodell."
